@@ -1,0 +1,125 @@
+<ion-content [fullscreen]="true">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-menu-button color="secondary"></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="text-start">
+        <div class="m-1">
+          <img width="40%" src="./assets/logo.png" alt="logo" />
+        </div>
+      </ion-title>
+      <!-- <ion-title>{{ home }}</ion-title> -->
+    </ion-toolbar>
+  </ion-header>
+  <!-- body -->
+  <ion-grid>
+    <!-- main -->
+    <ion-row size="12" class="main-center">
+      <div class="my-4">
+        <ion-grid>
+          <ion-row size="12">
+            <ion-col size="12">
+              <div class="container mt-5 ">
+                <h1 class="title-main text-center">Red médica</h1>
+              </div>
+            </ion-col>
+            <ion-col size="12">
+              <div class="container my-3">
+                <ion-row size="12">
+                  <ion-col size="4">
+                    <div class="text-center">
+                      <img src="./assets/random/heart.png" alt="Criterios de inclusion">
+                    </div>
+                  </ion-col>
+                  <ion-col size="8">
+                    <div class="text-start">
+                      <span class="text-clinical-studies">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque faucibus, augue eu
+                        convallis vulputate, sapien
+                        elit dignissim nulla, quis posuere.
+                      </span>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </ion-col>
+            <ion-col size="12">
+              <div class="container my-4">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control text-center" placeholder="Ingresar búsqueda"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                  <span class="input-group-text" id="basic-addon1">
+                    <ion-icon name="search-outline"></ion-icon>
+                  </span>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="12">
+              <ion-row size="12" class="text-center">
+                <ion-col size="6">
+                  <div class="container">
+                    <select class="form-select" aria-label="padecimiento">
+                      <option selected>Padecimiento</option>
+                      <option value="1">Cancer</option>
+                      <option value="2">Gripa</option>
+                      <option value="3">Tos</option>
+                    </select>
+                  </div>
+                </ion-col>
+                <ion-col size="6">
+                  <div class="container">
+                    <select class="form-select" aria-label="Tipo de estudio">
+                      <option selected>Tipo de estudio</option>
+                      <option value="1">Hemograma</option>
+                      <option value="2">Quimioterapia</option>
+                      <option value="3">Fosfatasa</option>
+                    </select>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-row>
+    <!-- content -->
+    <ion-row size="12">
+      <div class="container my-4">
+        <ion-card class="my-2" *ngFor="let item of [1,1,1,1,1,1,1,1]">
+          <div class="container text-start mt-1 mb-3">
+            <ion-row size="12">
+              <ion-col size="12" class="text-end">
+                <span class="text-disponible">Disponible
+                  <ion-icon class="text-center" name="ellipse" color="success"></ion-icon>
+                </span>
+              </ion-col>
+              <ion-col size="4" class="center-icon">
+                <ion-card background="./assets/random/person.jpg">
+                </ion-card>
+              </ion-col>
+              <ion-col size="8">
+                <ion-row size="12">
+                  <ion-col size="12" class="my-1">
+                    <span class="title-specialty text-start">
+                      Especialista Hematológico
+                    </span>
+                  </ion-col>
+                  <ion-col size="12" class="my-1">
+                    <span class="name-person text-start">Julián Cruz Zepeda</span>
+                  </ion-col>
+                  <ion-col size="12" class="my-1" class="text-end">
+                    <span class="text-end diagnostic">
+                      14 diagnósticos realizados
+                    </span>
+                  </ion-col>
+                  <ion-col></ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-card>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>
