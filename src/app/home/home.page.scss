@@ -1,6 +1,8 @@
 ion-content {
   background-color: #fafafa;
-
+}
+ion-grid {
+  background-color: #fafafa;
 }
 
 // background video
@@ -9,6 +11,8 @@ ion-content {
   background-size: cover;
   background-repeat: no-repeat;
   height: auto;
+    background-color: #fafafa;
+
   // -webkit-filter: blur(3px);
   // filter: blur(3px);
   // background-color: rgba(35, 41, 46, 0.2);
@@ -104,13 +108,57 @@ ion-content {
   line-height: normal;
   letter-spacing: normal;
 }
-.text-footer{
+
+.content-footer {
+  text-align: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #fafafa;
+
+}
+
+.logo-footer {
+  width: 60%;
+}
+
+.icon.social {
+  width: 15%;
+}
+
+.text-footer {
   font-family: Rubik;
   font-size: 1rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0277c4;
+}
+
+.email-footer {
+  font-family: Rubik;
+  font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   color: #0277c4;
+  align-self: center;
+}
+
+.text-end-footer {
+  font-family: Rubik;
+  font-size: 11px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: rgba(29, 29, 27, 0.8);
+}
+.icon-social{
+  width: 15%;
 }

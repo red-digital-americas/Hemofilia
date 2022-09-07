@@ -3,8 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // apiURL: 'http://34.237.214.147/back/api_hemofilia/api/',
+  apiURL: 'https://localhost:44369/api/',
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
     { title: 'Diagn. de hematopatías', url: 'hematopatias', icon: 'document' },
     { title: 'Estudios clínicos', url: 'clinical-studies', icon: 'reader' },
     { title: 'Red Médica', url: 'medical-network', icon: 'pulse' },
-    { title: 'Perfil', url: 'profile', icon: 'person' },
+    { title: 'Login', url: '/login', icon: 'person' },
   ];
   constructor() {}
   ngOnInit() {}

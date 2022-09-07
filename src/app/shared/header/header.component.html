@@ -4,7 +4,6 @@
       <ion-content>
         <ion-list id="inbox-list">
           <ion-list-header class="ion-padding-bottom">Menú</ion-list-header>
-          <!-- <ion-note>hi@ionicframework.com</ion-note> -->
           <ion-menu-toggle class="ion-padding-bottom" auto-hide="false" color="primary"
             *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
