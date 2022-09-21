@@ -10,11 +10,22 @@
   padding: 2rem;
 }
 
+.backg {
+  background: rgb(250, 250, 250);
+
+}
+
 ion-grid {
   background-color: #fafafa;
 }
+
 ion-content {
   background-color: #fafafa;
+}
+
+.img-slider-footer {
+  margin-top: 2rem;
+  width: 30%;
 }
 
 .text-title {
@@ -35,13 +46,13 @@ ion-content {
 
 .step-text {
   font-family: Rubik;
-  font-size: 22px;
-  font-weight: normal;
+  font-size: 1.5rem;
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: rgba(29, 29, 27, 0.8);
+  color: #0277C4;
 }
 
 .pharag-detail {
@@ -59,9 +70,11 @@ ion-content {
   margin-top: 3rem;
   align-self: center;
 }
+
 .align-center {
   align-self: center;
 }
+
 .btn-enviar {
   width: 200px;
   height: 84px;
@@ -141,6 +154,6 @@ ion-content {
   color: #0ab1e0;
 }
 
-.radio-group{
+.radio-group {
   text-align: center;
 }

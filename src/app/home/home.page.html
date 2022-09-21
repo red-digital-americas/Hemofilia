@@ -5,8 +5,9 @@
         <ion-menu-button color="secondary"></ion-menu-button>
       </ion-buttons>
       <ion-title class="text-start">
-        <div class="m-1">
-          <img width="40%" src="./assets/logo.png" alt="logo" />
+        <div class="p-1 logo-size">
+          <img class="p-1" src="./assets/logo.png" alt="logo" />
+          <img class="p-1" width="50%" src="./assets/amdlcc.png" alt="logo" />
         </div>
       </ion-title>
       <!-- <ion-title>{{ home }}</ion-title> -->
@@ -21,8 +22,9 @@
           <ion-row size="12">
             <ion-col size="10">
               <div class="container my-5">
-                <h1 class="title-main">Mejorando el diagnóstico oportuno en
-                  <b class="text-white">México</b>
+                <h1 class="title-main">Súmate al diagnostico
+                  temprano de Cánceres
+                  <b class="text-white">hematológicos</b>
                 </h1>
               </div>
             </ion-col>
@@ -32,7 +34,8 @@
           <ion-row size="12">
             <ion-col size="12">
               <div class="mx-2 mt-5 mb-1 text-start">
-                <button type="button" class="btn btn-tertiary btn-lg btn-gradient-orange">
+                <button (click)="iniciarDiagnostico()" type="button"
+                  class="btn btn-tertiary btn-lg btn-gradient-orange">
                   <span class="btn-text">
                     Iniciar diagnóstico
                   </span>
@@ -41,11 +44,11 @@
             </ion-col>
             <ion-col size="12">
               <div class="mx-2 mb-3 text-end">
-                <button type="button" class="btn btn-primary btn-lg btn-gradient-blue">
+                <!-- <button type="button" class="btn btn-primary btn-lg btn-gradient-blue">
                   <span class="btn-text">
                     Estudios clínicos
                   </span>
-                </button>
+                </button> -->
               </div>
             </ion-col>
           </ion-row>
@@ -57,27 +60,29 @@
       <ion-col size="12">
         <div class="container my-5 ">
           <h4 class="model-text">
-            Nuestro modelo de Intervención se basa en cuatro pilares
+            70% de los casos
+            diagnosticados, llegan en
+            etapas tardías
           </h4>
         </div>
       </ion-col>
-      <ion-col size="12">
-        <div class="text-center mb-4">
-          <img width="50%" src="./assets/4pilares.png" alt="cuatro pilares">
-        </div>
-      </ion-col>
+
       <ion-col size="12">
         <div class="container my-5 ">
           <!-- <h5 class="subtitle-second">Lorem ipsum dolor sit amet</h5> -->
           <div class="mt-4">
             <span class="second-text ">
-              Nuestros programas buscan educar y sensibilizar sobre la importancia del diagnostico temprano la atención
-              oportuna. Buscamos incidir en lograr un sistema de salud equitativo y más justo, que garantice el acceso
-              al derecho al diagnostico y la atención integral del cáncer.
+              Nuestro objetivo es reducir los tiempos en el
+              diagnóstico del cáncer y el tiempo en que un
+              paciente accede a tratamiento para de esta forma,
+              mejorar los resultados en la atención y pronóstico de
+              los pacientes.
               <br> <br>
-              Como organización de la sociedad civil trabajamos de la mano de profesionales de la salud, instituciones
-              nacionales e internacionales, proveedores de insumos para la salud, empresas, voluntarios, supervivientes,
-              pacientes y familiares orientados en disminuir la morbimortalidad por cáncer en nuestro país.
+              En la Asociación Mexicana de Lucha Contra el
+              Cáncer estamos convencidos que el Diagnóstico
+              Temprano y la Referencia Oportuna pueden hacer
+              la diferencia para un paciente y todo su entorno de
+              salud.
             </span>
           </div>
         </div>
@@ -87,8 +92,29 @@
         <div class="my-5">
           <ion-grid>
             <div class="container">
+
               <ion-row size="12">
-                <ion-col size="6">
+                <ion-col size="12">
+                  <div class="text-center mb-4">
+                    <img width="80%" src="./assets/logo.png" alt="cuatro pilares">
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class=" my-5 ">
+                    <!-- <h5 class="subtitle-second">Lorem ipsum dolor sit amet</h5> -->
+                    <div class="mt-4">
+                      <span class="second-text ">
+                        Hemos creado esta app gracias al apoyo de
+                        especialistas en la atención de las hematopatías.
+                        <br> <br>
+                        SUMATE AL DIAGNOSTICO TEMPRANO busca
+                        ser una guía de apoyo para el diagnóstico de
+                        posibles hematopatías
+                      </span>
+                    </div>
+                  </div>
+                </ion-col>
+                <!-- <ion-col size="6">
                   <div class="mx-1">
                     <ion-grid>
                       <ion-row size="12">
@@ -97,7 +123,6 @@
                         </ion-col>
                         <ion-col size="12">
                           <div class="text-end my-2">
-                            <!-- <span class="title-cancer">Lorem Ipsum</span> -->
                           </div>
                         </ion-col>
                         <ion-col size="12">
@@ -118,7 +143,6 @@
                         </ion-col>
                         <ion-col size="12">
                           <div class="text-start my-2">
-                            <!-- <span class="title-cancer">Lorem Ipsum</span> -->
                           </div>
                         </ion-col>
                         <ion-col size="12">
@@ -129,7 +153,7 @@
                       </ion-row>
                     </ion-grid>
                   </div>
-                </ion-col>
+                </ion-col> -->
                 <ion-col size="12">
                   <div class="text-center my-5">
                     <img width="50%" src="./assets/liston.png" alt="detención de cancer">
@@ -139,24 +163,54 @@
                 <ion-col size="12">
                   <div class="text-center mb-4">
                     <h5 class="model-text">
-                      Súmate para lograr el diagnostico temprano
+                      ¿Cómo funciona?
                     </h5>
                   </div>
                 </ion-col>
                 <ion-col size="12">
-                  <div class="text-center mb-4">
+                  <div class=" mb-4">
                     <span class="second-text">
-                      La detección temprana de los Cánceres Hematológicos puede hacer la diferencia en el pronostico de
-                      un paciente.
+                      Apoyado en el análisis diferentes variables,
+                      especialmente de los resultados de estudios de
+                      laboratorio que indiques a tus pacientes, la app
+                      mediante algoritmos específicos, le ayudara a usted,
+                      a levantar una sospecha fundada para impulsar una
+                      acción o referencia que pueda incidir en el
+                      pronóstico de personas con hematopatías graves.
+                      <br> <br>
+                      En el mundo los Cánceres Hematológicos sumados
+                      (Linfoma, Leucemias y Mieloma) representan el tercer
+                      cáncer más frecuente en adultos hombres (81,160) y el
+                      cuarto en mujeres (61,490).
+                      <br> <br>
+                      La leucemia por si sola en México, representa la
+                      primera causa de muerte en niños de 0-14 años y en
+                      jóvenes entre los 15 y 19 años, según los datos del
+                      INEGI reportados a febrero del 2022.
                       <br>
-                      Como profesional de la salud, puedes lograr que cada vez más pacientes tengan un diagnóstico y
-                      acceso a la atención.
+                      El diagnostico tardío tiene graves implicaciones para la
+                      persona que lo padece, su familia, el médico tratante y
+                      el sistema de salud.
+                    </span>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="text-center my-2">
+                    <img width="40%" src="./assets/amdlcc.png" alt="cuatro pilares">
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class=" my-4">
+                    <span class="second-text">
+                      Cambiemos esta historia juntos, por
+                      que el cáncer nos une a todos de alguna
+                      manera.
                     </span>
                   </div>
                 </ion-col>
                 <ion-col size="12">
                   <div class="mx-2 mt-5 mb-1 text-center">
-                    <button type="button" class="btn btn-tertiary btn-lg btn-gradient-orange">
+                    <button (click)="registro()" type="button" class="btn btn-tertiary btn-lg btn-gradient-orange">
                       <span class="btn-text">
                         Quiero unirme
                       </span>
@@ -183,14 +237,14 @@
           <ion-row size="12" class="my-4">
             <ion-col size="12">
               <div class="text-center">
-                <img class="icon-social" src="./assets/icon/icon-facebook.png" alt="facebook">
-                <img class="icon-social" src="./assets/icon/icon-instagram.png" alt="instagram">
-                <img class="icon-social" src="./assets/icon/icon-twitter.png" alt="twitter">
+                <img (click)="facebook()" class="icon-social" src="./assets/icon/icon-facebook.png" alt="facebook">
+                <img (click)="instagram()" class="icon-social" src="./assets/icon/icon-instagram.png" alt="instagram">
+                <img (click)="twitter()" class="icon-social" src="./assets/icon/icon-twitter.png" alt="twitter">
               </div>
             </ion-col>
           </ion-row>
           <ion-row size="12" class="my-4">
-            <ion-col size="12" class="mb-2">
+            <!-- <ion-col size="12" class="mb-2">
               <div class="text-start">
                 <span class="text-footer">Acerca de</span>
               </div>
@@ -204,10 +258,10 @@
               <div class="text-start">
                 <span class="text-footer">Ayuda</span>
               </div>
-            </ion-col>
+            </ion-col> -->
             <ion-col size="12" class="mb-2">
               <div class="text-start">
-                <span class="text-footer">Aviso de privacidad</span>
+                <span (click)="goTerminos()" class="text-footer">Aviso de privacidad</span>
               </div>
             </ion-col>
           </ion-row>
@@ -216,7 +270,7 @@
               <div class="text-start">
                 <span class="email-footer">
                   <ion-icon color="primary" name="mail-outline"></ion-icon>
-                  contacto@nomadome.com
+                  contacto@amlcc.org
                 </span>
               </div>
             </ion-col>
@@ -224,7 +278,15 @@
               <div class="text-start">
                 <span class="email-footer">
                   <ion-icon color="primary" name="call-outline"></ion-icon>
-                  55 0016 7811 11
+                  Oficina: (55) 5574 ‑ 0393 y (55) 5564 ‑ 0794
+                </span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="call-outline"></ion-icon>
+                  Pacientes: (55) 5574 ‑ 0393
                 </span>
               </div>
             </ion-col>
@@ -234,8 +296,9 @@
             <ion-col size="10">
               <div class="text-end">
                 <span class="text-end-footer">
-                  Asociación Mexicana de lucha contra el cáncer A.C.
-                  Todos los derechos reservados. 2022
+                  Asociación Mexicana de Lucha Contra
+                  el Cáncer A.C. Todos los derechos
+                  reservados 2022
                 </span>
               </div>
             </ion-col>

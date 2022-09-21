@@ -19,17 +19,22 @@ export class CreateUserComponent implements OnInit {
   public medicalType = '';
   public oneScreen = true;
   public twoScreen = false;
-  public threeScreenG = false;
-  public threeScreenE = false;
-  public fourScreenG = false;
-  public fourScreenE = false;
-  public fiveScreenG = false;
-  public fiveScreenE = false;
-  public sixScreenE = false;
+  public threeScreen = false;
+  public fourScreen = false;
+  public fiveScreen = false;
+  public sixScreen = false;
   public today = new Date();
   public title = '';
   public body = '';
   public createDate = '';
+  public especialidades;
+  public consultorio;
+  public catDay;
+  public catSchedule;
+  public optionDay;
+
+
+
 
 
   oneStep = this.formBuilder.group({
@@ -41,35 +46,25 @@ export class CreateUserComponent implements OnInit {
     birthday: ['', [Validators.required]],
     sex: ['', [Validators.required]],
   });
-  threStepGeneral = this.formBuilder.group({
+  threeStep = this.formBuilder.group({
     specialityId: ['', [Validators.required]],
     professionalLicense: [''],
     professionalLicenseProcedure: [''],
   });
-  threStepEspecialist = this.formBuilder.group({
+
+  fourStep = this.formBuilder.group({
     consultingType: ['', [Validators.required]],
-    institutio: ['', [Validators.required]],
     phoneConsulting: ['', [Validators.required]],
     address: ['', [Validators.required]],
+  });
+  // fiveStep = this.formBuilder.group({
+  //   schedule: ['', Validators.required],
+  // });
+  sixStep = this.formBuilder.group({
+    email: ['', Validators.email],
+    password: ['', [Validators.required]],
+    term: ['false', [Validators.requiredTrue]],
 
-  });
-  fourStepGeneral = this.formBuilder.group({
-    email: ['', Validators.email],
-    password: ['', [Validators.required]],
-  });
-  fourStepEspecialist = this.formBuilder.group({
-    schedule: ['', Validators.required],
-    scheduleDay: ['', [Validators.required]],
-  });
-  fiveStepGeneral = this.formBuilder.group({
-    code: ['', Validators.required],
-  });
-  fiveStepEspecialist = this.formBuilder.group({
-    email: ['', Validators.email],
-    password: ['', [Validators.required]],
-  });
-  sixStepEspecialist = this.formBuilder.group({
-    code: ['', Validators.required],
   });
   constructor(private formBuilder: FormBuilder,
     public router: Router,
@@ -83,120 +78,104 @@ export class CreateUserComponent implements OnInit {
       roleId: ['', [Validators.required]],
       // email: ['', Validators.email],
     });
+    this.getEspecialidades();
+    this.getConsultorio();
+    this.getDay();
+    this.getSchedule();
+
   }
   ngOnInit() {
+
     this.oneStep = this.formBuilder.group({
       roleId: ['', [Validators.required]],
       // email: ['', Validators.email],
     });
+
   }
   iniciarSesion() {
     this.ionViewWillEnter();
     this.router.navigateByUrl('login');
   }
+  getEspecialidades() {
+    this.service.serviceGeneralGet('CatSpeciality').subscribe(resp => {
+      if (resp.success) {
+        this.especialidades = resp.result;
+        console.log('cat especialidades', this.especialidades);
+      }
+    });
+  }
+  getConsultorio() {
+    this.service.serviceGeneralGet('CatConsultorio').subscribe(resp => {
+      if (resp.success) {
+        this.consultorio = resp.result;
+        console.log('cat consultorio', this.consultorio);
+      }
+    });
+  }
+  getDay() {
+    this.service.serviceGeneralGet('CatDay').subscribe(resp => {
+      if (resp.success) {
+        this.catDay = resp.result;
+        console.log('catDay', this.catDay);
+      }
+    });
+  }
+  getSchedule() {
+    this.service.serviceGeneralGet('CatSchedule').subscribe(resp => {
+      if (resp.success) {
+        this.catSchedule = resp.result;
+        console.log('cat catSchedule', this.catSchedule);
+      }
+    });
+  }
+  invitacionHematologicos() {
+    console.log('especialidad', this.threeStep.value.specialityId);
+    if (this.threeStep.value.specialityId === 1) {
+      this.title = 'Hola';
+      this.body = 'Nos encantaría que te unieras al equipo de hematólogos que queremos ver cada vez menos pacientes con enfermedades en etapas avanzadas, para ello, médicos de primer contacto podrán  contactarte brevemente para resolver dudas puntuales, de manera anónima y solo en los momentos libres que tengas, a tu elección. ';
+      this.message(this.title, this.body);
+    }
+  }
   step1() {
     this.oneScreen = true;
     this.twoScreen = false;
-    this.threeScreenG = false;
-    this.threeScreenE = false;
-    this.fourScreenG = false;
-    this.fourScreenE = false;
-    this.fiveScreenG = false;
-    this.fiveScreenE = false;
-    this.sixScreenE = false;
+    this.threeScreen = false;
+    this.fourScreen = false;
+    this.fiveScreen = false;
+    this.sixScreen = false;
   }
   step2() {
     this.oneScreen = false;
     this.twoScreen = true;
-    this.threeScreenG = false;
-    this.threeScreenE = false;
-    this.fourScreenG = false;
-    this.fourScreenE = false;
-    this.fiveScreenG = false;
-    this.fiveScreenE = false;
-    this.sixScreenE = false;
+    this.threeScreen = false;
+    this.fourScreen = false;
+    this.fiveScreen = false;
+    this.sixScreen = false;
   }
   // desicion
   step3() {
-    if (this.oneStep.value.roleId === 1) {
-      this.medicalType = 'general';
-      this.oneScreen = false;
-      this.twoScreen = false;
-      this.threeScreenG = true;
-      this.threeScreenE = false;
-      this.fourScreenG = false;
-      this.fourScreenE = false;
-      this.fiveScreenG = false;
-      this.fiveScreenE = false;
-      this.sixScreenE = false;
-    }
-    else if (this.oneStep.value.roleId === 4) {
-      this.medicalType = 'especialista';
-      this.oneScreen = false;
-      this.twoScreen = false;
-      this.threeScreenG = false;
-      this.threeScreenE = true;
-      this.fourScreenG = false;
-      this.fourScreenE = false;
-      this.fiveScreenG = false;
-      this.fiveScreenE = false;
-      this.sixScreenE = false;
-    }
-  }
-  step4G() {
     this.oneScreen = false;
     this.twoScreen = false;
-    this.threeScreenG = false;
-    this.threeScreenE = false;
-    this.fourScreenG = true;
-    this.fourScreenE = false;
-    this.fiveScreenG = false;
-    this.fiveScreenE = false;
-    this.sixScreenE = false;
+    this.threeScreen = true;
+    this.fourScreen = false;
+    this.fiveScreen = false;
+    this.sixScreen = false;
   }
-  step4E() {
+  step4() {
     this.oneScreen = false;
     this.twoScreen = false;
-    this.threeScreenG = false;
-    this.threeScreenE = false;
-    this.fourScreenG = false;
-    this.fourScreenE = true;
-    this.fiveScreenG = false;
-    this.fiveScreenE = false;
-    this.sixScreenE = false;
+    this.threeScreen = false;
+    this.fourScreen = true;
+    this.fiveScreen = false;
+    this.sixScreen = false;
   }
-  step5G() {
+  step6() {
     this.oneScreen = false;
     this.twoScreen = false;
-    this.threeScreenG = false;
-    this.threeScreenE = false;
-    this.fourScreenG = false;
-    this.fourScreenE = false;
-    this.fiveScreenG = true;
-    this.fiveScreenE = false;
-    this.sixScreenE = false;
-  }
-  step5E() {
-    this.oneScreen = false;
-    this.twoScreen = false;
-    this.threeScreenG = false;
-    this.threeScreenE = false;
-    this.fourScreenG = false;
-    this.fourScreenE = false;
-    this.fiveScreenG = false;
-    this.fiveScreenE = true;
-    this.sixScreenE = false;
-  }
-  step6E() {
-    this.oneScreen = false;
-    this.twoScreen = false;
-    this.threeScreenG = false;
-    this.threeScreenE = false;
-    this.fourScreenG = false;
-    this.fourScreenE = false;
-    this.fiveScreenG = false;
-    this.fiveScreenE = false;
-    this.sixScreenE = true;
+    this.threeScreen = false;
+    this.fourScreen = false;
+    this.fiveScreen = false;
+    this.sixScreen = true;
   }
   formartDate() {
     // 2022-03-11T17:27:00
@@ -220,7 +199,8 @@ export class CreateUserComponent implements OnInit {
     this.createDate = `${date}T${time}`;
     console.log('createDate', this.createDate);
   }
-  saveG() {
+
+  save() {
     this.disabled = true;
     this.formartDate();
     console.log('Save General');
@@ -231,21 +211,19 @@ export class CreateUserComponent implements OnInit {
     this.data.firstName = this.twoStep.value.firstName;
     this.data.dateBirth = this.twoStep.value.birthday;
     this.data.sex = this.twoStep.value.sex;
-    this.data.specialityId = this.threStepGeneral.value.specialityId;
-    this.data.professionalLicense = this.threStepGeneral.value.professionalLicense;
-    this.data.professionalLicenseProcedure = this.threStepGeneral.value.professionalLicenseProcedure;
-    this.data.email = this.fourStepGeneral.value.email;
-    this.data.password = this.fourStepGeneral.value.password;
+    this.data.specialityId = this.threeStep.value.specialityId;
+    this.data.professionalLicense = this.threeStep.value.professionalLicense;
+    this.data.professionalLicenseProcedure = this.threeStep.value.professionalLicenseProcedure;
+    this.data.email = this.sixStep.value.email;
+    this.data.password = this.sixStep.value.password;
     this.data.status = true;
-    this.data.phone = '';
-    // this.data.consultingType = null;
-    this.data.address = '';
-    // this.data.institution = null;
+    this.data.phone = this.fourStep.value.phoneConsulting;
+    this.data.consultingType = this.fourStep.value.consultingType;
+    this.data.address = this.fourStep.value.address;
     this.data.createdBy = 0;
     this.data.createdDate = this.today;
     this.data.updatedBy = 0;
     this.data.updatedDate = this.today;
-
     console.log('fecha', this.today);
 
     this.service.serviceGeneralPostWithUrl('User', this.data).subscribe(resp => {
@@ -260,7 +238,6 @@ export class CreateUserComponent implements OnInit {
         this.router.navigateByUrl('login');
         this.message(this.title, resp.message);
         this.disabled = false;
-
       }
     },
       (error) => {
@@ -269,36 +246,6 @@ export class CreateUserComponent implements OnInit {
         this.message(this.title, error.error.message);
         this.disabled = false;
       });
-  }
-  saveE() {
-    console.log('Save Especialista');
-
-    this.data.id = 0;
-    this.data.email = this.fiveStepEspecialist.value.email;
-    this.data.password = this.fiveStepEspecialist.value.password;
-    this.data.token = '';
-    this.data.name = this.twoStep.value.name;
-    this.data.professionalLicense = this.threStepGeneral.value.professionalLicense;
-    this.data.specialityId = this.threStepGeneral.value.specialityId;
-    this.data.professionalLicenseProcedure = this.threStepGeneral.value.professionalLicenseProcedure;
-    this.data.roleId = this.oneStep.value.roleId;
-    this.data.status = true;
-    this.data.phone = this.threStepEspecialist.value.phoneConsulting;
-    this.data.dateBirth = this.twoStep.value.birthday;
-    this.data.firstName = this.twoStep.value.firstName;
-    this.data.consultingType = this.threStepEspecialist.value.consultingType;
-    this.data.sex = this.twoStep.value.sex;
-    this.data.address = this.threStepEspecialist.value.address;
-    this.data.institution = this.threStepEspecialist.value.institutio;
-    this.data.createdBy = 0;
-    this.data.createdDate = this.today;
-    this.data.updatedBy = 0;
-    this.data.updatedDate = this.today;
-    this.title = 'Exito';
-    this.body = 'Se creao correctame la cuenta';
-    this.message(this.title, this.body);
-    this.router.navigateByUrl('login');
-
   }
 
   // falta sex institutio consultingType address schedule
@@ -311,9 +258,7 @@ export class CreateUserComponent implements OnInit {
       buttons: ['OK'],
       mode: 'ios',
     });
-
     await alert.present();
-
   }
 }
 
@@ -340,3 +285,5 @@ class UserModel {
   updatedBy: number;
   updatedDate: Date;
 }
+
+

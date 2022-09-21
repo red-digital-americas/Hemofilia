@@ -3,6 +3,10 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { CreateUserComponent } from './auth/create-user/create-user.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { LoginComponent } from './auth/login/login.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PatrocinadoresComponent } from './patrocinadores/patrocinadores.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { TerminosComponent } from './terminos/terminos.component';
 
 const routes: Routes = [
   {
@@ -21,6 +25,22 @@ const routes: Routes = [
   {
     path: 'create-user',
     component: CreateUserComponent
+  },
+  {
+    path: 'patrocinadores',
+    component: PatrocinadoresComponent
+  },
+  {
+    path: 'terminos-y-condiciones',
+    component: TerminosComponent
+  },
+  {
+    path: 'perfil',
+    component: PerfilComponent
+  },
+  {
+    path: 'change-password/:id',
+    component: ChangePasswordComponent
   },
   {
     path: 'home',
@@ -42,10 +62,10 @@ const routes: Routes = [
     path: 'medical-network',
     loadChildren: () => import('./medical-network/medical-network.module').then( m => m.MedicalNetworkPageModule)
   },
-  {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-  },
+  // {
+  //   path: 'profile',
+  //   loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  // },
 ];
 
 @NgModule({

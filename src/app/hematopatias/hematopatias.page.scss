@@ -26,3 +26,53 @@ ion-menu-button {
 #container a {
   text-decoration: none;
 }
+
+ion-slides {
+  height: 100%;
+  background-color: #8c8c8c;
+}
+
+.swiper-slide {
+  display: block;
+}
+.img-slider-header{
+  width: 70%;
+}
+.img-slider-footer{
+  margin-top: 2rem;
+  width: 30%;
+}
+
+.swiper-slide h2 {
+  margin-top: 3.8rem;
+  color: #0277C4;
+  font-size: 1.7rem;
+  font-weight: 700;
+
+}
+
+.swiper-slide img {
+  // max-height: 50%;
+  // max-width: 80%;
+  // margin: 60px 0 40px;
+  // pointer-events: none;
+}
+
+b {
+  font-weight: 500;
+}
+
+p {
+  padding: 0 40px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ion-color-step-600, #60646b);
+}
+
+p b {
+  color: var(--ion-text-color, #000000);
+}
+
+.img-slider {
+  width: 50%;
+}

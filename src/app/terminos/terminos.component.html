@@ -1,0 +1,152 @@
+<ion-content [fullscreen]="true">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-menu-button color="secondary"></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="text-start">
+        <div class="p-1 logo-size">
+          <img class="p-1" src="./assets/logo.png" alt="logo" />
+          <img class="p-1" width="50%" src="./assets/amdlcc.png" alt="logo" />
+        </div>
+      </ion-title>
+      <!-- <ion-title>{{ home }}</ion-title> -->
+    </ion-toolbar>
+  </ion-header>
+  <!-- body -->
+  <ion-grid>
+
+    <ion-row size="12" class="my-5">
+      <ion-col size="12">
+        <h3 class="text-center model-text">
+          Terminos y Condiciones
+        </h3>
+      </ion-col>
+      <ion-col size="12">
+        <div class="container my-3 mx-1">
+
+          <span class="second-text ">
+            La Asociación Mexicana de Lucha Contra el Cáncer pone a su disposición el Aviso de Privacidad que informa
+            acerca del
+            tratamiento y de los derechos que puede hacer valer en relación con sus datos personales.
+            <br> <br>
+            La falta de
+            respuesta al aviso
+            de privacidad, expresa su consentimiento tácito para el manejo, resguardo y transferencia de sus datos
+            personales, en
+            los términos que se describen en el aviso de privacidad.
+            <br><br>
+            Usted puede acceder y saber los cambios al Aviso de
+            Privacidad
+            a través de la página de Internet:
+          </span>
+        </div>
+      </ion-col>
+      <!-- image -->
+      <ion-col size="12">
+        <div class="my-5">
+          <ion-grid>
+            <div class="container">
+              <ion-row size="12">
+                <ion-col size="12">
+                  <div class="text-center mt-5">
+                    <span>Visitanos</span>
+
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="text-center">
+                    <span class="text-primary" (click)="visitTerminos()" color="primary">Terminos y condiciones</span>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- footer -->
+  <ion-grid>
+    <ion-row size="12" class="content-footer">
+      <div class="my-4">
+        <ion-grid>
+          <ion-row size="12">
+            <ion-col size="12">
+              <img class="logo-footer" src="./assets/logo.png" alt="logo Sumate al diagnostico oportuno">
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-4">
+            <ion-col size="12">
+              <div class="text-center">
+                <img (click)="facebook()" class="icon-social" src="./assets/icon/icon-facebook.png" alt="facebook">
+                <img (click)="instagram()" class="icon-social" src="./assets/icon/icon-instagram.png" alt="instagram">
+                <img (click)="twitter()" class="icon-social" src="./assets/icon/icon-twitter.png" alt="twitter">
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-4">
+            <!-- <ion-col size="12" class="mb-2">
+                  <div class="text-start">
+                    <span class="text-footer">Acerca de</span>
+                  </div>
+                </ion-col>
+                <ion-col size="12" class="mb-2">
+                  <div class="text-start">
+                    <span class="text-footer">Preguntas frecuentes</span>
+                  </div>
+                </ion-col>
+                <ion-col size="12" class="mb-2">
+                  <div class="text-start">
+                    <span class="text-footer">Ayuda</span>
+                  </div>
+                </ion-col> -->
+            <ion-col size="12" class="mb-2">
+              <div class="text-start">
+                <span (click)="goTerminos()" class="text-footer">Aviso de privacidad</span>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-2">
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="mail-outline"></ion-icon>
+                  contacto@amlcc.org
+                </span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="call-outline"></ion-icon>
+                  Oficina: (55) 5574 ‑ 0393 y (55) 5564 ‑ 0794
+                </span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="call-outline"></ion-icon>
+                  Pacientes: (55) 5574 ‑ 0393
+                </span>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-2">
+            <ion-col size="2"></ion-col>
+            <ion-col size="10">
+              <div class="text-end">
+                <span class="text-end-footer">
+                  Asociación Mexicana de Lucha Contra
+                  el Cáncer A.C. Todos los derechos
+                  reservados 2022
+                </span>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

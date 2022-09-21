@@ -1,28 +1,154 @@
-ion-menu-button {
-  color: var(--ion-color-primary);
+.main {
+  background: rgb(250, 250, 250);
+  background: linear-gradient(90deg, rgba(250, 250, 250, 1) 5%, rgba(250, 250, 250, 1) 35%, rgba(250, 250, 250, 1) 100%);
+  /* background-image: linear-gradient(to top, #faeafa, #fe7afa) !important; */
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: 2rem;
 }
 
-#container {
+ion-grid {
+  background-color: #fafafa;
+}
+
+ion-content {
+  background-color: #fafafa;
+}
+
+.img-slider-footer {
+  margin-top: 2rem;
+  width: 30%;
+}
+
+.text-title {
+  font-family: Rubik;
+  font-size: 42px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(29, 29, 27, 0.8);
+}
+
+.margin-pharag {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.step-text {
+  font-family: Rubik;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0277C4;
+}
+
+.pharag-detail {
+  font-family: Rubik;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(29, 29, 27, 0.8);
+}
+
+.margin-btn {
+  margin-top: 3rem;
+  align-self: center;
+}
+
+.align-center {
+  align-self: center;
+}
+
+.btn-enviar {
+  width: 200px;
+  height: 84px;
+  padding: 20px 19px 15px 21px;
+  border-radius: 26px;
+}
+
+.back {
+  font-family: Rubik;
+  font-size: 17px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(29, 29, 27, 0.8);
+}
+
+
+.justify {
+  .logo {
+    text-align: center;
+
+    h3 {
+      font-weight: bold;
+      color: #1d1d1b;
+    }
+
+    .rebel-img {
+      width: 70%;
+    }
+  }
+
+  .forgot-password {
+    text-align: end;
+    color: #d0122d;
+    font-weight: bold;
+  }
+
+  .login {
+    justify-content: center;
+  }
+}
+
+.puntero {
+  cursor: pointer;
+}
+
+.returnLogin {
+  color: #d0122d;
+}
+
+.btn-gradient-blue {
+  border-radius: 26px;
+  background-image: linear-gradient(to bottom, #0ab1e0 0%, #0277c4) !important;
+
+  border-color: #ff8b00;
+  border-width: 0px;
+}
+
+.btn-text {
+  color: white;
+  font-size: 1rem;
   text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  padding: 1rem;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.margin-cuenta {
+  margin-bottom: 1.5rem;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  color: #8c8c8c;
-  margin: 0;
+.regresar {
+  color: #0ab1e0;
 }
 
-#container a {
-  text-decoration: none;
+.radio-group {
+  text-align: center;
 }

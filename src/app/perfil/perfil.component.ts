@@ -6,16 +6,16 @@ import { AlertController } from '@ionic/angular';
 import { ServiceGeneralService } from 'src/app/core/servises/service-general/service-general.service';
 import { DatePipe } from '@angular/common';
 
-
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.page.html',
-  styleUrls: ['./profile.page.scss'],
+  selector: 'app-perfil',
+  templateUrl: './perfil.component.html',
+  styleUrls: ['./perfil.component.scss'],
 })
-export class ProfilePage implements OnInit {
+export class PerfilComponent implements OnInit {
 
-  public data: UserModel = new UserModel();
-  public disabled = true;
+  // public data: UserModel = new UserModel();
+  public data: any;
+  public disabledd = true;
   public medicalType = '';
   public oneScreen = true;
   public twoScreen = false;
@@ -53,15 +53,15 @@ export class ProfilePage implements OnInit {
     address: ['', [Validators.required]],
   });
   fiveStep = this.formBuilder.group({
-    schedule: ['', Validators.required],
+    schedule: [''],
     // scheduleDay: ['', [Validators.required]],
   });
   sixStep = this.formBuilder.group({
     email: ['', Validators.email],
-    password: ['', [Validators.required]],
-    term: ['', [Validators.required]],
-
   });
+  public user: any;
+  public dayCalendar: any[] = [];
+
   constructor(private formBuilder: FormBuilder,
     public router: Router,
     public service: ServiceGeneralService, private alertController: AlertController, public datepipe: DatePipe) {
@@ -70,10 +70,9 @@ export class ProfilePage implements OnInit {
     console.log('Segment changed', ev);
   }
   ionViewWillEnter() {
-    this.oneStep = this.formBuilder.group({
-      roleId: ['', [Validators.required]],
-      // email: ['', Validators.email],
-    });
+    this.user = JSON.parse(localStorage.getItem('userData'));
+    console.log('user', this.user);
+    this.getData(this.user.id);
     this.getEspecialidades();
     this.getConsultorio();
     this.getDay();
@@ -81,16 +80,86 @@ export class ProfilePage implements OnInit {
 
   }
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('userData'));
+    console.log('user', this.user);
+    this.getData(this.user.id);
+  }
+  getData(id: number) {
+    this.service.serviceGeneralGet(`User/${id}`).subscribe(resp => {
+      if (resp.success) {
+        this.data = resp.result;
+        console.log('data', this.data);
+        this.oneStep = this.formBuilder.group({
+          roleId: [this.data.user.roleId, [Validators.required]],
+        });
+        this.twoStep = this.formBuilder.group({
+          name: [this.data.user.name, [Validators.required]],
+          firstName: [this.data.user.firstName, [Validators.required]],
+          birthday: [this.data.user.dateBirth, [Validators.required]],
+          sex: [this.data.user.sex, [Validators.required]],
+        });
+        this.threeStep = this.formBuilder.group({
+          specialityId: [this.data.user.specialityId, [Validators.required]],
+          professionalLicense: [this.data.user.professionalLicense],
+          professionalLicenseProcedure: [this.data.user.professionalLicenseProcedure],
+        });
 
-    this.oneStep = this.formBuilder.group({
-      roleId: ['', [Validators.required]],
-      // email: ['', Validators.email],
-    });
+        this.sixStep = this.formBuilder.group({
+          email: [this.data.user.email, Validators.required],
+        });
+        this.fourStep = this.formBuilder.group({
+          consultingType: [this.data.user.consultingType, [Validators.required]],
+          phoneConsulting: [this.data.user.phone, [Validators.required]],
+          address: [this.data.user.address, [Validators.required]],
+        });
+        this.dayCalendar = this.data.calendario;
+        this.fiveStep = this.formBuilder.group({
+          schedule: [''],
+        });
 
+      } else {
+        this.title = 'Error';
+        this.message(this.title, resp.message);
+      }
+    },
+      (error) => {
+        console.log(error);
+        this.title = 'Error';
+        this.message(this.title, error.error.message);
+      });
   }
   back() {
     console.log('regresar');
     this.router.navigateByUrl('home');
+
+  }
+  addDay() {
+    this.dayCalendar.push({
+      id: 0,
+      userId: this.user.id,
+      dayId: 0,
+      scheduleId: 0
+    });
+    console.log('recuersos', this.dayCalendar);
+  }
+  deleteDay(data, index) {
+    console.log('index', index);
+    console.log('data', data);
+    if (data.id !== 0) {
+      this.service.serviceGeneralDelete(`Bnea/DeleteRecursoPaso6?idBnea=${data.idBneas}&idPaso=${data.idPaso}`).subscribe(resp => {
+        if (resp.success) {
+          console.log('resp delete calendar', resp.result);
+          this.getData(this.user.id);
+          this.dayCalendar = [];
+        }
+      });
+    }
+    else {
+      if (this.dayCalendar.length !== 1) {
+        this.dayCalendar.splice(index, 1);
+      }
+    }
+
 
   }
 
@@ -101,6 +170,11 @@ export class ProfilePage implements OnInit {
         console.log('cat especialidades', this.especialidades);
       }
     });
+  }
+
+  home() {
+    this.ionViewWillEnter();
+    this.router.navigateByUrl('home');
   }
   getConsultorio() {
     this.service.serviceGeneralGet('CatConsultorio').subscribe(resp => {
@@ -136,6 +210,8 @@ export class ProfilePage implements OnInit {
     }
   }
   step1() {
+    console.log('paso 1');
+
     this.oneScreen = true;
     this.twoScreen = false;
     this.threeScreen = false;
@@ -144,6 +220,8 @@ export class ProfilePage implements OnInit {
     this.sixScreen = false;
   }
   step2() {
+    console.log('paso 2');
+
     this.oneScreen = false;
     this.twoScreen = true;
     this.threeScreen = false;
@@ -153,6 +231,8 @@ export class ProfilePage implements OnInit {
   }
   // desicion
   step3() {
+    console.log('paso 3');
+
     this.oneScreen = false;
     this.twoScreen = false;
     this.threeScreen = true;
@@ -161,6 +241,8 @@ export class ProfilePage implements OnInit {
     this.sixScreen = false;
   }
   step4() {
+    console.log('paso 4');
+
     this.oneScreen = false;
     this.twoScreen = false;
     this.threeScreen = false;
@@ -170,6 +252,8 @@ export class ProfilePage implements OnInit {
   }
 
   step5() {
+    console.log('paso 5');
+    console.log(this.dayCalendar);
     this.oneScreen = false;
     this.twoScreen = false;
     this.threeScreen = false;
@@ -179,6 +263,8 @@ export class ProfilePage implements OnInit {
   }
 
   step6() {
+    console.log('paso 6, guardar calendario');
+    // this.saveCalendar();
     this.oneScreen = false;
     this.twoScreen = false;
     this.threeScreen = false;
@@ -208,57 +294,72 @@ export class ProfilePage implements OnInit {
     this.createDate = `${date}T${time}`;
     console.log('createDate', this.createDate);
   }
+  saveCalendar(){
 
-  save() {
-    this.disabled = true;
-    this.formartDate();
-    console.log('Save General');
-    this.data.id = 0;
-    this.data.token = '';
-    this.data.roleId = this.oneStep.value.roleId;
-    this.data.name = this.twoStep.value.name;
-    this.data.firstName = this.twoStep.value.firstName;
-    this.data.dateBirth = this.twoStep.value.birthday;
-    this.data.sex = this.twoStep.value.sex;
-    this.data.specialityId = this.threeStep.value.specialityId;
-    this.data.professionalLicense = this.threeStep.value.professionalLicense;
-    this.data.professionalLicenseProcedure = this.threeStep.value.professionalLicenseProcedure;
-    this.data.email = this.sixStep.value.email;
-    this.data.password = this.sixStep.value.password;
-    this.data.status = true;
-    this.data.phone = this.fourStep.value.phoneConsulting;
-    this.data.consultingType = this.fourStep.value.consultingType;
-    this.data.address = this.fourStep.value.address;
-    this.data.createdBy = 0;
-    this.data.createdDate = this.today;
-    this.data.updatedBy = 0;
-    this.data.updatedDate = this.today;
-    console.log('fecha', this.today);
-
-    this.service.serviceGeneralPostWithUrl('User', this.data).subscribe(resp => {
+    this.service.serviceGeneralPostWithUrl(`User/Calendar/${this.user.id}`, this.dayCalendar).subscribe(resp => {
       if (resp.success) {
         this.title = 'Exito';
-        this.body = 'Se creo correctame la cuenta de Medico';
+        this.body = 'Se guardo la disponibilidad de atención correctame';
         this.message(this.title, this.body);
-        this.router.navigateByUrl('login');
-        this.disabled = false;
       } else {
         this.title = 'Error';
-        this.router.navigateByUrl('login');
         this.message(this.title, resp.message);
-        this.disabled = false;
       }
     },
       (error) => {
         console.log(error);
         this.title = 'Error';
         this.message(this.title, error.error.message);
-        this.disabled = false;
       });
   }
 
-  // falta sex institutio consultingType address schedule
-  verificarCode() { }
+  save() {
+    this.disabledd = true;
+    this.formartDate();
+    console.log('Save General');
+    this.data.user.token = '';
+    this.data.user.roleId = this.oneStep.value.roleId;
+    this.data.user.name = this.twoStep.value.name;
+    this.data.user.firstName = this.twoStep.value.firstName;
+    this.data.user.dateBirth = this.twoStep.value.birthday;
+    this.data.user.sex = this.twoStep.value.sex;
+    this.data.user.specialityId = this.threeStep.value.specialityId;
+    this.data.user.professionalLicense = this.threeStep.value.professionalLicense;
+    this.data.user.professionalLicenseProcedure = this.threeStep.value.professionalLicenseProcedure;
+    this.data.user.email = this.sixStep.value.email;
+    this.data.user.status = true;
+    this.data.user.phone = this.fourStep.value.phoneConsulting;
+    this.data.user.consultingType = this.fourStep.value.consultingType;
+    this.data.user.address = this.fourStep.value.address;
+    this.data.user.updatedBy = this.user.id;
+    this.data.user.updatedDate = this.today;
+    console.log('data', this.data.user);
+
+    this.service.serviceGeneralPut('User/Edit_user', this.data.user).subscribe(resp => {
+      if (resp.success) {
+        this.title = 'Exito';
+        this.body = 'Se actualizo correctame su perfil';
+        this.message(this.title, this.body);
+        this.router.navigateByUrl('home');
+        this.disabledd = false;
+      } else {
+        this.title = 'Error';
+        this.router.navigateByUrl('home');
+        this.message(this.title, resp.message);
+        this.disabledd = false;
+      }
+    },
+      (error) => {
+        console.log(error);
+        this.title = 'Error';
+        this.message(this.title, error.error.message);
+        this.disabledd = false;
+      });
+  }
+  changePassword(){
+    this.router.navigateByUrl(`change-password/${this.data.user.id}`);
+  }
+
   async message(title, body) {
     const alert = await this.alertController.create({
       header: title,
@@ -294,5 +395,6 @@ class UserModel {
   updatedBy: number;
   updatedDate: Date;
 }
+
 
 

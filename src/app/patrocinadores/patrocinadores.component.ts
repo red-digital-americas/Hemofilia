@@ -1,21 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.page.html',
-  styleUrls: ['./about.page.scss'],
+  selector: 'app-patrocinadores',
+  templateUrl: './patrocinadores.component.html',
+  styleUrls: ['./patrocinadores.component.scss'],
 })
-export class AboutPage implements OnInit {
+export class PatrocinadoresComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(public router: Router,) { }
 
-  ngOnInit() {
-  }
-  registro() {
-    this.router.navigateByUrl('create-user');
-
-  }
+  ngOnInit() {}
   goTerminos() {
     this.router.navigateByUrl('terminos-y-condiciones');
 

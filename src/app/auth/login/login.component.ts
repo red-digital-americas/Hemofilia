@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
   }
   login(correo, contrasena) {
     this.disabled = true;
+    // User/Login?email=lucero.vargas%40zumit.tech&password=123
     const loginObj = `?email=${correo}&password=${contrasena}`;
     this.service.login(loginObj).subscribe(
       (resp) => {
@@ -72,6 +73,7 @@ export class LoginComponent implements OnInit {
           this.body = 'Haz iniciado sesion';
           this.message(this.title, this.body);
           this.router.navigateByUrl('home');
+          this.ionViewWillEnter();
 
         } else {
           this.disabled = false;
