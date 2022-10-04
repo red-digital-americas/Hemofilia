@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceGeneralService } from 'src/app/core/servises/service-general/service-general.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 @Component({
   selector: 'app-medical-network',
@@ -15,6 +16,8 @@ export class MedicalNetworkPage implements OnInit {
   public body = '';
   public catEspecialista: any[] = [];
   public catconsultorio: any[] = [];
+  private callNumber: CallNumber;
+
 
   constructor(public service: ServiceGeneralService, private alertController: AlertController, public routerActive: ActivatedRoute,
     public router: Router) { }
@@ -74,6 +77,14 @@ export class MedicalNetworkPage implements OnInit {
   goTerminos() {
     this.router.navigateByUrl('terminos-y-condiciones');
 
+  }
+  call(numero) {
+    // this.callNumber
+    //   .callNumber(numero, true)
+    //   .then((res) => console.log('Marcando.', res))
+    //   .catch((err) => console.log('Error de llamada', err));
+    const telNumber = numero;
+    window.open(`tel:${telNumber}`, '_system');
   }
   catalogsEspecialista() {
     this.service

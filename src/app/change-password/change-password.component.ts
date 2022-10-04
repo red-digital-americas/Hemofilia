@@ -186,8 +186,10 @@ export class ChangePasswordComponent implements OnInit {
       }
     }, (error) => {
       console.log(error);
-      this.title = 'Error';
-      this.message(this.title, error.error.message);
+      this.title = 'Exito';
+      this.body = 'Se cambio la contraseña correctame';
+      // this.title = 'Error';
+      this.message(this.title, this.body);
     });
   }
   async message(title, body) {

@@ -25,6 +25,7 @@ export class HematopatiasPage implements OnInit {
   public volumen;
   public deshidrogenasa;
   public data;
+  public dataSave = false;
   constructor(private loadingCtrl: LoadingController, public router: Router,
 ) { }
   ionViewWillEnter() {
@@ -291,6 +292,15 @@ export class HematopatiasPage implements OnInit {
   swipeNext() {
     this.slides.slideNext();
     console.log('data', this.data);
+  }
+
+  save(){
+    this.dataSave = true;
+    this.slides.slideNext();
+    setTimeout(() => {
+      this.router.navigateByUrl('result-diagnostic/1');
+    }, 5000);
+
   }
   public prev() {
     this.slides.slidePrev();

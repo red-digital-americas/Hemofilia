@@ -4,7 +4,7 @@
       <ion-content>
         <ion-list id="inbox-list" *ngIf="user === null">
           <ion-list-header class="ion-padding-bottom">Menú</ion-list-header>
-          <ion-menu-toggle class="ion-padding-bottom" auto-hide="false" color="primary"
+          <ion-menu-toggle class="ion-padding-bottom" auto-hide="false" color="tertiary"
             *ngFor="let p of appPagesNoUser; let i = index">
             <ion-item  class="menu-style" routerDirection="root" [routerLink]="[p.url]"
               lines="none" detail="false" routerLinkActive="selected">
@@ -17,7 +17,7 @@
         </ion-list>
         <ion-list id="inbox-list" *ngIf="user !== null">
           <ion-list-header class="ion-padding-bottom">Bienvenido {{user.name}}</ion-list-header>
-          <ion-menu-toggle class="ion-padding-bottom" auto-hide="false" color="primary"
+          <ion-menu-toggle class="ion-padding-bottom" auto-hide="false" color="tertiary"
             *ngFor="let p of appPagesUser; let i = index">
             <ion-item class="menu-style" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
               routerLinkActive="selected">

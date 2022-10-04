@@ -6,6 +6,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PatrocinadoresComponent } from './patrocinadores/patrocinadores.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { ResultDiagnosticComponent } from './result-diagnostic/result-diagnostic.component';
 import { TerminosComponent } from './terminos/terminos.component';
 
 const routes: Routes = [
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'change-password/:id',
     component: ChangePasswordComponent
+  },
+  {
+    path: 'result-diagnostic/:id',
+    component: ResultDiagnosticComponent
   },
   {
     path: 'home',

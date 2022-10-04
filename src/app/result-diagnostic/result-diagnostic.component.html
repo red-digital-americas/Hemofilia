@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="main">
   <ion-header [translucent]="true">
     <ion-toolbar>
       <ion-buttons slot="end">
@@ -18,120 +18,53 @@
     </ion-toolbar>
   </ion-header>
   <!-- body -->
-  <ion-grid>
-    <!-- main -->
-    <ion-row size="12" class="main-center">
-      <div class="my-4">
-        <ion-grid>
-          <ion-row size="12">
-            <ion-col size="12">
-              <div class="container mt-5">
-                <h1 class="title-main text-center">Red médica</h1>
-              </div>
-            </ion-col>
-            <ion-col size="12">
-              <div class="container my-3">
-                <ion-row size="12">
-                  <ion-col size="4">
-                    <div class="text-center">
-                      <img
-                        src="./assets/random/heart.png"
-                        alt="Criterios de inclusion"
-                      />
-                    </div>
-                  </ion-col>
-                  <ion-col size="8">
-                    <div class="text-start">
-                      <span class="text-clinical-studies">
-                        Aquí se encuentran héroes médicos que se han sumado a
-                        participar con su tiempo y expertos para resolver dudas
-                        puntuales de médicos de primer contacto que están
-                        enfrentando algún desafío diagnóstico
-                      </span>
-                    </div>
-                  </ion-col>
-                </ion-row>
-              </div>
-            </ion-col>
-            <!-- <ion-col size="12">
-              <div class="container my-4">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control text-center" placeholder="Ingresar búsqueda"
-                    aria-label="Username" aria-describedby="basic-addon1">
-                  <span class="input-group-text" id="basic-addon1">
-                    <ion-icon name="search-outline"></ion-icon>
-                  </span>
-                </div>
-              </div>
-            </ion-col> -->
-            <!-- <ion-col size="12">
-              <ion-row size="12" class="text-center">
-                <ion-col size="6">
-                  <div class="container">
-                    <select class="form-select" aria-label="padecimiento">
-                      <option selected>Padecimiento</option>
-                      <option value="1">Cancer</option>
-                      <option value="2">Gripa</option>
-                      <option value="3">Tos</option>
-                    </select>
-                  </div>
-                </ion-col>
-                <ion-col size="6">
-                  <div class="container">
-                    <select class="form-select" aria-label="Tipo de estudio">
-                      <option selected>Tipo de estudio</option>
-                      <option value="1">Hemograma</option>
-                      <option value="2">Quimioterapia</option>
-                      <option value="3">Fosfatasa</option>
-                    </select>
-                  </div>
-                </ion-col>
-              </ion-row>
-            </ion-col> -->
-          </ion-row>
-        </ion-grid>
-      </div>
+  <!-- <ion-app class="main">
+    <div id="container"> -->
+  <ion-grid class="container">
+    <ion-row class="margin-cuenta my-4">
+      <ion-col size="12" (click)="back()">
+        <div class="ion-text-start back ion-margin-bottom">
+          <p class="puntero">< Regresar</p>
+        </div>
+      </ion-col>
+      <!-- titulo -->
+      <ion-col size="12" class="ion-margin-top">
+        <h3 class="text-center model-text">
+          Resultado del diagnostico temprano
+        </h3>
+      </ion-col>
+      <ion-col>
+        <div class="second-text mt-4 text-center">
+          <span
+            >Con los datos que usted ingresó se obtienen las siguientes
+            posibilidades hematológicas</span
+          >
+        </div>
+      </ion-col>
     </ion-row>
-    <!-- content -->
-    <ion-row size="12" *ngIf="data">
-      <div class="container my-4">
-        <ion-card
-          (click)="call(item.phone)"
-          class="my-2 radius"
-          *ngFor="let item of data"
-        >
+    <ion-row class="my-2" size="12" *ngIf="data !== undefined">
+      <ion-col size="12" class="my-3" *ngFor="let item of data; index as i">
+        <ion-card class="radius">
           <div class="container text-start mt-1 mb-3">
-            <ion-row size="12">
+            <ion-row size="12" class="alineados">
               <ion-col size="12" class="text-end">
-                <span class="text-disponible"
-                  >Disponible
-                  <ion-icon
-                    class="text-center"
-                    name="ellipse"
-                    color="success"
-                  ></ion-icon>
-                </span>
+                <span class="text-disponible"> Opción {{ i + 1 }} </span>
               </ion-col>
               <ion-col size="4" class="center-icon">
                 <ion-card class="radius">
-                  <img src="./assets/avatar.jpg" alt="" />
+                  <img src="./assets/random/heart.png" alt="" />
                 </ion-card>
               </ion-col>
               <ion-col size="8">
                 <ion-row size="12" class="padd-left">
                   <ion-col size="12" class="my-1 pl-1">
                     <span class="title-specialty text-start">
-                      {{getNameSpecial(item.specialityId)}}
+                      {{ item.name }}
                     </span>
-                  </ion-col>
-                  <ion-col size="12" class="my-1 pl-1">
-                    <span class="name-person text-start"
-                      >{{item.name}} {{item.firstName}}</span
-                    >
                   </ion-col>
                   <ion-col size="12" class="my-1 pl-1" class="text-end">
                     <span class="text-end diagnostic">
-                      {{getNameConsul(item.consultingType)}}
+                      {{ item.type }}
                     </span>
                   </ion-col>
                   <ion-col></ion-col>
@@ -140,9 +73,63 @@
             </ion-row>
           </div>
         </ion-card>
-      </div>
+      </ion-col>
+      <ion-col size="12">
+        <div class="text-center">
+          <h4>Recomendaciones:</h4>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="mb-2">
+        <div class="second-text text-center">
+          <span>
+            {{ data.recomendacion }}
+          </span>
+        </div>
+      </ion-col>
+
+      <ion-col size="12" class="margin-btn ion-margin-top">
+        <div class="text-end">
+          <button
+            class="btn btn-tertiary btn-lg btn-gradient-blue"
+            color="primary"
+            (click)="home()"
+            shape="round"
+          >
+            <span class="btn-text">Terminar</span>
+          </button>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="margin-btn ion-margin-top mb-3">
+        <div class="text-end alineado">
+          <button
+            class="btn btn-tertiary btn-lg btn-gradient-orange"
+            color="primary"
+            (click)="especialistas()"
+            shape="round"
+          >
+            <span class="btn-text">Tengo una duda</span>
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="" size="12" *ngIf="data === undefined">
+      <ion-col size="12" class="my-3">
+        <div class="text-center">
+          <h3>No encontramos coincidencias vulve a intentarlo</h3>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="my-4 text-center">
+        <button
+          (click)="back()"
+          type="button"
+          class="btn btn-tertiary btn-lg btn-gradient-orange"
+        >
+          <span class="btn-text"> < Realizar diagnostico </span>
+        </button>
+      </ion-col>
     </ion-row>
   </ion-grid>
+  <!-- </div> -->
   <!-- footer -->
   <ion-grid>
     <ion-row size="12" class="content-footer">
@@ -183,20 +170,20 @@
           </ion-row>
           <ion-row size="12" class="my-4">
             <!-- <ion-col size="12" class="mb-2">
-              <div class="text-start">
-                <span class="text-footer">Acerca de</span>
-              </div>
-            </ion-col>
-            <ion-col size="12" class="mb-2">
-              <div class="text-start">
-                <span class="text-footer">Preguntas frecuentes</span>
-              </div>
-            </ion-col>
-            <ion-col size="12" class="mb-2">
-              <div class="text-start">
-                <span class="text-footer">Ayuda</span>
-              </div>
-            </ion-col> -->
+                  <div class="text-start">
+                    <span class="text-footer">Acerca de</span>
+                  </div>
+                </ion-col>
+                <ion-col size="12" class="mb-2">
+                  <div class="text-start">
+                    <span class="text-footer">Preguntas frecuentes</span>
+                  </div>
+                </ion-col>
+                <ion-col size="12" class="mb-2">
+                  <div class="text-start">
+                    <span class="text-footer">Ayuda</span>
+                  </div>
+                </ion-col> -->
             <ion-col size="12" class="mb-2">
               <div class="text-start">
                 <span (click)="goTerminos()" class="text-footer"
@@ -246,4 +233,5 @@
       </div>
     </ion-row>
   </ion-grid>
+  <!-- </ion-app> -->
 </ion-content>

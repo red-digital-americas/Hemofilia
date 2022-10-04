@@ -19,11 +19,15 @@ import { CreateUserComponent } from './auth/create-user/create-user.component';
 import { DialogGeneralMessageComponent } from './dialog/dialog-general-message/dialog-general-message.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ResultDiagnosticComponent } from './result-diagnostic/result-diagnostic.component';
+import { CallNumber } from '@ionic-native/call-number/ngx';
+
+
 @NgModule({
-  declarations: [AppComponent, FooterComponent, HeaderComponent, LoginComponent, ForgotPasswordComponent, CreateUserComponent, DialogGeneralMessageComponent, TerminosComponent, PerfilComponent, PatrocinadoresComponent, ChangePasswordComponent],
+  declarations: [AppComponent, FooterComponent, HeaderComponent, LoginComponent, ResultDiagnosticComponent, ForgotPasswordComponent, CreateUserComponent, DialogGeneralMessageComponent, TerminosComponent, PerfilComponent, PatrocinadoresComponent, ChangePasswordComponent],
   entryComponents: [],
   imports: [BrowserModule, CommonModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, DatePipe],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, DatePipe, CallNumber],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
