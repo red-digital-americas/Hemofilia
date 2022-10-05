@@ -23,7 +23,7 @@
       <ion-content>
         <ion-row>
           <ion-col size="12">
-            <div class="ion-text-start back  ion-margin-bottom">
+            <div class="ion-text-start back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon>
                 Cancelar
@@ -35,36 +35,41 @@
               <ion-grid class="my-2">
                 <ion-row>
                   <ion-col size="12">
-                    <img class="img-slider" src="./assets/amdlcc.png"
-                      alt="Asociacion Mexicana de Lucha contra el cancer">
+                    <img
+                      class="img-slider"
+                      src="./assets/amdlcc.png"
+                      alt="Asociacion Mexicana de Lucha contra el cancer"
+                    />
                   </ion-col>
                   <ion-col size="12">
                     <h2 color="primary">Bienvenido</h2>
                   </ion-col>
                   <ion-col size="12">
-                    <span>
-                      “Con esta herramienta de apoyo diagnóstico se le dará orientación según las variables ingresadas,
-                      iniciando
-                      por datos
-                      generales de su paciente, sus características clínicas y aquellos hallazgos de laboratorio que
-                      considere
-                      importantes y
-                      afines a su sospecha.
-                      <br><br>
-                      Recuerde que la herramienta de apoyo al diagnóstico está diseñada para ayudarle a identificar
-                      posibles etiologías y no sustituye la opinión médica profesional ni intenta ser una guía de
-                      recomendaciones”
-                    </span>
+                    <div class="text-welcome">
+                      <span class="text-welcome">
+                        “Con esta herramienta de apoyo diagnóstico se le dará
+                        orientación según las variables ingresadas, iniciando
+                        por datos generales de su paciente, sus características
+                        clínicas y aquellos hallazgos de laboratorio que
+                        considere importantes y afines a su sospecha.
+                        <br /><br />
+                        Recuerde que la herramienta de apoyo al diagnóstico está
+                        diseñada para ayudarle a identificar posibles etiologías
+                        y no sustituye la opinión médica profesional ni intenta
+                        ser una guía de recomendaciones”
+                      </span>
+                    </div>
                   </ion-col>
                 </ion-row>
               </ion-grid>
             </div>
-            <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+            <ion-button class="text-end" (click)="swipeNext()" color="warning" fill="clear"
+              >Continuar
+              <ion-icon color="warning" slot="end" name="arrow-forward">
               </ion-icon>
             </ion-button>
           </ion-col>
         </ion-row>
-
       </ion-content>
     </ion-slide>
     <!-- * Datos Iniciales  1 pantalla-->
@@ -73,12 +78,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -86,16 +94,19 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Iniciales</h2>
-            <ion-grid class="my-4">
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list class="text-left">
-                    <ion-radio-group #sel="ngModel" (ngModelChange)="sex = sexValue(sel)" [(ngModel)]="sex" name="sexo"
-                      ngDefaultControl>
+                    <ion-radio-group
+                      #sel="ngModel"
+                      (ngModelChange)="sex = sexValue(sel)"
+                      [(ngModel)]="sex"
+                      name="sexo"
+                      ngDefaultControl
+                    >
                       <ion-list-header class="mb-2">
-                        <ion-label>
-                          Seleccione solo una por favor:
-                        </ion-label>
+                        <ion-label class="subtitle"> Seleccione solo una por favor: </ion-label>
                       </ion-list-header>
 
                       <ion-item>
@@ -121,7 +132,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon  color="warning"  slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -130,7 +143,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -142,12 +159,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -155,16 +175,19 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Iniciales</h2>
-            <ion-grid class="my-4">
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list class="text-left">
-                    <ion-radio-group #selhabi (ngModelChange)="habita = habitaValue(selhabi)" [(ngModel)]="habita"
-                      name="habita" ngDefaultControl>
+                    <ion-radio-group
+                      #selhabi
+                      (ngModelChange)="habita = habitaValue(selhabi)"
+                      [(ngModel)]="habita"
+                      name="habita"
+                      ngDefaultControl
+                    >
                       <ion-list-header class="mb-2">
-                        <ion-label>
-                          Seleccione solo una por favor:
-                        </ion-label>
+                        <ion-label class="subtitle"> Seleccione solo una por favor: </ion-label>
                       </ion-list-header>
 
                       <ion-item>
@@ -173,12 +196,18 @@
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Habita entre 1000 y 2500 metros sobre <br> el nivel del mar</ion-label>
+                        <ion-label
+                          >Habita entre 1000 y 2500 metros sobre <br />
+                          el nivel del mar</ion-label
+                        >
                         <ion-radio value="e"></ion-radio>
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Habita a mas de 2500 metros sobre <br> el nivel del mar</ion-label>
+                        <ion-label
+                          >Habita a mas de 2500 metros sobre <br />
+                          el nivel del mar</ion-label
+                        >
                         <ion-radio value="f"></ion-radio>
                       </ion-item>
                     </ion-radio-group>
@@ -190,7 +219,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button color="warning" (click)="swipeNext()" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button color="warning" (click)="swipeNext()" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -199,7 +230,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -211,12 +246,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -224,17 +262,23 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list class="text-left">
-                    <ion-radio-group #selHemoglobina (ngModelChange)="hemoglobina = hemoglobinaValue(selHemoglobina)"
-                      [(ngModel)]="hemoglobina" name="hemoglobina" ngDefaultControl>
+                    <ion-radio-group
+                      #selHemoglobina
+                      (ngModelChange)="hemoglobina = hemoglobinaValue(selHemoglobina)"
+                      [(ngModel)]="hemoglobina"
+                      name="hemoglobina"
+                      ngDefaultControl
+                    >
                       <ion-list-header class="mb-2">
-                        <ion-label>
-                          Seleccione solo una por favor:
-                        </ion-label>
+                        <ion-label class="subtitle"> Seleccione solo una por favor: </ion-label>
                       </ion-list-header>
                       <ion-item>
                         <ion-label>Hemoglobina menos de 12 g/dL</ion-label>
@@ -242,7 +286,9 @@
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Hemoglobina igual o mayor de 12g/dL</ion-label>
+                        <ion-label
+                          >Hemoglobina igual o mayor de 12g/dL</ion-label
+                        >
                         <ion-radio value="gg"></ion-radio>
                       </ion-item>
 
@@ -252,7 +298,9 @@
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Hemoglobina igual o mayor a 14g/dL</ion-label>
+                        <ion-label
+                          >Hemoglobina igual o mayor a 14g/dL</ion-label
+                        >
                         <ion-radio value="hh"></ion-radio>
                       </ion-item>
 
@@ -274,7 +322,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -283,7 +333,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -295,12 +349,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -308,17 +365,23 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list class="text-left">
-                    <ion-radio-group #selPlaquetas (ngModelChange)="plaquetas = plaquetasValue(selPlaquetas)"
-                      [(ngModel)]="plaquetas" name="Plaquetas" ngDefaultControl>
+                    <ion-radio-group
+                      #selPlaquetas
+                      (ngModelChange)="plaquetas = plaquetasValue(selPlaquetas)"
+                      [(ngModel)]="plaquetas"
+                      name="Plaquetas"
+                      ngDefaultControl
+                    >
                       <ion-list-header class="mb-2">
-                        <ion-label>
-                          Seleccione solo una por favor:
-                        </ion-label>
+                        <ion-label class="subtitle"> Seleccione solo una por favor: </ion-label>
                       </ion-list-header>
                       <ion-item>
                         <ion-label>Plaquetas de 50 a 149 x10(9)/L</ion-label>
@@ -331,7 +394,9 @@
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Plaquetas normales de 150 a 450 x10(9)/L</ion-label>
+                        <ion-label
+                          >Plaquetas normales de 150 a 450 x10(9)/L</ion-label
+                        >
                         <ion-radio value="ll"></ion-radio>
                       </ion-item>
 
@@ -348,7 +413,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -357,7 +424,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -369,12 +440,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -382,35 +456,53 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list class="text-left">
-                    <ion-radio-group #selNutrofilos (ngModelChange)="neutrofilos = neutrofilosValue(selNutrofilos)"
-                      [(ngModel)]="neutrofilos" name="neutrofilos" ngDefaultControl>
+                    <ion-radio-group
+                      #selNutrofilos
+                      (ngModelChange)="neutrofilos = neutrofilosValue(selNutrofilos)"
+                      [(ngModel)]="neutrofilos"
+                      name="neutrofilos"
+                      ngDefaultControl
+                    >
                       <ion-list-header class="mb-2">
-                        <ion-label>
-                          Seleccione solo una por favor:
-                        </ion-label>
+                        <ion-label class="subtitle"> Seleccione solo una por favor: </ion-label>
                       </ion-list-header>
                       <ion-item>
-                        <ion-label>Neutrófilos absolutos menores de <br> 2.0 x10(9)/L</ion-label>
+                        <ion-label
+                          >Neutrófilos absolutos menores de <br />
+                          2.0 x10(9)/L</ion-label
+                        >
                         <ion-radio value="m"></ion-radio>
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Neutrófilos absolutos menores de <br> 0.5 x 10(9)/L</ion-label>
+                        <ion-label
+                          >Neutrófilos absolutos menores de <br />
+                          0.5 x 10(9)/L</ion-label
+                        >
                         <ion-radio value="n"></ion-radio>
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Neutrófilos absolutos mayores de <br> 8x10(9)/L</ion-label>
+                        <ion-label
+                          >Neutrófilos absolutos mayores de <br />
+                          8x10(9)/L</ion-label
+                        >
                         <ion-radio value="o"></ion-radio>
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Neutrófilos absolutos normales de <br> 2.0 a 8.0 x10(9)/L</ion-label>
+                        <ion-label
+                          >Neutrófilos absolutos normales de <br />
+                          2.0 a 8.0 x10(9)/L</ion-label
+                        >
                         <ion-radio value="pp"></ion-radio>
                       </ion-item>
                     </ion-radio-group>
@@ -422,7 +514,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -431,7 +525,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -443,12 +541,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -456,35 +557,53 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list class="text-left">
-                    <ion-radio-group #selLinfocitos (ngModelChange)="linfocitos = linfocitosValue(selLinfocitos)"
-                      [(ngModel)]="linfocitos" name="linfocitos" ngDefaultControl>
+                    <ion-radio-group
+                      #selLinfocitos
+                      (ngModelChange)="linfocitos = linfocitosValue(selLinfocitos)"
+                      [(ngModel)]="linfocitos"
+                      name="linfocitos"
+                      ngDefaultControl
+                    >
                       <ion-list-header class="mb-2">
-                        <ion-label>
-                          Seleccione solo una por favor:
-                        </ion-label>
+                        <ion-label class="subtitle"> Seleccione solo una por favor: </ion-label>
                       </ion-list-header>
                       <ion-item>
-                        <ion-label>Linfocitos absolutos iguales o <br> mayores de 5.0x10(9)/L</ion-label>
+                        <ion-label
+                          >Linfocitos absolutos iguales o <br />
+                          mayores de 5.0x10(9)/L</ion-label
+                        >
                         <ion-radio value="p"></ion-radio>
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Linfocitos absolutos menores de <br>1.0 x10(9)/L</ion-label>
+                        <ion-label
+                          >Linfocitos absolutos menores de <br />1.0
+                          x10(9)/L</ion-label
+                        >
                         <ion-radio value="q"></ion-radio>
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Linfocitos absolutos normales de <br> 1.0 a 3.0x10(9)/L</ion-label>
+                        <ion-label
+                          >Linfocitos absolutos normales de <br />
+                          1.0 a 3.0x10(9)/L</ion-label
+                        >
                         <ion-radio value="qq"></ion-radio>
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Linfocitos absolutos mayores de <br> 3.0x10(9)/L</ion-label>
+                        <ion-label
+                          >Linfocitos absolutos mayores de <br />
+                          3.0x10(9)/L</ion-label
+                        >
                         <ion-radio value="qqq"></ion-radio>
                       </ion-item>
                     </ion-radio-group>
@@ -496,7 +615,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -505,7 +626,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -517,12 +642,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -530,30 +658,57 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione una o mas opciones por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.r" slot="start"></ion-checkbox>
-                    <ion-label>Monocitos absolutos mayores de<br> 1.0x10(9)/L</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.r"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Monocitos absolutos mayores de<br />
+                      1.0x10(9)/L</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.s" slot="start"></ion-checkbox>
-                    <ion-label>Eosinofilos absolutos de 0.6 a 1.49<br> x10(9)/L</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.s"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Eosinofilos absolutos de 0.6 a 1.49<br />
+                      x10(9)/L</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.t" slot="start"></ion-checkbox>
-                    <ion-label>Eosinófilos absolutos mayores de<br> 1.5x10(9)/L</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.t"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Eosinófilos absolutos mayores de<br />
+                      1.5x10(9)/L</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.u" slot="start"></ion-checkbox>
-                    <ion-label>Basófilos absolutos mayores de<br> 0.3x10(9)/L</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.u"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Basófilos absolutos mayores de<br />
+                      0.3x10(9)/L</ion-label
+                    >
                   </ion-item>
                 </ion-col>
               </ion-row>
@@ -562,7 +717,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -571,7 +728,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -583,12 +744,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -596,35 +760,53 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list class="text-left">
-                    <ion-radio-group #selvolumen (ngModelChange)="volumen = volumenValue(selvolumen)"
-                      [(ngModel)]="volumen" name="volumen" ngDefaultControl>
+                    <ion-radio-group
+                      #selvolumen
+                      (ngModelChange)="volumen = volumenValue(selvolumen)"
+                      [(ngModel)]="volumen"
+                      name="volumen"
+                      ngDefaultControl
+                    >
                       <ion-list-header class="mb-2">
-                        <ion-label>
-                          Seleccione solo una por favor:
-                        </ion-label>
+                        <ion-label class="subtitle"> Seleccione solo una por favor: </ion-label>
                       </ion-list-header>
                       <ion-item>
-                        <ion-label>Volumen Corpuscular medio de 100 a <br>110 fl</ion-label>
+                        <ion-label
+                          >Volumen Corpuscular medio de 100 a <br />110
+                          fl</ion-label
+                        >
                         <ion-radio value="v"></ion-radio>
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Volumen Corpuscular medio mayor de <br> 110 fl</ion-label>
+                        <ion-label
+                          >Volumen Corpuscular medio mayor de <br />
+                          110 fl</ion-label
+                        >
                         <ion-radio value="w"></ion-radio>
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Volumen Corpuscular medio mayor a 80 <br> fl pero menor de 100 fl</ion-label>
+                        <ion-label
+                          >Volumen Corpuscular medio mayor a 80 <br />
+                          fl pero menor de 100 fl</ion-label
+                        >
                         <ion-radio value="vx"></ion-radio>
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Volumen Corpuscular medio menor <br> o igual a 80 fl</ion-label>
+                        <ion-label
+                          >Volumen Corpuscular medio menor <br />
+                          o igual a 80 fl</ion-label
+                        >
                         <ion-radio value="x"></ion-radio>
                       </ion-item>
                     </ion-radio-group>
@@ -636,7 +818,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -645,7 +829,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -657,12 +845,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -670,36 +861,67 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione una o mas opciones por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.y" slot="start"></ion-checkbox>
-                    <ion-label>Eritrocitos mayores de 5.5 <br>x10(6)/mcL</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.y"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Eritrocitos mayores de 5.5 <br />x10(6)/mcL</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.z" slot="start"></ion-checkbox>
-                    <ion-label>Hemoglobina corpuscular media <br> igual o menor a 27 pg</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.z"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Hemoglobina corpuscular media <br />
+                      igual o menor a 27 pg</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.aa" slot="start"></ion-checkbox>
-                    <ion-label>Hemoglobina corpuscular media <br>mayor a 33 pg</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.aa"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Hemoglobina corpuscular media <br />mayor a 33
+                      pg</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ab" slot="start"></ion-checkbox>
-                    <ion-label>Concentracion media de hemoglobina<br> corpuscular mayor a 36 g/dL</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.ab"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Concentracion media de hemoglobina<br />
+                      corpuscular mayor a 36 g/dL</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ac" slot="start"></ion-checkbox>
-                    <ion-label>Concentracion media de hemoglobina<br> corpuscular menor a 32 g/dL</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.ac"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Concentracion media de hemoglobina<br />
+                      corpuscular menor a 32 g/dL</ion-label
+                    >
                   </ion-item>
-
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -707,7 +929,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -716,7 +940,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -728,12 +956,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -741,17 +972,23 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de Frotis de sangre periferica</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione o omita la opción por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ad" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ad"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Blastos (cualquier porcentaje)</ion-label>
                   </ion-item>
                 </ion-col>
@@ -761,7 +998,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -770,7 +1009,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -782,12 +1025,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -795,109 +1041,184 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de Frotis de sangre periferica</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione una o mas opciones por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ae" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ae"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Eritroblastos</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.aaf" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.aaf"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Reticulocitos menos de 2%</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.af" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.af"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Reticulocitos mas de 2%</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ag" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ag"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Poiquilocitosis</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ah" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ah"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Anisocitosis</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ai" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ai"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Neutrofilos vacuolados</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.aj" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.aj"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Basofilia difusa</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ak" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ak"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Macro ovalocitos</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.al" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.al"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Neutrofilos polisegmentados</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.am" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.am"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Esquistocitos</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.an" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.an"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Rouleoux</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ao" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ao"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Células con cromatina laxa y nucleolo</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ap" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ap"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Linfocitos activados</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.aq" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.aq"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Agregados plaquetarios</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ar" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ar"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Granulacion toxica</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.as" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.as"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Granulacion azurófila</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.at" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.at"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Pelguer huet /pseudo pelguer huet</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.au" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.au"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Drepanocitos</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.av" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.av"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Cuerpos de Heinz</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.aw" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.aw"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Cuerpos de Howell Jolly</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ax" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ax"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Dacriocitos</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ay" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ay"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Esferocitos</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.pg" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.pg"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Plaquetas gigantes</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.az" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.az"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Células diana</ion-label>
                   </ion-item>
                 </ion-col>
@@ -907,7 +1228,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -916,7 +1239,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -928,12 +1255,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -941,37 +1271,58 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Bioquimicos</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione una o mas opciones por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ba" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ba"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Creatinina igual o más de 1.2 mg/dL</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bb" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bb"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Calcio menor a 8 mg/dL </ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bc" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bc"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Calcio mayor a 10mg/dL</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bd" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bd"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Albúmina menor de 3.9 g/dL</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.be" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.be"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Albúmina menor de 3.5 g/dL</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bf" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bf"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>proteinas totales mas de 7 g/dL</ion-label>
                   </ion-item>
                 </ion-col>
@@ -981,7 +1332,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -990,7 +1343,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -1002,12 +1359,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -1015,26 +1375,37 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Bioquimicos</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list class="text-left">
-                    <ion-radio-group #seldeshidrogenasa
+                    <ion-radio-group
+                      #seldeshidrogenasa
                       (ngModelChange)="deshidrogenasa = deshidrogenasaValue(seldeshidrogenasa)"
-                      [(ngModel)]="deshidrogenasa" name="deshidrogenasa" ngDefaultControl>
+                      [(ngModel)]="deshidrogenasa"
+                      name="deshidrogenasa"
+                      ngDefaultControl
+                    >
                       <ion-list-header class="mb-2">
-                        <ion-label>
-                          Seleccione solo una por favor:
-                        </ion-label>
+                        <ion-label class="subtitle"> Seleccione solo una por favor: </ion-label>
                       </ion-list-header>
                       <ion-item>
-                        <ion-label>Deshidrogenasa lactica mayor a <br>300 mg/dL</ion-label>
+                        <ion-label
+                          >Deshidrogenasa lactica mayor a <br />300
+                          mg/dL</ion-label
+                        >
                         <ion-radio value="bg"></ion-radio>
                       </ion-item>
 
                       <ion-item>
-                        <ion-label>Deshidrogenasa lactica normal<br>menor a 250 mg/dL</ion-label>
+                        <ion-label
+                          >Deshidrogenasa lactica normal<br />menor a 250
+                          mg/dL</ion-label
+                        >
                         <ion-radio value="bgg"></ion-radio>
                       </ion-item>
                     </ion-radio-group>
@@ -1046,7 +1417,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()"  color="warning" fill="clear">Continuar <ion-icon slot="end" color="warning" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon slot="end" color="warning" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -1055,7 +1428,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -1067,12 +1444,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -1080,41 +1460,71 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Bioquimicos</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione una o mas opciones por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bh" slot="start"></ion-checkbox>
-                    <ion-label>% de saturación de la transferrina <br> mayor a 45%</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.bh"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >% de saturación de la transferrina <br />
+                      mayor a 45%</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bi" slot="start"></ion-checkbox>
-                    <ion-label>% de saturacion de la transferrina<br> menor a 20 % </ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.bi"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >% de saturacion de la transferrina<br />
+                      menor a 20 %
+                    </ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bj" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bj"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Ferritina menor de 30 mg/dL</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bk" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bk"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Ferritina mayor de 1000 mg/dL</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bl" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bl"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Ferritina mayor a 10,000mg/dL</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bm" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bm"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Ferritina menor a 100 mg/dL</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.tr" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.tr"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Triglicéridos mayores a 177 mg/dL</ion-label>
                   </ion-item>
                 </ion-col>
@@ -1124,7 +1534,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -1133,7 +1545,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -1145,12 +1561,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -1158,18 +1577,27 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Bioquimicos</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione o omita la opción por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bn" slot="start"></ion-checkbox>
-                    <ion-label>Beta 2 microglobulina mayor a<br> 2.5 mg/dL</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.bn"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Beta 2 microglobulina mayor a<br />
+                      2.5 mg/dL</ion-label
+                    >
                   </ion-item>
                 </ion-col>
               </ion-row>
@@ -1178,7 +1606,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" fill="clear" color="warning">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" fill="clear" color="warning"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -1187,7 +1617,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -1199,12 +1633,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -1212,45 +1649,72 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Bioquimicos</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione una o mas opciones por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bo" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bo"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>IgG sérica arriba del limite normal</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bp" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bp"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>IgG sérica menor del límite normal </ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bq" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bq"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>IgM sérica mayor del límite normal</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.br" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.br"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>IgM sérica menor del límite normal</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bs" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bs"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>IgA sérica mayor del límite normal</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bt" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bt"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>IgA sérica menor del límite normal</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bu" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bu"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>IgE sérica mayor del límite normal</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bw" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bw"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>IgE sérica menor del límite normal</ion-label>
                   </ion-item>
                 </ion-col>
@@ -1260,17 +1724,22 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" fill="clear" color="warning">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" fill="clear" color="warning"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
-
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -1282,12 +1751,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -1295,41 +1767,65 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Bioquimicos</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione una o mas opciones por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bx" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bx"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Bilirrubina indirecta elevada</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.by" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.by"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Bilirrubina directa elevada </ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.bz" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.bz"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Vitamina B12 menor de 200 mg/dL</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ca" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.ca"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>COOMBS indirecto positivo</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.cd" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.cd"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>COOMBS directo positivo</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.cx" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.cx"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>COOMBS directo negativo</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.cc" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.cc"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Acido folico menor a 4 mg/dL</ion-label>
                   </ion-item>
                 </ion-col>
@@ -1339,7 +1835,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" fill="clear" color="warning">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" fill="clear" color="warning"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -1348,7 +1846,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -1360,12 +1862,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -1373,55 +1878,94 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de Coagulación</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione una o mas opciones por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.dd" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.dd"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Dimero D menor a 500</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.dm" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.dm"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Dimero D mayor de 500 </ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.fm" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.fm"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Fibrinogeno menor a 200 mg/dL</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.in" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.in"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>INR mayor a 3.5</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.il" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.il"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>INR menor a 2.0</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.tp" slot="start"></ion-checkbox>
-                    <ion-label>Tiempo de protrombina mayor a 3<br> segundos el limite superior reportado o comparado con
-                      el
-                      testigo</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.tp"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Tiempo de protrombina mayor a 3<br />
+                      segundos el limite superior reportado o comparado con el
+                      testigo</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ttp" slot="start"></ion-checkbox>
-                    <ion-label>Tiempo de tromboplastina parcial<br> activada mayor a 5 segundos el limite superior
-                      reportado
-                      y
-                      comparado con el testigo</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.ttp"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Tiempo de tromboplastina parcial<br />
+                      activada mayor a 5 segundos el limite superior reportado y
+                      comparado con el testigo</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.tt" slot="start"></ion-checkbox>
-                    <ion-label>Tiempo de trombina mayor a 3 <br>segundos el limite superior reportado</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.tt"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Tiempo de trombina mayor a 3 <br />segundos el limite
+                      superior reportado</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ts" slot="start"></ion-checkbox>
-                    <ion-label>Tiempo de sangrado mayor a 8<br> minutos</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.ts"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Tiempo de sangrado mayor a 8<br />
+                      minutos</ion-label
+                    >
                   </ion-item>
                 </ion-col>
               </ion-row>
@@ -1430,7 +1974,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -1439,7 +1985,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -1451,12 +2001,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -1464,51 +2017,90 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Clínicos</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione una o mas opciones por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.fa" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.fa"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Fiebre</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.fb" slot="start"></ion-checkbox>
-                    <ion-label>Pérdida de peso (10% del peso habitual<br> en menos 6 meses)</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.fb"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Pérdida de peso (10% del peso habitual<br />
+                      en menos 6 meses)</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.fc" slot="start"></ion-checkbox>
-                    <ion-label>Sudoración nocturna (sudoracion intensa,<br> que deja marcada la cama de sudor)
+                    <ion-checkbox
+                      [(ngModel)]="data.fc"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Sudoración nocturna (sudoracion intensa,<br />
+                      que deja marcada la cama de sudor)
                     </ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.fd" slot="start"></ion-checkbox>
-                    <ion-label>Adenomegalias mas de 1cm en cuello y/o<br> axilas y/o ingles, dolorosas a la palpación
+                    <ion-checkbox
+                      [(ngModel)]="data.fd"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Adenomegalias mas de 1cm en cuello y/o<br />
+                      axilas y/o ingles, dolorosas a la palpación
                     </ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.fe" slot="start"></ion-checkbox>
-                    <ion-label>Adenomegalias mas de 1cm no dolorosas<br> o levemente dolorosas en cuello y/o axilas y/o
-                      ingles.
+                    <ion-checkbox
+                      [(ngModel)]="data.fe"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Adenomegalias mas de 1cm no dolorosas<br />
+                      o levemente dolorosas en cuello y/o axilas y/o ingles.
                     </ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.ff" slot="start"></ion-checkbox>
-                    <ion-label>Fracturas patológicas (provocadas <br>con mínimos golpes o níngun golpe
+                    <ion-checkbox
+                      [(ngModel)]="data.ff"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Fracturas patológicas (provocadas <br />con mínimos
+                      golpes o níngun golpe
                     </ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.fg" slot="start"></ion-checkbox>
-                    <ion-label>Esplenomegalia (palpable por debajo <br>del borde costal o por ultrasonido mas de 11cm)
+                    <ion-checkbox
+                      [(ngModel)]="data.fg"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Esplenomegalia (palpable por debajo <br />del borde
+                      costal o por ultrasonido mas de 11cm)
                     </ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.fh" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.fh"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Ictericia</ion-label>
                   </ion-item>
                 </ion-col>
@@ -1518,7 +2110,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -1527,7 +2121,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -1539,12 +2137,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -1552,40 +2153,71 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Clínicos</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione una o mas opciones por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.fi" slot="start"></ion-checkbox>
-                    <ion-label>Lesiones púrpuricas en extremidades<br> NO PALPABLES</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.fi"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Lesiones púrpuricas en extremidades<br />
+                      NO PALPABLES</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.fj" slot="start"></ion-checkbox>
-                    <ion-label>Lesiones púrpuricas en extremidaes <br>PALPABLES y DOLOROSAS</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.fj"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Lesiones púrpuricas en extremidaes <br />PALPABLES y
+                      DOLOROSAS</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.fk" slot="start"></ion-checkbox>
-                    <ion-label>Alteraciones neurolgicas (convulsiones,<br> somnolencia, desorientacion)</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.fk"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Alteraciones neurolgicas (convulsiones,<br />
+                      somnolencia, desorientacion)</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.eed" slot="start"></ion-checkbox>
-                    <ion-label>Edema, eritema, dolor de alguna <br>extremidad
+                    <ion-checkbox
+                      [(ngModel)]="data.eed"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Edema, eritema, dolor de alguna <br />extremidad
                     </ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.taq" slot="start"></ion-checkbox>
-                    <ion-label>Taquicardia mayor a 90 lat / min
-                    </ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.taq"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label>Taquicardia mayor a 90 lat / min </ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.dme" slot="start"></ion-checkbox>
-                    <ion-label>Disnea de medianos y pequeños <br>esfuerzos
+                    <ion-checkbox
+                      [(ngModel)]="data.dme"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Disnea de medianos y pequeños <br />esfuerzos
                     </ion-label>
                   </ion-item>
                 </ion-col>
@@ -1595,7 +2227,9 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button (click)="swipeNext()" color="warning" fill="clear"
+                >Continuar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -1604,7 +2238,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -1616,12 +2254,15 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
@@ -1629,31 +2270,51 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Clínicos</h2>
-            <span>“si no cuenta usted con algún dato solicitado, omítalo y continue”</span>
-            <ion-grid class="my-4">
+            <span class="text-desc"
+              >“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span
+            >
+            <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
                   <ion-list-header class="mb-2">
-                    <ion-label>
+                    <ion-label class="subtitle">
                       Seleccione una o mas opciones por favor:
                     </ion-label>
                   </ion-list-header>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.msm" slot="start"></ion-checkbox>
-                    <ion-label>Manifestaciones de sangrado en<br> mucosas (epistaxis, gingivorragia)</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.msm"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Manifestaciones de sangrado en<br />
+                      mucosas (epistaxis, gingivorragia)</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.hua" slot="start"></ion-checkbox>
+                    <ion-checkbox
+                      [(ngModel)]="data.hua"
+                      slot="start"
+                    ></ion-checkbox>
                     <ion-label>Sangrado uterino anormal</ion-label>
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.pea" slot="start"></ion-checkbox>
-                    <ion-label>Manifestacions de sangrado en<br>piel (equimosis) y articulaciones</ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.pea"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label
+                      >Manifestacions de sangrado en<br />piel (equimosis) y
+                      articulaciones</ion-label
+                    >
                   </ion-item>
                   <ion-item>
-                    <ion-checkbox [(ngModel)]="data.pf" slot="start"></ion-checkbox>
-                    <ion-label>Pérdidas fetales
-                    </ion-label>
+                    <ion-checkbox
+                      [(ngModel)]="data.pf"
+                      slot="start"
+                    ></ion-checkbox>
+                    <ion-label>Pérdidas fetales </ion-label>
                   </ion-item>
                 </ion-col>
               </ion-row>
@@ -1662,7 +2323,12 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="[save(), slides.slideNext()] " color="warning" fill="clear">Guardar <ion-icon color="warning" slot="end" name="arrow-forward">
+              <ion-button
+                (click)="[save(), slides.slideNext()] "
+                color="warning"
+                fill="clear"
+                >Guardar
+                <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
             </ion-grid>
@@ -1671,7 +2337,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>
@@ -1683,28 +2353,34 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img class="img-slider-header" src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-header"
+                src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
           <ion-col size="6">
-            <div class="ion-text-end back  ion-margin-bottom">
+            <div class="ion-text-end back ion-margin-bottom">
               <span (click)="back()" class="puntero">
                 <ion-icon name="close-outline"></ion-icon> Cancelar
               </span>
             </div>
           </ion-col>
           <ion-col size="12">
-            <ion-grid class="my-4">
+            <ion-grid class="mb-4">
               <ion-row>
                 <h2>Evaluando resultados</h2>
                 <ion-col size="12">
-                  <span>Con los datos que usted ingresó se obtienen las siguientes posibilidades hematológicas</span>
+                  <span
+                    >Con los datos que usted ingresó se obtienen las siguientes
+                    posibilidades hematológicas</span
+                  >
                 </ion-col>
                 <ion-col size="12" class="my-5">
-                  <ion-spinner color="primary"></ion-spinner>
-                  <!-- <ion-button (click)="showLoading()">Show Loading</ion-button> -->
+                  <ion-spinner color="tertiary"></ion-spinner>
 
+                  <!-- <ion-button (click)="showLoading()">Show Loading</ion-button> -->
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -1719,7 +2395,11 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img class="img-slider-footer" src="./assets/amdlcc.png" alt="Asociacion Mexicana de Lucha contra el cancer">
+              <img
+                class="img-slider-footer mb-4"
+                src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer"
+              />
             </div>
           </ion-col>
         </ion-row>

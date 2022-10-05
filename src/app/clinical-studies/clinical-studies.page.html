@@ -1,16 +1,17 @@
 <ion-content [fullscreen]="true">
   <ion-header [translucent]="true">
     <ion-toolbar>
+      <ion-row size="8" slot="start">
+        <ion-col size="6">
+          <img class="p-1" src="./assets/logo.png" alt="logo" />
+        </ion-col>
+        <ion-col size="6" class="text-end">
+          <img class="p-1" width="40%" src="./assets/amdlcc.png" alt="logo" />
+        </ion-col>
+      </ion-row>
       <ion-buttons slot="end">
         <ion-menu-button color="secondary"></ion-menu-button>
       </ion-buttons>
-      <ion-title class="text-start">
-        <div class="p-1 logo-size">
-          <img class=" p-1 logo-size-cancer" src="./assets/logo.png" alt="logo" />
-          <img class="p-1" width="50%" src="./assets/amdlcc.png" alt="logo" />
-        </div>
-      </ion-title>
-      <!-- <ion-title>{{ home }}</ion-title> -->
     </ion-toolbar>
   </ion-header>
   <!-- body -->
@@ -21,7 +22,7 @@
         <ion-grid>
           <ion-row size="12">
             <ion-col size="12">
-              <div class="container mt-5 ">
+              <div class="container mt-5">
                 <h1 class="title-main text-center">Estudios clínicos</h1>
               </div>
             </ion-col>
@@ -30,15 +31,18 @@
                 <ion-row size="12">
                   <ion-col size="4">
                     <div class="text-center">
-                      <img src="./assets/random/criterios.png" alt="Criterios de inclusion">
+                      <img
+                        src="./assets/random/criterios.png"
+                        alt="Criterios de inclusion"
+                      />
                     </div>
                   </ion-col>
                   <ion-col size="8">
                     <div class="text-start">
                       <span class="text-clinical-studies">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque faucibus, augue eu
-                        convallis vulputate, sapien
-                        elit dignissim nulla, quis posuere.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Pellentesque faucibus, augue eu convallis vulputate,
+                        sapien elit dignissim nulla, quis posuere.
                       </span>
                     </div>
                   </ion-col>
@@ -48,8 +52,13 @@
             <ion-col size="12">
               <div class="container my-4">
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control text-center" placeholder="Ingresar búsqueda"
-                    aria-label="Username" aria-describedby="basic-addon1">
+                  <input
+                    type="text"
+                    class="form-control text-center"
+                    placeholder="Ingresar búsqueda"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                  />
                   <span class="input-group-text" id="basic-addon1">
                     <ion-icon name="search-outline"></ion-icon>
                   </span>
@@ -97,7 +106,8 @@
               </ion-col>
               <ion-col size="10">
                 <h5 class="title-card">
-                  Addition of Gemcitabine to Pre Allo-HSCT Conditioning for Acute Lymphoblastic Leukemia
+                  Addition of Gemcitabine to Pre Allo-HSCT Conditioning for
+                  Acute Lymphoblastic Leukemia
                 </h5>
               </ion-col>
             </ion-row>
@@ -109,8 +119,8 @@
               </ion-col>
               <ion-col size="10">
                 <span class="text-card">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque faucibus, augue eu convallis
-                  vulputate, sapien
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pellentesque faucibus, augue eu convallis vulputate, sapien
                   elit dignissim nulla, quis posuere dui arcu non eros.
                 </span>
               </ion-col>

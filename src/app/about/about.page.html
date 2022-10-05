@@ -1,16 +1,17 @@
 <ion-content [fullscreen]="true">
   <ion-header [translucent]="true">
     <ion-toolbar>
+      <ion-row size="8" slot="start">
+        <ion-col size="6">
+          <img class="p-1" src="./assets/logo.png" alt="logo" />
+        </ion-col>
+        <ion-col size="6" class="text-end">
+          <img class="p-1" width="40%" src="./assets/amdlcc.png" alt="logo" />
+        </ion-col>
+      </ion-row>
       <ion-buttons slot="end">
         <ion-menu-button color="secondary"></ion-menu-button>
       </ion-buttons>
-      <ion-title class="text-start">
-        <div class="p-1 logo-size">
-          <img class=" p-1 logo-size-cancer" src="./assets/logo.png" alt="logo" />
-          <img class="p-1" width="50%" src="./assets/amdlcc.png" alt="logo" />
-        </div>
-      </ion-title>
-      <!-- <ion-title>{{ home }}</ion-title> -->
     </ion-toolbar>
   </ion-header>
   <!-- body -->
@@ -142,7 +143,7 @@
   <!-- footer -->
   <ion-grid>
     <ion-row size="12" class="content-footer">
-      <div class="my-4">
+      <div class="my-1">
         <ion-grid>
           <ion-row size="12">
             <ion-col size="12">

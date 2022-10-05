@@ -2,38 +2,107 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
+        <ion-grid>
+          <ion-row size="12" class="mt-2">
+            <ion-col size="12" class="text-start">
+              <img width="50%" class="p-1" src="./assets/logo.png" alt="logo" />
+            </ion-col>
+          </ion-row>
+        </ion-grid>
         <ion-list id="inbox-list" *ngIf="user === null">
-          <ion-list-header class="ion-padding-bottom">Menú</ion-list-header>
-          <ion-menu-toggle class="ion-padding-bottom" auto-hide="false" color="tertiary"
-            *ngFor="let p of appPagesNoUser; let i = index">
-            <ion-item  class="menu-style" routerDirection="root" [routerLink]="[p.url]"
-              lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon class="mr-2" slot="start" [ios]="p.icon" [md]="p.icon + '-sharp'">
+          <ion-list-header class="ion-padding-bottom text-menu"
+            >Menú</ion-list-header
+          >
+          <ion-menu-toggle
+            class="ion-padding-bottom"
+            auto-hide="false"
+            color="tertiary"
+            *ngFor="let p of appPagesNoUser; let i = index"
+          >
+            <ion-item
+              class="menu-style"
+              routerDirection="root"
+              [routerLink]="[p.url]"
+              lines="none"
+              detail="false"
+              routerLinkActive="selected"
+            >
+              <ion-icon
+                color="tertiary"
+                class="mr-2"
+                slot="start"
+                [ios]="p.icon"
+                [md]="p.icon + '-sharp'"
+              >
               </ion-icon>
               <ion-label> {{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
-
         </ion-list>
         <ion-list id="inbox-list" *ngIf="user !== null">
-          <ion-list-header class="ion-padding-bottom">Bienvenido {{user.name}}</ion-list-header>
-          <ion-menu-toggle class="ion-padding-bottom" auto-hide="false" color="tertiary"
-            *ngFor="let p of appPagesUser; let i = index">
-            <ion-item class="menu-style" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
-              routerLinkActive="selected">
-              <ion-icon class="mr-2" slot="start" [ios]="p.icon" [md]="p.icon + '-sharp'">
+          <ion-list-header class="ion-padding-bottom text-menu"
+            >Bienvenid@ {{ user.name }}</ion-list-header
+          >
+          <ion-menu-toggle
+            class="ion-padding-bottom"
+            auto-hide="false"
+            color="tertiary"
+            *ngFor="let p of appPagesUser; let i = index"
+          >
+            <ion-item
+              class="menu-style"
+              routerDirection="root"
+              [routerLink]="[p.url]"
+              lines="none"
+              detail="false"
+              routerLinkActive="selected"
+            >
+              <ion-icon
+                color="tertiary"
+                class="mr-2"
+                slot="start"
+                [ios]="p.icon"
+                [md]="p.icon + '-sharp'"
+              >
               </ion-icon>
               <ion-label> {{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
-          <ion-menu-toggle class="ion-padding-bottom" auto-hide="false" color="primary">
-            <ion-item class="menu-style" routerDirection="root" routerLinkActive="selected" (click)="logout()">
-              <ion-icon class="mr-2" slot="start" ios="key" [md]="'key' + '-sharp'">
+          <ion-menu-toggle
+            class="ion-padding-bottom"
+            auto-hide="false"
+            color="primary"
+          >
+            <ion-item
+              class="menu-style"
+              routerDirection="root"
+              routerLinkActive="selected"
+              (click)="logout()"
+            >
+              <ion-icon
+                color="tertiary"
+                class="mr-2"
+                slot="start"
+                ios="key"
+                [md]="'key' + '-sharp'"
+              >
               </ion-icon>
               <ion-label> Cerrar Sesión </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
+        <ion-grid>
+          <ion-row size="12" class="my-4">
+            <ion-col size="12" class="text-center">
+              <img
+                class="p-1"
+                width="35%"
+                src="./assets/amdlcc.png"
+                alt="logo"
+              />
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

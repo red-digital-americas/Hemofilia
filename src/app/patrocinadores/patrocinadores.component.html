@@ -1,20 +1,17 @@
 <ion-content [fullscreen]="true">
   <ion-header [translucent]="true">
     <ion-toolbar>
+      <ion-row size="8" slot="start">
+        <ion-col size="6">
+          <img class="p-1" src="./assets/logo.png" alt="logo" />
+        </ion-col>
+        <ion-col size="6" class="text-end">
+          <img class="p-1" width="40%" src="./assets/amdlcc.png" alt="logo" />
+        </ion-col>
+      </ion-row>
       <ion-buttons slot="end">
         <ion-menu-button color="secondary"></ion-menu-button>
       </ion-buttons>
-      <ion-title class="text-start">
-        <div class="p-1 logo-size">
-          <img
-            class="p-1 logo-size-cancer"
-            src="./assets/logo.png"
-            alt="logo"
-          />
-          <img class="p-1" width="50%" src="./assets/amdlcc.png" alt="logo" />
-        </div>
-      </ion-title>
-      <!-- <ion-title>{{ home }}</ion-title> -->
     </ion-toolbar>
   </ion-header>
   <!-- body -->
@@ -39,15 +36,15 @@
       </ion-col>
       <!-- image -->
       <ion-col size="12">
-        <div class="my-5">
+        <div class="my-4">
           <ion-grid>
             <div class="container">
               <ion-row size="12">
                 <ion-col size="12" class="text-center">
-                  <h3 class="text-primary">Agradecemos el soporte de:</h3>
+                  <h3 class="text-agrade">Agradecemos a:</h3>
                 </ion-col>
                 <ion-col size="12">
-                  <div class="text-center my-5">
+                  <div class="text-center my-2">
                     <img
                       width="50%"
                       src="./assets/abbvie.png"
@@ -56,7 +53,7 @@
                   </div>
                 </ion-col>
                 <ion-col size="12">
-                  <div class="text-center my-5">
+                  <div class="text-center my-2">
                     <img
                       width="70%"
                       src="./assets/Bristol.png"
@@ -65,7 +62,7 @@
                   </div>
                 </ion-col>
                 <ion-col size="12">
-                  <div class="text-center my-5">
+                  <div class="text-center my-2">
                     <img
                       width="50%"
                       src="./assets/novartis.png"
@@ -74,7 +71,7 @@
                   </div>
                 </ion-col>
                 <ion-col size="12">
-                  <div class="text-center my-5">
+                  <div class="text-center my-2">
                     <img
                       width="40%"
                       src="./assets/roche.png"
@@ -83,26 +80,26 @@
                   </div>
                 </ion-col>
                 <ion-col size="12">
-                  <div class="text-center my-5">
+                  <div class="text-center my-2">
                     <img
-                      width="40%"
+                      width="50%"
                       src="./assets/sanofi.png"
                       alt="detención de cancer"
                     />
                   </div>
                 </ion-col>
                 <ion-col size="12" class="text-center">
-                  <span>
-                    <b> Gracias por su Apoyo Incondicional </b>
-                  </span>
+                  <h3 class="text-agrade">
+                    ¡Gracias por su Apoyo Incondicional!
+                  </h3>
                 </ion-col>
               </ion-row>
-              <ion-row size="12" class="my-2 ">
+              <!-- <ion-row size="12" class="my-2">
                 <ion-col size="12" class="text-center mt-4">
                   <h3 class="text-primary">Avalado por:</h3>
                 </ion-col>
                 <ion-col size="12">
-                  <div class="text-center my-5">
+                  <div class="text-center my-2">
                     <img
                       width="40%"
                       src="./assets/CONAMEGE.png"
@@ -111,17 +108,17 @@
                   </div>
                 </ion-col>
                 <ion-col size="12">
-                  <div class="text-center my-5">
+                  <div class="text-center my-2">
                     <img width="40%" src="./assets/AMOFAC.png" alt="AMOFAC" />
                   </div>
                 </ion-col>
-              </ion-row>
+              </ion-row> -->
               <ion-row size="12" class="my-2">
                 <ion-col size="12" class="text-center mt-4">
-                  <h3 class="text-primary">Aliados Estratégicos:</h3>
+                  <h3 class="text-agrade">Aliados Estratégicos:</h3>
                 </ion-col>
                 <ion-col size="12">
-                  <div class="text-center my-5">
+                  <div class="text-center my-2">
                     <img
                       width="50%"
                       src="./assets/_UNIDOS.png"
@@ -130,16 +127,20 @@
                   </div>
                 </ion-col>
                 <ion-col size="12">
-                  <div class="text-center my-5">
+                  <div class="text-center my-2">
                     <img width="50%" src="./assets/JCC.png" alt="AMOFAC" />
                   </div>
                 </ion-col>
                 <ion-col size="12">
-                  <div class="text-center my-5">
-                    <img width="50%" src="./assets/_RCC.png" alt="AMOFAC" />
+                  <div class="text-center my-2">
+                    <img width="40%" src="./assets/_RCC.png" alt="AMOFAC" />
                   </div>
                 </ion-col>
-
+                <ion-col size="12">
+                  <div class="text-center my-2">
+                    <img width="50%" src="./assets/zumit.png" alt="zumit" />
+                  </div>
+                </ion-col>
               </ion-row>
             </div>
           </ion-grid>
@@ -150,7 +151,7 @@
   <!-- footer -->
   <ion-grid>
     <ion-row size="12" class="content-footer">
-      <div class="my-4">
+      <div class="my-1">
         <ion-grid>
           <ion-row size="12">
             <ion-col size="12">

@@ -42,8 +42,9 @@ ion-menu.md ion-list#labels-list ion-list-header {
 
   min-height: 26px;
 }
+
 .item.sc-ion-label-ios-h,
-.item .sc-ion-label-ios-h.selected{
+.item .sc-ion-label-ios-h.selected {
   color: var(--ion-color-tertiary);
 }
 
@@ -136,4 +137,9 @@ ion-item.selected {
 .mr-2 {
   margin-right: 1rem;
   text-align: center;
+}
+
+.text-menu {
+  color: #0277C4;
+  font-size: 1.5rem;
 }
