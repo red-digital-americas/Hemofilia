@@ -23,7 +23,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   ngOnInit() { }
   iniciarSesion() {
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('/perfil-user/login');
   }
   forgot(email: string) {
     console.log('recuperar contraseña');

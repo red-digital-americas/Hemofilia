@@ -39,12 +39,12 @@ export class LoginComponent implements OnInit {
 
   back() {
     console.log('regresar');
-    this.router.navigateByUrl('home');
+    this.router.navigateByUrl('/perfil-user/home');
 
   }
 
   forgotPassword() {
-    this.router.navigateByUrl('forgot-password');
+    this.router.navigateByUrl('/perfil-user/forgot-password');
   }
   public viewPassword(type) {
     if (type === true) {
@@ -72,7 +72,8 @@ export class LoginComponent implements OnInit {
           this.title = 'Exito';
           this.body = 'Haz iniciado sesion';
           this.message(this.title, this.body);
-          this.router.navigateByUrl('home');
+          this.router.navigateByUrl('/perfil-doctor/home');
+          // this.router.navigateByUrl('home');
           this.ionViewWillEnter();
 
         } else {
@@ -90,7 +91,7 @@ export class LoginComponent implements OnInit {
   }
   createUser() {
     console.log('create user');
-    this.router.navigateByUrl('create-user');
+    this.router.navigateByUrl('/perfil-user/create-user');
 
   }
 

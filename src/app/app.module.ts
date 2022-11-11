@@ -6,9 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { CommonModule, DatePipe } from '@angular/common';
-import { TerminosComponent } from './terminos/terminos.component';
-import { PatrocinadoresComponent } from './patrocinadores/patrocinadores.component';
-
+// import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -17,17 +15,39 @@ import { LoginComponent } from './auth/login/login.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { CreateUserComponent } from './auth/create-user/create-user.component';
 import { DialogGeneralMessageComponent } from './dialog/dialog-general-message/dialog-general-message.component';
-import { PerfilComponent } from './perfil/perfil.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
-import { ResultDiagnosticComponent } from './result-diagnostic/result-diagnostic.component';
 import { CallNumber } from '@ionic-native/call-number/ngx';
-
-
 @NgModule({
-  declarations: [AppComponent, FooterComponent, HeaderComponent, LoginComponent, ResultDiagnosticComponent, ForgotPasswordComponent, CreateUserComponent, DialogGeneralMessageComponent, TerminosComponent, PerfilComponent, PatrocinadoresComponent, ChangePasswordComponent],
+  declarations: [
+    AppComponent,
+    FooterComponent,
+    HeaderComponent,
+    LoginComponent,
+    ForgotPasswordComponent,
+    CreateUserComponent,
+    DialogGeneralMessageComponent,
+    ChangePasswordComponent,
+  ],
   entryComponents: [],
-  imports: [BrowserModule, CommonModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, DatePipe, CallNumber],
+  imports:
+    [
+      BrowserModule,
+      // APP_ROUTING,
+      CommonModule,
+      IonicModule.forRoot(),
+      AppRoutingModule,
+      FormsModule,
+      ReactiveFormsModule,
+      HttpClientModule,
+    ],
+  providers:
+    [
+      {
+        provide: RouteReuseStrategy,
+        useClass: IonicRouteStrategy
+      },
+      DatePipe, CallNumber
+    ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

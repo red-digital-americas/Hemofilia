@@ -1,0 +1,342 @@
+<ion-content [fullscreen]="true" class="main" *ngIf="data !== undefined" >
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-row size="8" slot="start">
+        <ion-col size="6">
+          <img class="p-1" src="./assets/logo.png" alt="logo" />
+        </ion-col>
+        <ion-col size="6" class="text-end">
+          <img class="p-1" width="40%" src="./assets/amdlcc.png" alt="logo" />
+        </ion-col>
+      </ion-row>
+      <ion-buttons slot="end">
+        <ion-menu-button color="secondary"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <!-- body -->
+  <!-- <ion-app class="main">
+    <div id="container"> -->
+  <ion-grid class="container">
+    <ion-row class="margin-cuenta my-4">
+      <ion-col size="12" (click)="back()">
+        <div class="ion-text-start back ion-margin-bottom">
+          <p class="puntero">< Regresar</p>
+        </div>
+      </ion-col>
+      <!-- titulo -->
+      <ion-col size="12" class="ion-margin-top">
+        <h3 class="text-center model-text">
+          Resultado del diagnostico temprano
+        </h3>
+      </ion-col>
+      <ion-col>
+        <div class="second-text mt-4 text-center">
+          <span
+            >Con los datos que usted ingresó se obtienen las siguientes
+            posibilidades hematológicas</span
+          >
+        </div>
+      </ion-col>
+      <!-- <ion-col *ngIf="data !== undefined" size="12" class="ion-margin-top">
+        <h5 *ngIf="data.keyCode" class="code">
+          {{ data.keyCode }}
+        </h5>
+      </ion-col> -->
+    </ion-row>
+    <ion-row class="" size="12" *ngIf="data !== null ">
+      <ion-col *ngIf="data !== null" size="12" class="my-3">
+        <ion-card class="radius my-3" *ngIf="data.option1 !== 'no '">
+          <div class="container text-start mt-1 mb-3">
+            <ion-row size="12" class="alineados">
+              <ion-col size="12" class="text-end">
+                <span class="text-disponible"> Opción 1 </span>
+              </ion-col>
+              <ion-col size="4" class="center-icon">
+                <ion-card class="radius">
+                  <img src="./assets/random/heart.png" alt="" />
+                </ion-card>
+              </ion-col>
+              <ion-col size="8">
+                <ion-row size="12" class="padd-left">
+                  <ion-col size="12" class="my-1 pl-1">
+                    <span class="title-specialty text-start">
+                      {{ data.option1 }}
+                    </span>
+                  </ion-col>
+                  <ion-col size="12" class="my-1 pl-1" class="text-end">
+                    <span class="text-end diagnostic">
+                      {{ data.type }}
+                    </span>
+                  </ion-col>
+                  <ion-col></ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-card>
+        <ion-card class="radius my-3" *ngIf="data.option2 !== 'no  '">
+          <div class="container text-start mt-1 mb-3">
+            <ion-row size="12" class="alineados">
+              <ion-col size="12" class="text-end">
+                <span class="text-disponible"> Opción 2 </span>
+              </ion-col>
+              <ion-col size="4" class="center-icon">
+                <ion-card class="radius">
+                  <img src="./assets/random/heart.png" alt="" />
+                </ion-card>
+              </ion-col>
+              <ion-col size="8">
+                <ion-row size="12" class="padd-left">
+                  <ion-col size="12" class="my-1 pl-1">
+                    <span class="title-specialty text-start">
+                      {{ data.option2 }}
+                    </span>
+                  </ion-col>
+                  <ion-col size="12" class="my-1 pl-1" class="text-end">
+                    <span class="text-end diagnostic">
+                      {{ data.type }}
+                    </span>
+                  </ion-col>
+                  <ion-col></ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-card>
+        <ion-card class="radius my-3" *ngIf="data.option3 !== 'no  '">
+          <div class="container text-start mt-1 mb-3">
+            <ion-row size="12" class="alineados">
+              <ion-col size="12" class="text-end">
+                <span class="text-disponible"> Opción 3 </span>
+              </ion-col>
+              <ion-col size="4" class="center-icon">
+                <ion-card class="radius">
+                  <img src="./assets/random/heart.png" alt="" />
+                </ion-card>
+              </ion-col>
+              <ion-col size="8">
+                <ion-row size="12" class="padd-left">
+                  <ion-col size="12" class="my-1 pl-1">
+                    <span class="title-specialty text-start">
+                      {{ data.option3 }}
+                    </span>
+                  </ion-col>
+                  <ion-col size="12" class="my-1 pl-1" class="text-end">
+                    <span class="text-end diagnostic">
+                      {{ data.type }}
+                    </span>
+                  </ion-col>
+                  <ion-col></ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-card>
+        <ion-card class="radius my-3" *ngIf="data.option4 !== 'no  '">
+          <div class="container text-start mt-1 mb-3">
+            <ion-row size="12" class="alineados">
+              <ion-col size="12" class="text-end">
+                <span class="text-disponible"> Opción 4 </span>
+              </ion-col>
+              <ion-col size="4" class="center-icon">
+                <ion-card class="radius">
+                  <img src="./assets/random/heart.png" alt="" />
+                </ion-card>
+              </ion-col>
+              <ion-col size="8">
+                <ion-row size="12" class="padd-left">
+                  <ion-col size="12" class="my-1 pl-1">
+                    <span class="title-specialty text-start">
+                      {{ data.option4 }}
+                    </span>
+                  </ion-col>
+                  <ion-col size="12" class="my-1 pl-1" class="text-end">
+                    <span class="text-end diagnostic">
+                      {{ data.type }}
+                    </span>
+                  </ion-col>
+                  <ion-col></ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" *ngIf="data !== null">
+        <div class="text-center">
+          <h4 class="text-recomendacion">Recomendaciones:</h4>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="mb-4" *ngIf="data !== null">
+        <div class="second-text text-center">
+          <span>
+            {{ data.recomendacion }}
+          </span>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="mb-2">
+        <div class="info-text text-center">
+          <span class="info-text">
+            Si se resolvieron tus dudas da click en
+            <b class="info-text-b">Terminar</b>
+          </span>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="mb-4">
+        <div class="info-text text-center">
+          <span class="info-text">
+            Si no se resolvieron tus dudas da click en
+            <b class="info-text-b">Tengo una duda</b>
+          </span>
+        </div>
+      </ion-col>
+
+      <ion-col size="12" class="margin-btn ion-margin-top">
+        <div class="text-end">
+          <button
+            class="btn btn-tertiary btn-lg btn-gradient-blue"
+            color="primary"
+            (click)="home()"
+            shape="round"
+          >
+            <span class="btn-text">Terminar</span>
+          </button>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="margin-btn ion-margin-top mb-3">
+        <div class="text-end alineado">
+          <button
+            class="btn btn-tertiary btn-lg btn-gradient-orange"
+            color="primary"
+            (click)="especialistas()"
+            shape="round"
+          >
+            <span class="btn-text">Tengo una duda</span>
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="" size="12" *ngIf="data === null ">
+      <ion-col size="12" class="my-3">
+        <div class="text-center">
+          <h3>No encontramos coincidencias vulve a intentarlo</h3>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="my-4 text-center">
+        <button
+          (click)="back()"
+          type="button"
+          class="btn btn-tertiary btn-lg btn-gradient-orange"
+        >
+          <span class="btn-text"> < Realizar diagnostico </span>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- </div> -->
+  <!-- footer -->
+  <ion-grid>
+    <ion-row size="12" class="content-footer">
+      <div class="my-1">
+        <ion-grid>
+          <ion-row size="12">
+            <ion-col size="12">
+              <img
+                class="logo-footer"
+                src="./assets/logo.png"
+                alt="logo Sumate al diagnostico oportuno"
+              />
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-4">
+            <ion-col size="12">
+              <div class="text-center">
+                <img
+                  (click)="facebook()"
+                  class="icon-social"
+                  src="./assets/icon/icon-facebook.png"
+                  alt="facebook"
+                />
+                <img
+                  (click)="instagram()"
+                  class="icon-social"
+                  src="./assets/icon/icon-instagram.png"
+                  alt="instagram"
+                />
+                <img
+                  (click)="twitter()"
+                  class="icon-social"
+                  src="./assets/icon/icon-twitter.png"
+                  alt="twitter"
+                />
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-4">
+            <!-- <ion-col size="12" class="mb-2">
+                  <div class="text-start">
+                    <span class="text-footer">Acerca de</span>
+                  </div>
+                </ion-col>
+                <ion-col size="12" class="mb-2">
+                  <div class="text-start">
+                    <span class="text-footer">Preguntas frecuentes</span>
+                  </div>
+                </ion-col>
+                <ion-col size="12" class="mb-2">
+                  <div class="text-start">
+                    <span class="text-footer">Ayuda</span>
+                  </div>
+                </ion-col> -->
+            <ion-col size="12" class="mb-2">
+              <div class="text-start">
+                <span (click)="goTerminos()" class="text-footer"
+                  >Aviso de privacidad</span
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-2">
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="mail-outline"></ion-icon>
+                  contacto@amlcc.org
+                </span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="call-outline"></ion-icon>
+                  Oficina: (55) 5574 ‑ 0393 y (55) 5564 ‑ 0794
+                </span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="call-outline"></ion-icon>
+                  Pacientes: (55) 5574 ‑ 0393
+                </span>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-2">
+            <ion-col size="2"></ion-col>
+            <ion-col size="10">
+              <div class="text-end">
+                <span class="text-end-footer">
+                  Asociación Mexicana de Lucha Contra el Cáncer A.C. Todos los
+                  derechos reservados 2022
+                </span>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-row>
+  </ion-grid>
+  <!-- </ion-app> -->
+</ion-content>

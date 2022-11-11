@@ -1,0 +1,166 @@
+ion-content {
+  background-color: #fafafa;
+
+}
+
+// background video
+.main {
+  background-image: url('./../../../assets/random/main.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  // -webkit-filter: blur(3px);
+  // filter: blur(3px);
+  // background-color: rgba(35, 41, 46, 0.2);
+}
+
+.logo-size {
+  width: 40%;
+  height: auto;
+}
+
+.logo-size-cancer {
+  margin-right: 2.25rem;
+}
+
+
+.main-center {
+  text-align: center;
+  justify-content: center;
+}
+
+.title-main {
+  color: white;
+  text-align: left;
+  font-size: 2.5rem;
+  font-weight: 100;
+}
+
+.btn-gradient-orange {
+  border-radius: 26px;
+  background-image: linear-gradient(to bottom, #ff5a14, #ff8b00);
+  border-color: #ff8b00;
+  border-width: 0px;
+}
+
+
+
+.btn-text {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  padding: 1rem;
+}
+
+// content
+.model-text {
+  font-family: Rubik;
+  font-size: 2.3rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0277c4;
+}
+
+.subtitle-second {
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(29, 29, 27, 0.8);
+}
+
+.second-text {
+  font-family: Rubik;
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(29, 29, 27, 0.8);
+}
+
+.img-circle {
+  border-radius: 50%;
+  height: 150px;
+  width: 90%;
+}
+
+.title-cancer {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.content-cancer {
+  font-size: 1.9rem;
+  color: rgba(29, 29, 27, 0.8);
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.content-footer {
+  text-align: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #fafafa;
+
+}
+
+.logo-footer {
+  width: 70%;
+}
+
+.icon.social {
+  width: 15%;
+}
+
+.text-footer {
+  font-family: Rubik;
+  font-size: 1rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0277c4;
+}
+
+.email-footer {
+  font-family: Rubik;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0277c4;
+  align-self: center;
+}
+
+.text-end-footer {
+  font-family: Rubik;
+  font-size: 11px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: rgba(29, 29, 27, 0.8);
+}
+
+.icon-social {
+  width: 15%;
+}

@@ -159,7 +159,7 @@ export class ChangePasswordComponent implements OnInit {
   }
   back() {
     console.log('regresar');
-    this.router.navigateByUrl('home');
+    this.router.navigateByUrl('/perfil-user/home');
 
   }
   public viewPassword2(type) {

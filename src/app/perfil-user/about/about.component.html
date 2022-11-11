@@ -1,0 +1,226 @@
+<ion-content [fullscreen]="true">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-row size="8" slot="start">
+        <ion-col size="6">
+          <img class="p-1" src="./assets/logo.png" alt="logo" />
+        </ion-col>
+        <ion-col size="6" class="text-end">
+          <img class="p-1" width="40%" src="./assets/amdlcc.png" alt="logo" />
+        </ion-col>
+      </ion-row>
+      <ion-buttons slot="end">
+        <ion-menu-button color="secondary"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <!-- body -->
+  <ion-grid>
+    <!-- image -->
+    <ion-row size="12" class="main-center main">
+      <div class="my-4">
+        <ion-col size="12">
+          <ion-row size="12">
+            <ion-col size="12">
+              <div class="container my-5">
+                <h1 class="title-main">Conócenos
+                </h1>
+              </div>
+            </ion-col>
+            <ion-col size="2"></ion-col>
+          </ion-row>
+        </ion-col>
+      </div>
+    </ion-row>
+    <!-- content -->
+    <ion-row size="12">
+      <ion-col size="12">
+        <div class="container my-5 text-center">
+          <img width="40%" src="./assets/amdlcc.png" alt="logo">
+        </div>
+      </ion-col>
+
+      <ion-col size="12">
+        <div class="container my-3 mx-1">
+          <span class="second-text ">
+            La Asociación Mexicana de Lucha contra el Cáncer (AMLCC) es una asociación civil fundada en 1972
+            comprometida con las
+            personas que sufren cáncer en México con un enfoque especial en los sectores más vulnerables de la
+            sociedad.
+            <br> <br>
+            Trabajamos gracias a la colaboración de personas como tú, de empresas y diversas instituciones nacionales
+            e
+            internacionales que, entendiendo la importancia de la causa, día a día se suman a nuestra lucha.
+            <br><br>
+            Queremos transformar la realidad del cáncer en México, por ello nos sumamos al logro del tercero de los
+            Objetivos de
+            Desarrollo Sostenible (ODS) de las Naciones Unidas, Salud y bienestar, abonando a garantizar una vida sana
+            y promover el
+            bienestar para todos en todas las edades.
+          </span>
+        </div>
+      </ion-col>
+      <!-- image -->
+      <ion-col size="12">
+        <div class="my-5">
+          <ion-grid>
+            <div class="container">
+              <ion-row size="12">
+                <ion-col size="12">
+                  <div class="container my-5 text-center">
+                    <h4 class="model-text">
+                      Nuestra Misión
+                    </h4>
+                  </div>
+                </ion-col>
+                <ion-col size="6">
+                  <div class="mx-1">
+                    <ion-grid>
+                      <ion-row size="12">
+                        <ion-col size="12">
+                          <img class="img-circle" src="./assets/random/cancer.jpg" alt="detención de cancer">
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </div>
+                </ion-col>
+                <ion-col size="6">
+                  <div class="mx-1">
+                    <ion-grid>
+                      <ion-row size="12">
+                        <ion-col size="12">
+                          <img class="img-circle" src="./assets/random/cancer2.jpg" alt="detención de cancer">
+                        </ion-col>
+
+                      </ion-row>
+                    </ion-grid>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="text-center">
+                    <h4 class="content-cancer">Buscamos disminuir la
+                      Morbimortalidad por Cáncer</h4>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="text-center my-5">
+                    <img width="50%" src="./assets/liston.png" alt="detención de cancer">
+                  </div>
+                </ion-col>
+                <!-- quiero unirme -->
+                <ion-col size="12">
+                  <div class="text-center mb-4">
+                    <h5 class="model-text">
+                      Únete a la mejora del diagnóstico
+                    </h5>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="text-center mb-4">
+                    <span class="second-text">
+                      Impulsamos la detección temprana del cáncer a través de campañas de concientización en comunidades
+                      vulnerables y
+                      marginadas.
+                    </span>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="mx-2 mt-5 mb-1 text-center">
+                    <button (click)="registro()" type="button" class="btn btn-tertiary btn-lg btn-gradient-orange">
+                      <span class="btn-text">
+                        Quiero unirme
+                      </span>
+                    </button>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- footer -->
+  <ion-grid>
+    <ion-row size="12" class="content-footer">
+      <div class="my-1">
+        <ion-grid>
+          <ion-row size="12">
+            <ion-col size="12">
+              <img class="logo-footer" src="./assets/logo.png" alt="logo Sumate al diagnostico oportuno">
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-4">
+            <ion-col size="12">
+              <div class="text-center">
+                <img (click)="facebook()" class="icon-social" src="./assets/icon/icon-facebook.png" alt="facebook">
+                <img (click)="instagram()" class="icon-social" src="./assets/icon/icon-instagram.png" alt="instagram">
+                <img (click)="twitter()" class="icon-social" src="./assets/icon/icon-twitter.png" alt="twitter">
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-4">
+            <!-- <ion-col size="12" class="mb-2">
+                <div class="text-start">
+                  <span class="text-footer">Acerca de</span>
+                </div>
+              </ion-col>
+              <ion-col size="12" class="mb-2">
+                <div class="text-start">
+                  <span class="text-footer">Preguntas frecuentes</span>
+                </div>
+              </ion-col>
+              <ion-col size="12" class="mb-2">
+                <div class="text-start">
+                  <span class="text-footer">Ayuda</span>
+                </div>
+              </ion-col> -->
+            <ion-col size="12" class="mb-2">
+              <div class="text-start">
+                <span (click)="goTerminos()" class="text-footer">Aviso de privacidad</span>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-2">
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="mail-outline"></ion-icon>
+                  contacto@amlcc.org
+                </span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="call-outline"></ion-icon>
+                  Oficina: (55) 5574 ‑ 0393 y (55) 5564 ‑ 0794
+                </span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="call-outline"></ion-icon>
+                  Pacientes: (55) 5574 ‑ 0393
+                </span>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-2">
+            <ion-col size="2"></ion-col>
+            <ion-col size="10">
+              <div class="text-end">
+                <span class="text-end-footer">
+                  Asociación Mexicana de Lucha Contra
+                  el Cáncer A.C. Todos los derechos
+                  reservados 2022
+                </span>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

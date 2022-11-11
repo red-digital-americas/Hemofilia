@@ -1,0 +1,340 @@
+<ion-content [fullscreen]="true">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-row size="8" slot="start">
+        <ion-col size="6">
+          <img class="p-1" src="./assets/logo.png" alt="logo" />
+        </ion-col>
+        <ion-col size="6" class="text-end">
+          <img class="p-1" width="40%" src="./assets/amdlcc.png" alt="logo" />
+        </ion-col>
+      </ion-row>
+      <ion-buttons slot="end">
+        <ion-menu-button color="secondary"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <!-- body -->
+  <ion-grid>
+    <!-- main -->
+    <ion-row size="12" class="main-center main">
+      <div class="my-4">
+        <ion-col size="12">
+          <ion-row size="12">
+            <ion-col size="10">
+              <div class="container my-5">
+                <h1 class="title-main">
+                  Súmate al diagnostico temprano de Cánceres
+                  <b class="text-white">Hematológicos</b>
+                </h1>
+              </div>
+            </ion-col>
+            <ion-col size="2"></ion-col>
+          </ion-row>
+          <!-- buttons -->
+          <ion-row size="12">
+            <ion-col size="12">
+              <div class="mx-2 mt-5 mb-1 text-start">
+                <button
+                  (click)="iniciarDiagnostico()"
+                  type="button"
+                  class="btn btn-tertiary btn-lg btn-gradient-orange"
+                >
+                  <span class="btn-text"> Iniciar diagnóstico </span>
+                </button>
+              </div>
+            </ion-col>
+            <ion-col size="12">
+              <div class="mx-2 mb-3 text-end">
+                <!-- <button type="button" class="btn btn-primary btn-lg btn-gradient-blue">
+                  <span class="btn-text">
+                    Estudios clínicos
+                  </span>
+                </button> -->
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </div>
+    </ion-row>
+    <!-- content -->
+    <ion-row size="12">
+      <ion-col size="12">
+        <div class="container my-5">
+          <h4 class="model-text">
+            70% de los casos diagnosticados, llegan en etapas tardías
+          </h4>
+        </div>
+      </ion-col>
+
+      <ion-col size="12">
+        <div class="container my-5">
+          <!-- <h5 class="subtitle-second">Lorem ipsum dolor sit amet</h5> -->
+          <div class="mt-4">
+            <span class="second-text">
+              Nuestro objetivo es reducir los tiempos en el diagnóstico del
+              cáncer y el tiempo en que un paciente accede a tratamiento para de
+              esta forma, mejorar los resultados en la atención y pronóstico de
+              los pacientes.
+              <br />
+              <br />
+              En la Asociación Mexicana de Lucha Contra el Cáncer estamos
+              convencidos que el Diagnóstico Temprano y la Referencia Oportuna
+              pueden hacer la diferencia para un paciente y todo su entorno de
+              salud.
+            </span>
+          </div>
+        </div>
+      </ion-col>
+      <!-- image -->
+      <ion-col size="12">
+        <div class="my-5">
+          <ion-grid>
+            <div class="container">
+              <ion-row size="12">
+                <ion-col size="12">
+                  <div class="text-center mb-4">
+                    <img
+                      width="80%"
+                      src="./assets/logo.png"
+                      alt="cuatro pilares"
+                    />
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="my-5">
+                    <!-- <h5 class="subtitle-second">Lorem ipsum dolor sit amet</h5> -->
+                    <div class="mt-4">
+                      <span class="second-text">
+                        Hemos creado esta app 4myPatient, gracias al apoyo de
+                        especialistas en la atención de las hematopatías.
+                        <br />
+                        <br />
+                        SUMATE AL DIAGNOSTICO TEMPRANO busca ser una guía de
+                        apoyo para el diagnóstico de posibles hematopatías.
+                      </span>
+                    </div>
+                  </div>
+                </ion-col>
+                <!-- <ion-col size="6">
+                  <div class="mx-1">
+                    <ion-grid>
+                      <ion-row size="12">
+                        <ion-col size="12">
+                          <img class="img-circle" src="./assets/random/cancer.jpg" alt="detención de cancer">
+                        </ion-col>
+                        <ion-col size="12">
+                          <div class="text-end my-2">
+                          </div>
+                        </ion-col>
+                        <ion-col size="12">
+                          <div class="text-end">
+                            <span class="content-cancer">Impulsamos la detección temprana del cáncer.</span>
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </div>
+                </ion-col>
+                <ion-col size="6">
+                  <div class="mx-1">
+                    <ion-grid>
+                      <ion-row size="12">
+                        <ion-col size="12">
+                          <img class="img-circle" src="./assets/random/cancer2.jpg" alt="detención de cancer">
+                        </ion-col>
+                        <ion-col size="12">
+                          <div class="text-start my-2">
+                          </div>
+                        </ion-col>
+                        <ion-col size="12">
+                          <div class="text-start">
+                            <span class="content-cancer">Impulsamos la detección temprana del cáncer.</span>
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </div>
+                </ion-col> -->
+                <ion-col size="12">
+                  <div class="text-center my-5">
+                    <img
+                      width="50%"
+                      src="./assets/liston.png"
+                      alt="detención de cancer"
+                    />
+                  </div>
+                </ion-col>
+                <!-- quiero unirme -->
+                <ion-col size="12">
+                  <div class="text-center mb-4">
+                    <h5 class="model-text">¿Cómo funciona?</h5>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="mb-4">
+                    <span class="second-text">
+                      Apoyado en el análisis diferentes variables, especialmente
+                      de los resultados de estudios de laboratorio que indiques
+                      a tus pacientes, la app mediante algoritmos específicos,
+                      le ayudara a usted, a levantar una sospecha fundada para
+                      impulsar una acción o referencia que pueda incidir en el
+                      pronóstico de personas con hematopatías graves.
+                      <br />
+                      <br />
+                      En el mundo los Cánceres Hematológicos sumados (Linfoma,
+                      Leucemias y Mieloma) representan el tercer cáncer más
+                      frecuente en adultos hombres (81,160) y el cuarto en
+                      mujeres (61,490).
+                      <br />
+                      <br />
+                      La leucemia por si sola en México, representa la primera
+                      causa de muerte en niños de 0-14 años y en jóvenes entre
+                      los 15 y 19 años, según los datos del INEGI reportados a
+                      febrero del 2022.
+                      <br />
+                      El diagnostico tardío tiene graves implicaciones para la
+                      persona que lo padece, su familia, el médico tratante y el
+                      sistema de salud.
+                    </span>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="text-center my-2">
+                    <img
+                      width="40%"
+                      src="./assets/amdlcc.png"
+                      alt="cuatro pilares"
+                    />
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="my-4 text-center">
+                    <span class="second-text ">
+                      Cambiemos esta historia juntos, por que el cáncer nos une
+                      a todos de alguna manera.
+                    </span>
+                  </div>
+                </ion-col>
+                <!-- <ion-col size="12">
+                  <div class="mx-2 mt-5 mb-1 text-center">
+                    <button
+                      (click)="registro()"
+                      type="button"
+                      class="btn btn-tertiary btn-lg btn-gradient-orange"
+                    >
+                      <span class="btn-text"> Quiero unirme </span>
+                    </button>
+                  </div>
+                </ion-col> -->
+              </ion-row>
+            </div>
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- footer -->
+  <ion-grid>
+    <ion-row size="12" class="content-footer">
+      <div class="my-1">
+        <ion-grid>
+          <ion-row size="12">
+            <ion-col size="12">
+              <img
+                class="logo-footer"
+                src="./assets/logo.png"
+                alt="logo Sumate al diagnostico oportuno"
+              />
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-4">
+            <ion-col size="12">
+              <div class="text-center">
+                <img
+                  (click)="facebook()"
+                  class="icon-social"
+                  src="./assets/icon/icon-facebook.png"
+                  alt="facebook"
+                />
+                <img
+                  (click)="instagram()"
+                  class="icon-social"
+                  src="./assets/icon/icon-instagram.png"
+                  alt="instagram"
+                />
+                <img
+                  (click)="twitter()"
+                  class="icon-social"
+                  src="./assets/icon/icon-twitter.png"
+                  alt="twitter"
+                />
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-4">
+            <!-- <ion-col size="12" class="mb-2">
+              <div class="text-start">
+                <span class="text-footer">Acerca de</span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-2">
+              <div class="text-start">
+                <span class="text-footer">Preguntas frecuentes</span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-2">
+              <div class="text-start">
+                <span class="text-footer">Ayuda</span>
+              </div>
+            </ion-col> -->
+            <ion-col size="12" class="mb-2">
+              <div class="text-start">
+                <span (click)="goTerminos()" class="text-footer"
+                  >Aviso de privacidad</span
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-2">
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="mail-outline"></ion-icon>
+                  contacto@amlcc.org
+                </span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="call-outline"></ion-icon>
+                  Oficina: (55) 5574 ‑ 0393 y (55) 5564 ‑ 0794
+                </span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="call-outline"></ion-icon>
+                  Pacientes: (55) 5574 ‑ 0393
+                </span>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-2">
+            <ion-col size="2"></ion-col>
+            <ion-col size="10">
+              <div class="text-end">
+                <span class="text-end-footer">
+                  Asociación Mexicana de Lucha Contra el Cáncer A.C. Todos los
+                  derechos reservados 2022
+                </span>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

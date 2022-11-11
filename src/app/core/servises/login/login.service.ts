@@ -39,7 +39,7 @@ export class LoginService {
 
   logout() {
     localStorage.removeItem('token');
-    this.route.navigateByUrl('login');
+    this.route.navigateByUrl('/perfil-user/login');
   }
 }
 

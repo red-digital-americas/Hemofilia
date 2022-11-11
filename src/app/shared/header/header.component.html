@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu contentId="main-content" type="overlay" (ionWillOpen)="menuChange()">
       <ion-content>
         <ion-grid>
           <ion-row size="12" class="mt-2">
@@ -9,7 +9,7 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-        <ion-list id="inbox-list" *ngIf="user === null">
+        <ion-list id="inbox-list" *ngIf="userRol === false">
           <ion-list-header class="ion-padding-bottom text-menu"
             >Menú</ion-list-header
           >
@@ -39,7 +39,7 @@
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
-        <ion-list id="inbox-list" *ngIf="user !== null">
+        <ion-list id="inbox-list" *ngIf="userRol === true">
           <ion-list-header class="ion-padding-bottom text-menu"
             >Bienvenid@ {{ user.name }}</ion-list-header
           >
