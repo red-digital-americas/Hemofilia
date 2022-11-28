@@ -1,6 +1,7 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "Hemofilia",
-	"webDir": "www",
-	"bundledWebRuntime": false
+	"appId": "com.hematologicos.app",
+	"appName": "hematologicos",
+	"bundledWebRuntime": false,
+  "npmClient": "npm",
+	"webDir": "www"
 }

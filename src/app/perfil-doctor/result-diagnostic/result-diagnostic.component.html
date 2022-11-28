@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true" class="main" *ngIf="data !== undefined" >
   <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-row size="8" slot="start">
+      <ion-row size="8" slot="start" class="transparent">
         <ion-col size="6">
           <img class="p-1" src="./assets/logo.png" alt="logo" />
         </ion-col>
@@ -237,11 +237,11 @@
   <!-- </div> -->
   <!-- footer -->
   <ion-grid>
-    <ion-row size="12" class="content-footer">
+    <ion-row size="12" class="content-footer mb-4">
       <div class="my-1">
-        <ion-grid>
-          <ion-row size="12">
-            <ion-col size="12">
+        <ion-grid class="transparent">
+          <ion-row size="12" class="transparent">
+            <ion-col size="12" >
               <img
                 class="logo-footer"
                 src="./assets/logo.png"
@@ -249,7 +249,7 @@
               />
             </ion-col>
           </ion-row>
-          <ion-row size="12" class="my-4">
+          <ion-row size="12" class="my-4 transparent">
             <ion-col size="12">
               <div class="text-center">
                 <img
@@ -273,7 +273,7 @@
               </div>
             </ion-col>
           </ion-row>
-          <ion-row size="12" class="my-4">
+          <ion-row size="12" class="my-4 transparent">
             <!-- <ion-col size="12" class="mb-2">
                   <div class="text-start">
                     <span class="text-footer">Acerca de</span>
@@ -289,15 +289,15 @@
                     <span class="text-footer">Ayuda</span>
                   </div>
                 </ion-col> -->
-            <ion-col size="12" class="mb-2">
-              <div class="text-start">
+            <ion-col size="12" class="my-2">
+              <div class="text-center">
                 <span (click)="goTerminos()" class="text-footer"
                   >Aviso de privacidad</span
                 >
               </div>
             </ion-col>
           </ion-row>
-          <ion-row size="12" class="my-2">
+          <ion-row size="12" class="my-2 transparent">
             <ion-col size="12" class="mb-1">
               <div class="text-start">
                 <span class="email-footer">
@@ -323,7 +323,7 @@
               </div>
             </ion-col>
           </ion-row>
-          <ion-row size="12" class="my-2">
+          <ion-row size="12" class="my-2 transparent">
             <ion-col size="2"></ion-col>
             <ion-col size="10">
               <div class="text-end">

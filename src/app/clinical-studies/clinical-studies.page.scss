@@ -1,7 +1,27 @@
 ion-content {
   background-color: #fafafa;
-
 }
+
+ion-grid {
+  background-color: #fafafa;
+}
+
+ion-row {
+  background-color: #fafafa;
+}
+
+ion-input {
+  background: rgb(250, 250, 250);
+}
+
+ion-item {
+  background-color: #fff;
+}
+
+ion-select {
+  background-color: #fff;
+}
+
 .logo-size {
   width: 40%;
   height: auto;
@@ -12,9 +32,9 @@ ion-content {
 }
 
 .title-main {
-  color: rgba(29, 29, 27, 0.8);
+  color: white;
   text-align: left;
-  font-size: 2.5rem;
+  font-size: 1.7rem;
   font-weight: 100;
 }
 
@@ -41,7 +61,8 @@ ion-content {
   letter-spacing: normal;
   color: rgba(0, 0, 0, 0.85);
 }
-.text-card{
+
+.text-card {
   font-size: .7rem;
   font-weight: normal;
   font-stretch: normal;
@@ -51,6 +72,6 @@ ion-content {
   color: rgba(0, 0, 0, 0.85);
 }
 
-.center-icon{
+.center-icon {
   align-self: center;
 }

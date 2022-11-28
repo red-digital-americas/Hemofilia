@@ -2,6 +2,29 @@ ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
 
+ion-content {
+  background-color: #fff;
+}
+ion-grid {
+  background-color: #fff;
+}
+
+ion-row {
+  background-color: #fff;
+}
+
+ion-input {
+  background: rgb(250, 250, 250);
+}
+
+ion-item {
+  background-color: #fff;
+}
+
+ion-select {
+  background-color: #fff;
+}
+
 ion-menu.md ion-content {
   --padding-start: 8px;
   --padding-end: 8px;

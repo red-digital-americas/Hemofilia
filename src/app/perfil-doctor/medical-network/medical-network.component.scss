@@ -1,15 +1,35 @@
 ion-content {
-  background-color: #fafafa;
+  background-color: #fff;
+}
+ion-grid {
+  background-color: #fff;
+}
 
+ion-row {
+  background-color: #fff;
+}
+
+ion-input {
+  background: #fff;
+}
+
+ion-item {
+  background-color: #fff;
+}
+
+ion-select {
+  background-color: #fff;
+}
+.transparent {
+  background-color: transparent;
 }
 
 .title-main {
-  color: #0277c4;
+  color: white;
   text-align: left;
-  font-size: 2.5rem;
+  font-size: 1.7rem;
   font-weight: 100;
 }
-
 .logo-size {
   width: 40%;
   height: auto;
@@ -176,11 +196,12 @@ ion-content {
 
 .model-text {
   font-family: Rubik;
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: rgba(29, 29, 27, 0.8);
+  color: #0277c4;
+  text-align: center;
 }

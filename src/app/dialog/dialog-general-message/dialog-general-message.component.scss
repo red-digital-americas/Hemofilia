@@ -8,7 +8,25 @@ ion-content {
   --width: 25%;
   --border-color: pink;
 }
+ion-grid {
+  background-color: #fafafa;
+}
 
+ion-row {
+  background-color: #fafafa;
+}
+
+ion-input {
+  background: rgb(250, 250, 250);
+}
+
+ion-item {
+  background-color: #fff;
+}
+
+ion-select {
+  background-color: #fff;
+}
 .modal-wrapper.sc-ion-modal-ios {
   opacity: 1;
   width: 40%;

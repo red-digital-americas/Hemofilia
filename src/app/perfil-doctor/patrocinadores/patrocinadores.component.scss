@@ -1,3 +1,31 @@
+ion-content {
+  background-color: #fff;
+}
+
+ion-grid {
+  background-color: #fff;
+}
+
+ion-row {
+  background-color: #fff;
+}
+
+ion-input {
+  background: #fff;
+}
+
+ion-item {
+  background-color: #fff;
+}
+
+ion-select {
+  background-color: #fff;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
 .content-footer {
   text-align: center;
   justify-content: center;
@@ -5,6 +33,7 @@
   background-color: #fafafa;
 
 }
+
 .logo-size {
   width: 40%;
   height: auto;
@@ -71,18 +100,19 @@
   letter-spacing: normal;
   color: rgba(29, 29, 27, 0.8);
 }
+
 .model-text {
   font-family: Rubik;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  // color: rgba(29, 29, 27, 0.8);
-    color: #0277c4;
-
+  color: #0277c4;
+  text-align: center;
 }
-.text-agrade{
+
+.text-agrade {
   color: #FF8B00;
 }

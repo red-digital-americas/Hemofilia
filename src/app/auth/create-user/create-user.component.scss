@@ -8,6 +8,7 @@
   background-size: cover;
   position: relative;
   padding: 2rem;
+  margin-bottom: 3rem;
 }
 
 .backg {
@@ -15,13 +16,43 @@
 
 }
 
+ion-content {
+  background-color: #fafafa;
+}
+
 ion-grid {
   background-color: #fafafa;
 }
 
-ion-content {
+ion-row {
   background-color: #fafafa;
 }
+
+ion-input {
+  background: #fff;
+}
+
+ion-item {
+  background-color: #fff;
+}
+
+ion-select {
+  background-color: #fff;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+.ion-select-option {
+  white-space: pre-wrap;
+overflow-wrap: break-word;
+word-break: break-all;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
 
 .img-slider-footer {
   margin-top: 2rem;

@@ -15,6 +15,29 @@ ion-content {
   background: linear-gradient(90deg, rgba(250, 250, 250, 1) 5%, rgba(250, 250, 250, 1) 35%, rgba(250, 250, 250, 1) 100%);
 }
 
+ion-grid {
+  background-color: #fafafa;
+}
+
+ion-row {
+  background-color: #fafafa;
+}
+
+ion-input {
+  background: #fff;
+}
+
+ion-item {
+  background-color: #fff;
+}
+
+ion-select {
+  background-color: #fff;
+}
+
+.transparent {
+  background-color: transparent;
+}
 
 .container-logo {
   text-align: center;
@@ -58,9 +81,6 @@ ion-content {
   // margin-bottom: .5rem;
 }
 
-ion-item {
-  background-color: #ffffff;
-}
 
 ion-item:focus {
   // font-size: 0.9em;

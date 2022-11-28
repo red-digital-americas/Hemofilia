@@ -20,7 +20,7 @@
     <ion-row size="12" class="main-center main">
       <div class="my-4">
         <ion-col size="12">
-          <ion-row size="12">
+          <ion-row class="transparent" size="12">
             <ion-col size="10">
               <div class="container my-5">
                 <h1 class="title-main">
@@ -32,7 +32,7 @@
             <ion-col size="2"></ion-col>
           </ion-row>
           <!-- buttons -->
-          <ion-row size="12">
+          <ion-row class="transparent" size="12">
             <ion-col size="12">
               <div class="mx-2 mt-5 mb-1 text-start">
                 <button
@@ -44,15 +44,6 @@
                 </button>
               </div>
             </ion-col>
-            <ion-col size="12">
-              <div class="mx-2 mb-3 text-end">
-                <!-- <button type="button" class="btn btn-primary btn-lg btn-gradient-blue">
-                  <span class="btn-text">
-                    Estudios clínicos
-                  </span>
-                </button> -->
-              </div>
-            </ion-col>
           </ion-row>
         </ion-col>
       </div>
@@ -60,7 +51,7 @@
     <!-- content -->
     <ion-row size="12">
       <ion-col size="12">
-        <div class="container my-5">
+        <div class="container mt-5">
           <h4 class="model-text">
             70% de los casos diagnosticados, llegan en etapas tardías
           </h4>
@@ -210,7 +201,7 @@
                 </ion-col>
                 <ion-col size="12">
                   <div class="my-4 text-center">
-                    <span class="second-text ">
+                    <span class="second-text">
                       Cambiemos esta historia juntos, por que el cáncer nos une
                       a todos de alguna manera.
                     </span>
@@ -236,10 +227,10 @@
   </ion-grid>
   <!-- footer -->
   <ion-grid>
-    <ion-row size="12" class="content-footer">
+    <ion-row size="12" class="content-footer mb-4">
       <div class="my-1">
-        <ion-grid>
-          <ion-row size="12">
+        <ion-grid class="transparent">
+          <ion-row size="12" class="transparent" >
             <ion-col size="12">
               <img
                 class="logo-footer"
@@ -248,7 +239,7 @@
               />
             </ion-col>
           </ion-row>
-          <ion-row size="12" class="my-4">
+          <ion-row size="12" class="my-4" class="transparent">
             <ion-col size="12">
               <div class="text-center">
                 <img
@@ -272,7 +263,7 @@
               </div>
             </ion-col>
           </ion-row>
-          <ion-row size="12" class="my-4">
+          <ion-row size="12" class="my-4" class="transparent">
             <!-- <ion-col size="12" class="mb-2">
               <div class="text-start">
                 <span class="text-footer">Acerca de</span>
@@ -288,15 +279,15 @@
                 <span class="text-footer">Ayuda</span>
               </div>
             </ion-col> -->
-            <ion-col size="12" class="mb-2">
-              <div class="text-start">
+            <ion-col size="12" class="my-2">
+              <div class="text-center">
                 <span (click)="goTerminos()" class="text-footer"
                   >Aviso de privacidad</span
                 >
               </div>
             </ion-col>
           </ion-row>
-          <ion-row size="12" class="my-2">
+          <ion-row size="12" class="my-2" class="transparent">
             <ion-col size="12" class="mb-1">
               <div class="text-start">
                 <span class="email-footer">
@@ -309,7 +300,8 @@
               <div class="text-start">
                 <span class="email-footer">
                   <ion-icon color="primary" name="call-outline"></ion-icon>
-                  Oficina: (55) 5574 ‑ 0393 y (55) 5564 ‑ 0794
+                  Oficina: (55) 5574 ‑ 0393
+                  <br> (55) 5564 ‑ 0794
                 </span>
               </div>
             </ion-col>
@@ -321,10 +313,7 @@
                 </span>
               </div>
             </ion-col>
-          </ion-row>
-          <ion-row size="12" class="my-2">
-            <ion-col size="2"></ion-col>
-            <ion-col size="10">
+            <ion-col size="12">
               <div class="text-end">
                 <span class="text-end-footer">
                   Asociación Mexicana de Lucha Contra el Cáncer A.C. Todos los

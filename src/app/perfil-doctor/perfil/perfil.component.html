@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true" class="main">
   <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-row size="8" slot="start">
+      <ion-row size="8" slot="start" class="transparent">
         <ion-col size="6">
           <img class="p-1" src="./assets/logo.png" alt="logo" />
         </ion-col>
@@ -14,7 +14,7 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-app class="main" *ngIf="data">
+  <div class="main" *ngIf="data">
     <div id="container">
       <ion-grid>
         <ion-row class="margin-cuenta">
@@ -74,7 +74,7 @@
                 </div>
               </ion-col>
             </ion-row>
-            <ion-row>
+            <ion-row class="mb-4">
               <ion-col size="12">
                 <div class="ion-text-center">
                   <img
@@ -167,7 +167,7 @@
                 </div>
               </ion-col>
             </ion-row>
-            <ion-row>
+            <ion-row class="mb-4">
               <ion-col size="12">
                 <div class="ion-text-center">
                   <img
@@ -252,7 +252,7 @@
                 </div>
               </ion-col>
             </ion-row>
-            <ion-row>
+            <ion-row class="mb-4">
               <ion-col size="12">
                 <div class="ion-text-center">
                   <img
@@ -342,7 +342,7 @@
                 </div>
               </ion-col>
             </ion-row>
-            <ion-row>
+            <ion-row class="mb-4">
               <ion-col size="12">
                 <div class="ion-text-center">
                   <img
@@ -444,7 +444,7 @@
                 </div>
               </ion-col>
             </ion-row>
-            <ion-row>
+            <ion-row class="mb-4">
               <ion-col size="12">
                 <div class="ion-text-center">
                   <img
@@ -506,7 +506,7 @@
                 </div>
               </ion-col>
             </ion-row>
-            <ion-row>
+            <ion-row class="mb-4">
               <ion-col size="12">
                 <div class="ion-text-center">
                   <img
@@ -521,5 +521,5 @@
         </ion-row>
       </ion-grid>
     </div>
-  </ion-app>
+  </div>
 </ion-content>
