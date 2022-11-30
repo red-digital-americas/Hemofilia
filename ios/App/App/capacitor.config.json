@@ -1,0 +1,7 @@
+{
+	"appId": "com.hematologicos.app",
+	"appName": "hematologicos",
+	"bundledWebRuntime": false,
+	"npmClient": "npm",
+	"webDir": "www"
+}
