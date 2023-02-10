@@ -30,6 +30,12 @@ ion-item {
 ion-select {
   background-color: #fff;
 }
+ion-label {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  text-overflow: clip !important;
+  white-space: initial !important;
+}
 
 #container {
   text-align: center;
