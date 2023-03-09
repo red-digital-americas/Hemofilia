@@ -35,11 +35,8 @@
           <ion-row size="12" class="transparent">
             <ion-col size="12">
               <div class="mx-2 mt-5 mb-1 text-start">
-                <button
-                  (click)="iniciarDiagnostico()"
-                  type="button"
-                  class="btn btn-tertiary btn-lg btn-gradient-orange"
-                >
+                <button (click)="iniciarDiagnostico()" type="button"
+                  class="btn btn-tertiary btn-lg btn-gradient-orange">
                   <span class="btn-text"> Iniciar diagnóstico </span>
                 </button>
               </div>
@@ -59,6 +56,13 @@
     </ion-row>
     <!-- content -->
     <ion-row size="12">
+      <ion-col size="12" class="mt-5">
+        <div class="div-content">
+          <video autoPlay="false" class="img-caro" controls (click)="pauseVideo(videoplayer)" #videoPlayer>
+            <source autoPlay="false" src="./assets/FullSizeRender.mov" type="video/mp4">
+          </video>
+        </div>
+      </ion-col>
       <ion-col size="12">
         <div class="container mt-5">
           <h4 class="model-text">
@@ -94,11 +98,7 @@
               <ion-row size="12">
                 <ion-col size="12">
                   <div class="text-center mb-4">
-                    <img
-                      width="80%"
-                      src="./assets/logo.png"
-                      alt="cuatro pilares"
-                    />
+                    <img width="80%" src="./assets/logo.png" alt="cuatro pilares" />
                   </div>
                 </ion-col>
                 <ion-col size="12">
@@ -158,11 +158,7 @@
                 </ion-col> -->
                 <ion-col size="12">
                   <div class="text-center my-5">
-                    <img
-                      width="50%"
-                      src="./assets/liston.png"
-                      alt="detención de cancer"
-                    />
+                    <img width="50%" src="./assets/liston.png" alt="detención de cancer" />
                   </div>
                 </ion-col>
                 <!-- quiero unirme -->
@@ -201,11 +197,7 @@
                 </ion-col>
                 <ion-col size="12">
                   <div class="text-center my-2">
-                    <img
-                      width="40%"
-                      src="./assets/amdlcc.png"
-                      alt="cuatro pilares"
-                    />
+                    <img width="40%" src="./assets/amdlcc.png" alt="cuatro pilares" />
                   </div>
                 </ion-col>
                 <ion-col size="12">
@@ -236,39 +228,20 @@
   </ion-grid>
   <!-- footer -->
   <ion-grid>
-    <ion-row size="12" class="content-footer mb-4">
+    <ion-row size="12" class="content-footer ">
       <div class="my-1">
         <ion-grid class="transparent">
           <ion-row size="12" class="transparent">
             <ion-col size="12">
-              <img
-                class="logo-footer"
-                src="./assets/logo.png"
-                alt="logo Sumate al diagnostico oportuno"
-              />
+              <img class="logo-footer" src="./assets/logo.png" alt="logo Sumate al diagnostico oportuno" />
             </ion-col>
           </ion-row>
           <ion-row size="12" class="my-4" class="transparent">
             <ion-col size="12">
               <div class="text-center">
-                <img
-                  (click)="facebook()"
-                  class="icon-social"
-                  src="./assets/icon/icon-facebook.png"
-                  alt="facebook"
-                />
-                <img
-                  (click)="instagram()"
-                  class="icon-social"
-                  src="./assets/icon/icon-instagram.png"
-                  alt="instagram"
-                />
-                <img
-                  (click)="twitter()"
-                  class="icon-social"
-                  src="./assets/icon/icon-twitter.png"
-                  alt="twitter"
-                />
+                <img (click)="facebook()" class="icon-social" src="./assets/icon/icon-facebook.png" alt="facebook" />
+                <img (click)="instagram()" class="icon-social" src="./assets/icon/icon-instagram.png" alt="instagram" />
+                <img (click)="twitter()" class="icon-social" src="./assets/icon/icon-twitter.png" alt="twitter" />
               </div>
             </ion-col>
           </ion-row>
@@ -290,9 +263,7 @@
             </ion-col> -->
             <ion-col size="12" class="my-2">
               <div class="text-center">
-                <span (click)="goTerminos()" class="text-footer"
-                  >Aviso de privacidad</span
-                >
+                <span (click)="goTerminos()" class="text-footer">Aviso de privacidad</span>
               </div>
             </ion-col>
           </ion-row>
@@ -322,7 +293,7 @@
                 </span>
               </div>
             </ion-col>
-             <ion-col size="12">
+            <ion-col size="12">
               <div class="text-end">
                 <span class="text-end-footer">
                   Asociación Mexicana de Lucha Contra el Cáncer A.C. Todos los

@@ -1,0 +1,224 @@
+<ion-content [fullscreen]="true">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-row class="transparent" size="8" slot="start">
+        <ion-col size="6">
+          <img class="p-1" src="./assets/logo.png" alt="logo" />
+        </ion-col>
+        <ion-col size="6" class="text-end">
+          <img class="p-1" width="40%" src="./assets/amdlcc.png" alt="logo" />
+        </ion-col>
+      </ion-row>
+      <ion-buttons slot="end">
+        <ion-menu-button color="secondary"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <!-- body -->
+  <ion-grid>
+    <!-- image -->
+    <ion-row size="12" class="main-center main">
+      <div class="my-4">
+        <ion-col size="12">
+          <ion-row size="12" class="transparent">
+            <ion-col size="12">
+              <div class="container my-5">
+                <h1 class="title-main">Acerca de
+                </h1>
+              </div>
+            </ion-col>
+            <ion-col size="2"></ion-col>
+          </ion-row>
+        </ion-col>
+      </div>
+    </ion-row>
+    <!-- content -->
+    <ion-row size="12">
+      <ion-col size="12">
+        <div class="container my-5 text-center">
+          <img width="40%" src="./assets/amdlcc.png" alt="logo">
+        </div>
+      </ion-col>
+
+      <ion-col size="12">
+        <div class="container my-3 mx-1">
+          <span class="second-text ">
+            Ponemos a su disposición la aplicación <b>4myPatient</b> para apoyar una identificación de posibles
+            etiologías.
+            <br> <br>
+            En la AMLCC seguimos trabajando para mejorar el alcance a través de servicios digitales.
+            <br> <br>
+            A continuación, presentamos las distintas fuentes de información, sustento y respaldo medico que nos ha
+            llevado a crear <b>4myPatient</b>.
+            <br> <br>
+            Ofrecida por:
+          </span>
+        </div>
+      </ion-col>
+      <!-- image -->
+      <ion-col size="12">
+        <div class="my-2">
+          <ion-grid>
+            <div class="container">
+              <ion-row size="12">
+                <ion-col size="12">
+                  <div class="container my-5 text-center">
+                    <h4 class="model-text">
+                      Asociación Mexicana de Lucha Contra el Cancer AC.
+                    </h4>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="container my-1 text-center">
+                    <ion-text color="primary">
+                      <span>Fuente de información medica</span>
+                    </ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="container my-1 text-center">
+                    <ion-text color="primary">
+                      <span>Divulgación de datos y metodologia
+                      </span>
+                    </ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="container my-1 text-center">
+                    <ion-text color="primary">
+                      <span>Respaldo medico
+                      </span>
+                    </ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="container my-4 text-center">
+                    <ion-text color="primary">
+                      <span> <b style="color: #FF8B00; font-size: 16px;">
+                          Version.
+                        </b>
+                        <br>
+                        7.1.0
+
+                      </span>
+                    </ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="container my-4 text-center">
+                    <ion-text color="primary">
+                      <span>
+                        <b style="color: #FF8B00; font-size: 16px;">
+                          Desarrollador:
+                        </b>
+                        <br>
+                        Asociación Mexicana de Lucha Contra el Cancer AC.
+                      </span>
+                    </ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="12">
+                  <div class="container my-4 text-center">
+                    <ion-text color="primary">
+                      <span>
+                        <b style="color: #0277c4; font-size: 16px;">
+                          https://www.amlcc.org
+                        </b>
+                      </span>
+                    </ion-text>
+                  </div>
+                </ion-col>
+
+
+
+              </ion-row>
+            </div>
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- footer -->
+  <ion-grid>
+    <ion-row size="12" class="content-footer">
+      <div class="my-1">
+        <ion-grid class="transparent">
+          <ion-row size="12" class="transparent">
+            <ion-col size="12">
+              <img class="logo-footer" src="./assets/logo.png" alt="logo Sumate al diagnostico oportuno">
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-4" class="transparent">
+            <ion-col size="12">
+              <div class="text-center">
+                <img (click)="facebook()" class="icon-social" src="./assets/icon/icon-facebook.png" alt="facebook">
+                <img (click)="instagram()" class="icon-social" src="./assets/icon/icon-instagram.png" alt="instagram">
+                <img (click)="twitter()" class="icon-social" src="./assets/icon/icon-twitter.png" alt="twitter">
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-4" class="transparent">
+            <!-- <ion-col size="12" class="mb-2">
+                <div class="text-start">
+                  <span class="text-footer">Acerca de</span>
+                </div>
+              </ion-col>
+              <ion-col size="12" class="mb-2">
+                <div class="text-start">
+                  <span class="text-footer">Preguntas frecuentes</span>
+                </div>
+              </ion-col>
+              <ion-col size="12" class="mb-2">
+                <div class="text-start">
+                  <span class="text-footer">Ayuda</span>
+                </div>
+              </ion-col> -->
+            <ion-col size="12" class="my-2">
+              <div class="text-center">
+                <span (click)="goTerminos()" class="text-footer">Aviso de privacidad</span>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-2" class="transparent">
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="mail-outline"></ion-icon>
+                  contacto@amlcc.org
+                </span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="call-outline"></ion-icon>
+                  Oficina: (55) 5574 ‑ 0393 y (55) 5564 ‑ 0794
+                </span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mb-1">
+              <div class="text-start">
+                <span class="email-footer">
+                  <ion-icon color="primary" name="call-outline"></ion-icon>
+                  Pacientes: (55) 5574 ‑ 0393
+                </span>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row size="12" class="my-2" class="transparent">
+            <ion-col size="2"></ion-col>
+            <ion-col size="10">
+              <div class="text-end">
+                <span class="text-end-footer">
+                  Asociación Mexicana de Lucha Contra
+                  el Cáncer A.C. Todos los derechos
+                  reservados 2022
+                </span>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

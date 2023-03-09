@@ -7,7 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { PatrocinadoresComponent } from './patrocinadores/patrocinadores.component';
 import { TerminosComponent } from './terminos/terminos.component';
-
+import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 export const routes: Routes = [
   {
     path: 'home',
@@ -25,6 +25,10 @@ export const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+  },
+  {
+    path: 'acerca-de',
+    component: AcercaDeComponent,
   },
   {
     path: 'create-user',

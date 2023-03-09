@@ -146,7 +146,7 @@ export class PerfilComponent implements OnInit {
     console.log('index', index);
     console.log('data', data);
     if (data.id !== 0) {
-      this.service.serviceGeneralDelete(`Bnea/DeleteRecursoPaso6?idBnea=${data.idBneas}&idPaso=${data.idPaso}`).subscribe(resp => {
+      this.service.serviceGeneralDelete(`User/DeleteCalendario?id=${data.id}`).subscribe(resp => {
         if (resp.success) {
           console.log('resp delete calendar', resp.result);
           this.getData(this.user.id);

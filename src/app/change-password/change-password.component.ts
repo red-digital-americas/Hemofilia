@@ -47,6 +47,11 @@ export class ChangePasswordComponent implements OnInit {
   ngOnInit() {
     console.log('user', this.idUser);
     this.getData(this.idUser);
+    this.password = '';
+    this.password2 = '';
+    this.btnDisables = true;
+
+
   }
   getData(id: number) {
     this.service.serviceGeneralGet(`User/${id}`).subscribe(resp => {
@@ -70,10 +75,13 @@ export class ChangePasswordComponent implements OnInit {
       this.hintMessen = 'Campo requerido';
       this.hintMessen2 = 'Campo requerido';
       this.activePassword = true;
+      this.btnDisables = true;
     } if (this.password2 === undefined && this.password2 !== '') {
       this.hintMessen = 'Campo requerido';
       this.hintMessen2 = 'Campo requerido';
       this.activePassword2 = true;
+      this.btnDisables = true;
+
     }
     if (this.password !== '' && this.password2 !== '') {
       //si las contraseñas no coinciden
@@ -82,6 +90,8 @@ export class ChangePasswordComponent implements OnInit {
         this.activePassword2 = true;
         this.hintMessen = 'No es la misma contraseña';
         this.hintMessen2 = 'No es la misma contraseña';
+        this.btnDisables = true;
+
       }
       else if (this.password === this.password2) {
         //Si todo esta correcto
@@ -90,10 +100,13 @@ export class ChangePasswordComponent implements OnInit {
           this.activePassword2 = false;
           console.log('correcto las contraseñas coinciden');
           this.passCorrect = true;
+          this.btnDisables = false;
+
 
         }
         // si no es correcto
         else {
+          this.btnDisables = true;
           this.activePassword = true;
           this.activePassword2 = true;
           this.hintMessen = 'Contraseña invalida';
@@ -135,6 +148,8 @@ export class ChangePasswordComponent implements OnInit {
       this.activePassword2 = true;
       this.hintMessen = 'Contraseña vacia';
       this.hintMessen2 = 'Contraseña vacia';
+      this.btnDisables = true;
+
     }
   }
   validarForm() {
@@ -186,8 +201,8 @@ export class ChangePasswordComponent implements OnInit {
       }
     }, (error) => {
       console.log(error);
-      this.title = 'Exito';
-      this.body = 'Se cambio la contraseña correctame';
+      this.title = 'Error';
+      this.body = error;
       // this.title = 'Error';
       this.message(this.title, this.body);
     });

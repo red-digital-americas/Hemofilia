@@ -49,7 +49,7 @@ export class CreateUserComponent implements OnInit {
   threeStep = this.formBuilder.group({
     specialityId: ['', [Validators.required]],
     professionalLicense: [''],
-    professionalLicenseProcedure: [''],
+    professionalLicenseProcedure: [false, [Validators.required]],
   });
 
   fourStep = this.formBuilder.group({

@@ -4,9 +4,6 @@ import { Router } from '@angular/router';
 import { LoginService } from 'src/app/core/servises/login/login.service';
 import { DialogGeneralMessageComponent } from 'src/app/dialog/dialog-general-message/dialog-general-message.component';
 import { AlertController } from '@ionic/angular';
-
-// import { DialogGeneralMessageComponent } from '../../dialog-general/dialog-general-message/dialog-general-message.component';
-// import { LoaderComponent } from '../../dialog-general/loader/loader.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -89,6 +86,7 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+ 
   createUser() {
     console.log('create user');
     this.router.navigateByUrl('/perfil-user/create-user');

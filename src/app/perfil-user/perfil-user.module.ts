@@ -11,7 +11,7 @@ import { TerminosComponent } from './terminos/terminos.component';
 import { AboutComponent } from './about/about.component';
 import { PatrocinadoresComponent } from './patrocinadores/patrocinadores.component';
 import { PerfilUserRoutingModule } from './perfil-user-routing.module';
-
+import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 @NgModule({
   declarations:
     [
@@ -19,6 +19,7 @@ import { PerfilUserRoutingModule } from './perfil-user-routing.module';
       AboutComponent,
       PatrocinadoresComponent,
       TerminosComponent,
+      AcercaDeComponent
     ],
   imports: [
     // RouterModule.forChild(perfilUserRoutingModule),
