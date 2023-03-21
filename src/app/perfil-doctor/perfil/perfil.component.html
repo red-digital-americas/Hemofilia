@@ -1,5 +1,5 @@
 <ion-content class="main">
-  <ion-header >
+  <ion-header>
     <ion-toolbar>
       <ion-row size="8" slot="start" class="transparent">
         <ion-col size="6">
@@ -189,7 +189,6 @@
           </form>
         </ion-row>
         <!-- step 3 ambos -->
-       
         <ion-row *ngIf="threeScreen === true">
           <ion-col size="12" class="step-text">
             <span class="step-text">Paso 3</span>
@@ -205,29 +204,33 @@
               <ion-col size="12" class="mb-3">
                 <ion-list>
                   <ion-item>
-                    <ion-select mode="ios"  id="specialityId" (ngModelChange)="invitacionHematologicos()" color="tertiary"
-                      formControlName="specialityId" interface="action-sheet" placeholder="Selecciona un especialidad">
+                    <ion-select mode="ios" id="specialityId" (ngModelChange)="invitacionHematologicos()"
+                      color="tertiary" formControlName="specialityId" interface="action-sheet"
+                      placeholder="Selecciona un especialidad">
                       <ion-select-option *ngFor="let item of especialidades" [value]="item.id">{{ item.speciality
                         }}</ion-select-option>
                     </ion-select>
                   </ion-item>
                 </ion-list>
-  
-                <!-- <ion-item>
-                  <ion-select id="specialityId" (ngModelChange)="invitacionHematologicos()" color="tertiary"
-                    formControlName="specialityId" placeholder="">
-                    <ion-select-option disable value="0">Elige una especialidad:</ion-select-option>
-                    <ion-select-option *ngFor="let item of especialidades" [value]="item.id">{{ item.speciality }}
-                    </ion-select-option>
-                  </ion-select>
-                </ion-item> -->
               </ion-col>
-  
-  
+              <!-- texto de otro -->
+              <ion-col class="text-start" size="12" *ngIf="threeStep.value.specialityId === 20">
+                <ion-label class="label-form" for="other" position="stacked">Otro</ion-label>
+              </ion-col>
+
+              <ion-col size="12" class="mb-3" *ngIf="threeStep.value.specialityId === 20">
+                <ion-item class="closed">
+                  <ion-input id="other" type="text" formControlName="other" placeholder="">
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+
+              <!-- cedula profesional -->
               <ion-col class="text-start" size="12">
-                <ion-label class="label-form" for="professionalLicense" position="stacked">Cédula profesional</ion-label>
+                <ion-label class="label-form" for="professionalLicense" position="stacked">Cédula
+                  profesional</ion-label>
               </ion-col>
-  
+
               <ion-col size="12" class="mb-3">
                 <ion-item class="closed">
                   <ion-input id="professionalLicense" type="text" formControlName="professionalLicense" placeholder="">
@@ -252,8 +255,8 @@
               </ion-col>
               <ion-col size="6" class="margin-btn ion-margin-top">
                 <div class="text-end">
-                  <button class="btn btn-tertiary btn-lg btn-gradient-blue" color="primary" [disabled]="!threeStep.valid"
-                    (click)="step4()" shape="round">
+                  <button class="btn btn-tertiary btn-lg btn-gradient-blue" color="primary"
+                    [disabled]="!threeStep.valid" (click)="step4()" shape="round">
                     <span class="btn-text"> Continuar </span>
                   </button>
                 </div>
@@ -271,7 +274,6 @@
           </form>
         </ion-row>
         <!-- step 4 ambos  -->
-       
         <ion-row *ngIf="fourScreen === true">
           <ion-col size="12" class="step-text">
             <span class="step-text">Paso 4</span>
@@ -310,6 +312,21 @@
                   <ion-input id="phoneConsulting" type="text" formControlName="phoneConsulting" placeholder="">
                   </ion-input>
                 </ion-item>
+              </ion-col>
+              <ion-col class="text-start" size="12">
+                <ion-label class="label-form" for="state" position="stacked">Estado</ion-label>
+              </ion-col>
+              <ion-col size="12" class="mb-3">
+                <ion-list>
+                  <ion-item>
+                    <ion-select mode="ios" id="state" 
+                      color="tertiary" formControlName="state" interface="action-sheet"
+                      placeholder="Selecciona un estado">
+                      <ion-select-option *ngFor="let item of catState" [value]="item.id">{{ item.name
+                        }}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-list>
               </ion-col>
               <ion-col class="text-start" size="12">
                 <ion-label class="label-form" for="address" position="stacked">Dirección</ion-label>
@@ -375,7 +392,7 @@
               </ion-col>
               <ion-col size="12" class="mb-2">
                 <ion-item>
-                  <ion-select mode="ios"  [(ngModel)]="item.scheduleId" placeholder="Turno" interface="action-sheet">
+                  <ion-select mode="ios" [(ngModel)]="item.scheduleId" placeholder="Turno" interface="action-sheet">
                     <ion-select-option *ngFor="let item of catSchedule" [value]="item.id">{{ item.name }}
                     </ion-select-option>
                   </ion-select>
@@ -383,7 +400,7 @@
               </ion-col>
               <ion-col size="12" class="mb-3">
                 <ion-item>
-                  <ion-select mode="ios"  [(ngModel)]="item.dayId" placeholder="Dias" interface="action-sheet">
+                  <ion-select mode="ios" [(ngModel)]="item.dayId" placeholder="Dias" interface="action-sheet">
                     <ion-select-option *ngFor="let item of catDay" [value]="item.id">{{ item.name }}
                     </ion-select-option>
                   </ion-select>

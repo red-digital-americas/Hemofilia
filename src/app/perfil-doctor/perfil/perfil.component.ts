@@ -31,6 +31,7 @@ export class PerfilComponent implements OnInit {
   public consultorio;
   public catDay;
   public catSchedule;
+  public catState;
   public optionDay;
   oneStep = this.formBuilder.group({
     roleId: ['', [Validators.required]],
@@ -43,6 +44,7 @@ export class PerfilComponent implements OnInit {
   });
   threeStep = this.formBuilder.group({
     specialityId: ['', [Validators.required]],
+    other: [''],
     professionalLicense: [''],
     professionalLicenseProcedure: [''],
   });
@@ -50,6 +52,7 @@ export class PerfilComponent implements OnInit {
   fourStep = this.formBuilder.group({
     consultingType: ['', [Validators.required]],
     phoneConsulting: ['', [Validators.required]],
+    state: ['', [Validators.required]],
     address: ['', [Validators.required]],
   });
   fiveStep = this.formBuilder.group({
@@ -77,6 +80,7 @@ export class PerfilComponent implements OnInit {
     this.getConsultorio();
     this.getDay();
     this.getSchedule();
+    this.getState();
 
   }
   ngOnInit() {
@@ -100,6 +104,7 @@ export class PerfilComponent implements OnInit {
         });
         this.threeStep = this.formBuilder.group({
           specialityId: [this.data.user.specialityId, [Validators.required]],
+          other: [this.data.user.other],
           professionalLicense: [this.data.user.professionalLicense],
           professionalLicenseProcedure: [this.data.user.professionalLicenseProcedure],
         });
@@ -110,13 +115,13 @@ export class PerfilComponent implements OnInit {
         this.fourStep = this.formBuilder.group({
           consultingType: [this.data.user.consultingType, [Validators.required]],
           phoneConsulting: [this.data.user.phone, [Validators.required]],
+          state: [this.data.user.stateId, [Validators.required]],
           address: [this.data.user.address, [Validators.required]],
         });
         this.dayCalendar = this.data.calendario;
         this.fiveStep = this.formBuilder.group({
           schedule: [''],
         });
-
       } else {
         this.title = 'Error';
         this.message(this.title, resp.message);
@@ -131,7 +136,6 @@ export class PerfilComponent implements OnInit {
   back() {
     console.log('regresar');
     this.router.navigateByUrl('/perfil-doctor/home');
-
   }
   addDay() {
     this.dayCalendar.push({
@@ -163,6 +167,14 @@ export class PerfilComponent implements OnInit {
 
   }
 
+  getState() {
+    this.service.serviceGeneralGet('CatState').subscribe(resp => {
+      if (resp.success) {
+        this.catState = resp.result;
+        console.log('cat estado', this.catState);
+      }
+    });
+  }
   getEspecialidades() {
     this.service.serviceGeneralGet('CatSpeciality').subscribe(resp => {
       if (resp.success) {
@@ -325,11 +337,14 @@ export class PerfilComponent implements OnInit {
     this.data.user.sex = this.twoStep.value.sex;
     this.data.user.specialityId = this.threeStep.value.specialityId;
     this.data.user.professionalLicense = this.threeStep.value.professionalLicense;
+    this.data.user.other = this.threeStep.value.other;
     this.data.user.professionalLicenseProcedure = this.threeStep.value.professionalLicenseProcedure;
     this.data.user.email = this.sixStep.value.email;
     this.data.user.status = true;
     this.data.user.phone = this.fourStep.value.phoneConsulting;
     this.data.user.consultingType = this.fourStep.value.consultingType;
+    this.data.user.stateId = this.fourStep.value.state;
+
     this.data.user.address = this.fourStep.value.address;
     this.data.user.updatedBy = this.user.id;
     this.data.user.updatedDate = this.today;
@@ -342,6 +357,8 @@ export class PerfilComponent implements OnInit {
         this.message(this.title, this.body);
         this.router.navigateByUrl('/perfil-doctor/home');
         this.disabledd = false;
+        this.ngOnInit();
+        this.step1();
       } else {
         this.title = 'Error';
         this.router.navigateByUrl('/perfil-doctor/home');
