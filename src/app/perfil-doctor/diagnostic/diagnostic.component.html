@@ -17,11 +17,8 @@
               <ion-grid class="my-2">
                 <ion-row>
                   <ion-col size="12">
-                    <img
-                      class="img-slider"
-                      src="./assets/amdlcc.png"
-                      alt="Asociacion Mexicana de Lucha contra el cancer"
-                    />
+                    <img class="img-slider" src="./assets/amdlcc.png"
+                      alt="Asociacion Mexicana de Lucha contra el cancer" />
                   </ion-col>
                   <ion-col size="12">
                     <h2 color="primary">Bienvenido</h2>
@@ -40,19 +37,15 @@
                         y no sustituye la opinión médica profesional ni intenta
                         ser una guía de recomendaciones”
                         <br><br>
-                        Por este motivo se recomienda consultar a un medico especialista ante cualquier sospecha de enfermedad.
+                        Por este motivo se recomienda consultar a un medico especialista ante cualquier sospecha de
+                        enfermedad.
                       </span>
                     </div>
                   </ion-col>
                 </ion-row>
               </ion-grid>
             </div>
-            <ion-button
-              class="text-end"
-              (click)="swipeNext()"
-              color="warning"
-              fill="clear"
-              >Continuar
+            <ion-button class="text-end" (click)="swipeNext()" color="warning" fill="clear">Continuar
               <ion-icon color="warning" slot="end" name="arrow-forward">
               </ion-icon>
             </ion-button>
@@ -66,11 +59,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -93,11 +83,8 @@
                     </ion-list-header>
                     <div *ngFor="let item of cOption">
                       <ion-item *ngIf="item.screen === '1'">
-                        <ion-checkbox
-                          [(ngModel)]="item.status"
-                          slot="start"
-                          (ngModelChange)="sexValueOp(item)"
-                        ></ion-checkbox>
+                        <ion-checkbox [(ngModel)]="item.status" slot="start"
+                          (ngModelChange)="sexValueOp(item)"></ion-checkbox>
                         <ion-label *ngIf="item.screen === '1'">
                           {{item.variableName}}
                         </ion-label>
@@ -111,8 +98,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -122,11 +108,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -138,11 +121,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -165,11 +145,8 @@
                     </ion-list-header>
                     <div *ngFor="let item of cOption">
                       <ion-item *ngIf="item.screen === '2'">
-                        <ion-checkbox
-                          [(ngModel)]="item.status"
-                          slot="start"
-                          (ngModelChange)="habitaValueOp(item)"
-                        ></ion-checkbox>
+                        <ion-checkbox [(ngModel)]="item.status" slot="start"
+                          (ngModelChange)="habitaValueOp(item)"></ion-checkbox>
                         <ion-label *ngIf="item.screen === '2'">
                           {{item.variableName}}
                         </ion-label>
@@ -183,8 +160,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button color="warning" (click)="swipeNext()" fill="clear"
-                >Continuar
+              <ion-button color="warning" (click)="swipeNext()" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -194,11 +170,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -210,11 +183,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -226,14 +196,12 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
-                  <ion-list class="text-left" >
+                  <ion-list class="text-left">
                     <ion-list-header class="mb-2">
                       <ion-label class="subtitle">
                         Seleccione solo una por favor:
@@ -241,11 +209,8 @@
                     </ion-list-header>
                     <div *ngFor="let item of cOption">
                       <ion-item *ngIf="item.screen === '3'">
-                        <ion-checkbox
-                          [(ngModel)]="item.status"
-                          slot="start"
-                          (ngModelChange)="hemoglobinaValueOp(item)"
-                        ></ion-checkbox>
+                        <ion-checkbox [(ngModel)]="item.status" slot="start"
+                          (ngModelChange)="hemoglobinaValueOp(item)"></ion-checkbox>
                         <ion-label *ngIf="item.screen === '3'">
                           {{item.variableName}}
                         </ion-label>
@@ -259,8 +224,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -270,11 +234,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -286,11 +247,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -302,10 +260,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -317,11 +273,8 @@
                     </ion-list-header>
                     <div *ngFor="let item of cOption">
                       <ion-item *ngIf="item.screen === '4'">
-                        <ion-checkbox
-                          [(ngModel)]="item.status"
-                          slot="start"
-                          (ngModelChange)="plaquetasValueOp(item)"
-                        ></ion-checkbox>
+                        <ion-checkbox [(ngModel)]="item.status" slot="start"
+                          (ngModelChange)="plaquetasValueOp(item)"></ion-checkbox>
                         <ion-label *ngIf="item.screen === '4'">
                           {{item.variableName}}
                         </ion-label>
@@ -335,8 +288,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -346,11 +298,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -362,11 +311,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -378,10 +324,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -393,11 +337,8 @@
                     </ion-list-header>
                     <div *ngFor="let item of cOption">
                       <ion-item *ngIf="item.screen === '5'">
-                        <ion-checkbox
-                          [(ngModel)]="item.status"
-                          slot="start"
-                          (ngModelChange)="neutrofilosValueOp(item)"
-                        ></ion-checkbox>
+                        <ion-checkbox [(ngModel)]="item.status" slot="start"
+                          (ngModelChange)="neutrofilosValueOp(item)"></ion-checkbox>
                         <ion-label *ngIf="item.screen === '5'">
                           {{item.variableName}}
                         </ion-label>
@@ -411,8 +352,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -422,11 +362,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -438,11 +375,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -454,10 +388,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -469,11 +401,8 @@
                     </ion-list-header>
                     <div *ngFor="let item of cOption">
                       <ion-item *ngIf="item.screen === '6'">
-                        <ion-checkbox
-                          [(ngModel)]="item.status"
-                          slot="start"
-                          (ngModelChange)="linfocitosValueOp(item)"
-                        ></ion-checkbox>
+                        <ion-checkbox [(ngModel)]="item.status" slot="start"
+                          (ngModelChange)="linfocitosValueOp(item)"></ion-checkbox>
                         <ion-label *ngIf="item.screen === '6'">
                           {{item.variableName}}
                         </ion-label>
@@ -487,8 +416,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -498,11 +426,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -514,11 +439,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -530,10 +452,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -545,10 +465,7 @@
                     </ion-list-header>
                     <div *ngFor="let item of cOption">
                       <ion-item *ngIf="item.screen === '7'">
-                        <ion-checkbox
-                          [(ngModel)]="item.status"
-                          slot="start"
-                        ></ion-checkbox>
+                        <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                         <ion-label *ngIf="item.screen === '7'">
                           {{item.variableName}}
                         </ion-label>
@@ -562,8 +479,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -573,11 +489,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -589,11 +502,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -605,10 +515,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -620,11 +528,8 @@
                     </ion-list-header>
                     <div *ngFor="let item of cOption">
                       <ion-item *ngIf="item.screen === '8'">
-                        <ion-checkbox
-                          [(ngModel)]="item.status"
-                          slot="start"
-                          (ngModelChange)="volumenValueOp(item)"
-                        ></ion-checkbox>
+                        <ion-checkbox [(ngModel)]="item.status" slot="start"
+                          (ngModelChange)="volumenValueOp(item)"></ion-checkbox>
                         <ion-label *ngIf="item.screen === '8'">
                           {{item.variableName}}
                         </ion-label>
@@ -638,8 +543,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -649,11 +553,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -665,11 +566,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -681,10 +579,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de la Biometria Hematica</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -696,10 +592,7 @@
                     </ion-list-header>
                     <div *ngFor="let item of cOption">
                       <ion-item *ngIf="item.screen === '9'">
-                        <ion-checkbox
-                          [(ngModel)]="item.status"
-                          slot="start"
-                        ></ion-checkbox>
+                        <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                         <ion-label *ngIf="item.screen === '9'">
                           {{item.variableName}}
                         </ion-label>
@@ -713,8 +606,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -724,11 +616,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -740,11 +629,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -756,10 +642,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de Frotis de sangre periferica</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -770,10 +654,7 @@
                   </ion-list-header>
                   <div *ngFor="let item of cOption">
                     <ion-item *ngIf="item.screen === '10'">
-                      <ion-checkbox
-                        [(ngModel)]="item.status"
-                        slot="start"
-                      ></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                       <ion-label *ngIf="item.screen === '10'">
                         {{item.variableName}}
                       </ion-label>
@@ -786,8 +667,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -797,11 +677,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -813,11 +690,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -829,10 +703,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de Frotis de sangre periferica</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -843,10 +715,7 @@
                   </ion-list-header>
                   <div *ngFor="let item of cOption">
                     <ion-item *ngIf="item.screen === '11'">
-                      <ion-checkbox
-                        [(ngModel)]="item.status"
-                        slot="start"
-                      ></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                       <ion-label *ngIf="item.screen === '11'">
                         {{item.variableName}}
                       </ion-label>
@@ -859,8 +728,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -870,11 +738,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -886,11 +751,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -902,10 +764,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Bioquimicos</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -916,10 +776,7 @@
                   </ion-list-header>
                   <div *ngFor="let item of cOption">
                     <ion-item *ngIf="item.screen === '12'">
-                      <ion-checkbox
-                        [(ngModel)]="item.status"
-                        slot="start"
-                      ></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                       <ion-label *ngIf="item.screen === '12'">
                         {{item.variableName}}
                       </ion-label>
@@ -932,8 +789,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -943,11 +799,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -959,11 +812,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -975,10 +825,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Bioquimicos</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -990,11 +838,8 @@
                     </ion-list-header>
                     <div *ngFor="let item of cOption">
                       <ion-item *ngIf="item.screen === '13'">
-                        <ion-checkbox
-                          [(ngModel)]="item.status"
-                          slot="start"
-                          (ngModelChange)="deshidrogenasaValueOp(item)"
-                        ></ion-checkbox>
+                        <ion-checkbox [(ngModel)]="item.status" slot="start"
+                          (ngModelChange)="deshidrogenasaValueOp(item)"></ion-checkbox>
                         <ion-label *ngIf="item.screen === '13'">
                           {{item.variableName}}
                         </ion-label>
@@ -1008,8 +853,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon slot="end" color="warning" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -1019,11 +863,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -1035,11 +876,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -1051,10 +889,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Bioquimicos</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -1065,10 +901,7 @@
                   </ion-list-header>
                   <div *ngFor="let item of cOption">
                     <ion-item *ngIf="item.screen === '14'">
-                      <ion-checkbox
-                        [(ngModel)]="item.status"
-                        slot="start"
-                      ></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                       <ion-label *ngIf="item.screen === '14'">
                         {{item.variableName}}
                       </ion-label>
@@ -1081,8 +914,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -1092,11 +924,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -1108,11 +937,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -1124,10 +950,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Bioquimicos</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -1138,10 +962,7 @@
                   </ion-list-header>
                   <div *ngFor="let item of cOption">
                     <ion-item *ngIf="item.screen === '15'">
-                      <ion-checkbox
-                        [(ngModel)]="item.status"
-                        slot="start"
-                      ></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                       <ion-label *ngIf="item.screen === '15'">
                         {{item.variableName}}
                       </ion-label>
@@ -1154,8 +975,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" fill="clear" color="warning"
-                >Continuar
+              <ion-button (click)="swipeNext()" fill="clear" color="warning">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -1165,11 +985,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -1181,11 +998,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -1197,10 +1011,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Bioquimicos</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -1211,10 +1023,7 @@
                   </ion-list-header>
                   <div *ngFor="let item of cOption">
                     <ion-item *ngIf="item.screen === '16'">
-                      <ion-checkbox
-                        [(ngModel)]="item.status"
-                        slot="start"
-                      ></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                       <ion-label *ngIf="item.screen === '16'">
                         {{item.variableName}}
                       </ion-label>
@@ -1227,8 +1036,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" fill="clear" color="warning"
-                >Continuar
+              <ion-button (click)="swipeNext()" fill="clear" color="warning">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -1238,11 +1046,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -1254,11 +1059,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -1270,10 +1072,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Bioquimicos</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -1284,10 +1084,7 @@
                   </ion-list-header>
                   <div *ngFor="let item of cOption">
                     <ion-item *ngIf="item.screen === '17'">
-                      <ion-checkbox
-                        [(ngModel)]="item.status"
-                        slot="start"
-                      ></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                       <ion-label *ngIf="item.screen === '17'">
                         {{item.variableName}}
                       </ion-label>
@@ -1300,8 +1097,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" fill="clear" color="warning"
-                >Continuar
+              <ion-button (click)="swipeNext()" fill="clear" color="warning">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -1311,11 +1107,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -1327,11 +1120,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -1343,10 +1133,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos de Coagulación</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -1357,10 +1145,7 @@
                   </ion-list-header>
                   <div *ngFor="let item of cOption">
                     <ion-item *ngIf="item.screen === '18'">
-                      <ion-checkbox
-                        [(ngModel)]="item.status"
-                        slot="start"
-                      ></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                       <ion-label *ngIf="item.screen === '18'">
                         {{item.variableName}}
                       </ion-label>
@@ -1373,8 +1158,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -1384,11 +1168,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -1400,11 +1181,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -1416,10 +1194,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Clínicos</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -1430,10 +1206,7 @@
                   </ion-list-header>
                   <div *ngFor="let item of cOption">
                     <ion-item *ngIf="item.screen === '19'">
-                      <ion-checkbox
-                        [(ngModel)]="item.status"
-                        slot="start"
-                      ></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                       <ion-label *ngIf="item.screen === '19'">
                         {{item.variableName}}
                       </ion-label>
@@ -1446,8 +1219,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -1457,11 +1229,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -1473,11 +1242,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -1489,10 +1255,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Clínicos</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -1503,10 +1267,7 @@
                   </ion-list-header>
                   <div *ngFor="let item of cOption">
                     <ion-item *ngIf="item.screen === '20'">
-                      <ion-checkbox
-                        [(ngModel)]="item.status"
-                        slot="start"
-                      ></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                       <ion-label *ngIf="item.screen === '20'">
                         {{item.variableName}}
                       </ion-label>
@@ -1519,8 +1280,7 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button (click)="swipeNext()" color="warning" fill="clear"
-                >Continuar
+              <ion-button (click)="swipeNext()" color="warning" fill="clear">Continuar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -1530,11 +1290,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -1546,11 +1303,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -1562,10 +1316,8 @@
           </ion-col>
           <ion-col size="12">
             <h2>Datos Clínicos</h2>
-            <span class="text-desc"
-              >“si no cuenta usted con algún dato solicitado, omítalo y
-              continue”</span
-            >
+            <span class="text-desc">“si no cuenta usted con algún dato solicitado, omítalo y
+              continue”</span>
             <ion-grid class="mb-4">
               <ion-row>
                 <ion-col size="12">
@@ -1576,10 +1328,7 @@
                   </ion-list-header>
                   <div *ngFor="let item of cOption">
                     <ion-item *ngIf="item.screen === '21'">
-                      <ion-checkbox
-                        [(ngModel)]="item.status"
-                        slot="start"
-                      ></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="item.status" slot="start"></ion-checkbox>
                       <ion-label *ngIf="item.screen === '21'">
                         {{item.variableName}}
                       </ion-label>
@@ -1592,11 +1341,8 @@
               <ion-button (click)="slides.slidePrev()" fill="clear">
                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
               </ion-button>
-              <ion-button
-                (click)="[save(), slides.slideNext()] "
-                color="warning"
-                fill="clear"
-                >Guardar
+              <!-- , slides.slideNext() -->
+              <ion-button [disabled]="disabledGuardar=== true" (click)="[save()]" color="warning" fill="clear">Guardar
                 <ion-icon color="warning" slot="end" name="arrow-forward">
                 </ion-icon>
               </ion-button>
@@ -1606,11 +1352,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>
@@ -1622,11 +1365,8 @@
         <ion-row>
           <ion-col size="6">
             <div class="ion-text-start">
-              <img
-                class="img-slider-header"
-                src="./assets/logo.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
           <ion-col size="6">
@@ -1641,10 +1381,8 @@
               <ion-row>
                 <h2>Evaluando resultados</h2>
                 <ion-col size="12">
-                  <span
-                    >Con los datos que usted ingresó se obtienen las siguientes
-                    posibilidades hematológicas</span
-                  >
+                  <span>Con los datos que usted ingresó se obtienen las siguientes
+                    posibilidades hematológicas</span>
                 </ion-col>
                 <ion-col size="12" class="my-5">
                   <ion-spinner color="tertiary"></ion-spinner>
@@ -1656,11 +1394,8 @@
         <ion-row>
           <ion-col size="12">
             <div class="ion-text-center">
-              <img
-                class="img-slider-footer mb-4"
-                src="./assets/amdlcc.png"
-                alt="Asociacion Mexicana de Lucha contra el cancer"
-              />
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
             </div>
           </ion-col>
         </ion-row>

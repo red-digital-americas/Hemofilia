@@ -32,16 +32,21 @@ export class DiagnosticComponent implements OnInit {
   public body = '';
   public today = new Date();
   public user: any;
+  public disabledGuardar = false;
 
   // eslint-disable-next-line max-len
   constructor(private loadingCtrl: LoadingController, public router: Router, public service: ServiceGeneralService, private alertController: AlertController,
   ) { }
   ionViewWillEnter() {
+    this.slides.slideTo(0);
     this.user = JSON.parse(localStorage.getItem('userData'));
     console.log('user', this.user);
     this.getCatOpcion();
   }
   ngOnInit() {
+    this.slides.slideTo(0);
+    this.disabledGuardar = false;
+
     this.user = JSON.parse(localStorage.getItem('userData'));
     console.log('user', this.user);
     this.getCatOpcion();
@@ -77,10 +82,12 @@ export class DiagnosticComponent implements OnInit {
   back() {
     console.log('regresar');
     this.router.navigateByUrl('/perfil-doctor/home');
+    this.slides.slideTo(0);
 
   }
   swipeNext() {
     this.slides.slideNext();
+
   }
   async message(title, body) {
     const alert = await this.alertController.create({
@@ -94,6 +101,7 @@ export class DiagnosticComponent implements OnInit {
   }
 
   save() {
+    this.disabledGuardar = true;
     let nameTemp = '';
     this.data.results = [];
     this.cOption.forEach(element => {
@@ -124,26 +132,32 @@ export class DiagnosticComponent implements OnInit {
 
     console.log('data', this.data);
 
-
-    this.service.serviceGeneralPostWithUrl('Quiz', this.data).subscribe(resp => {
-      if (resp.success) {
-        this.dataSave = true;
-        this.slides.slideNext();
-        setTimeout(() => {
-          this.router.navigateByUrl(`/perfil-doctor/result-diagnostic/${resp.result.id}`);
-        }, 5000);
-
-      }
-      else {
-        this.title = 'Error';
-        this.message(this.title, resp.message);
-      }
-    },
-      (error) => {
-        console.log(error);
-        this.title = 'Error';
-        this.message(this.title, error.error.message);
-      });
+    if (this.data.results.length !== 0) {
+      this.service.serviceGeneralPostWithUrl('Quiz', this.data).subscribe(resp => {
+        if (resp.success) {
+          this.dataSave = true;
+          this.slides.slideNext();
+          setTimeout(() => {
+            this.router.navigateByUrl(`/perfil-doctor/result-diagnostic/${resp.result.id}`);
+            this.disabledGuardar = false;
+          }, 5000);
+        }
+        else {
+          this.title = 'Error';
+          this.message(this.title, resp.message);
+        }
+      },
+        (error) => {
+          console.log(error);
+          this.title = 'Error';
+          this.message(this.title, error.error.message);
+        });
+    }
+    else {
+      this.message('Error', 'Vuelve a intentarlo');
+      this.ngOnInit();
+      this.slides.slideTo(0);
+    }
   }
   public prev() {
     this.slides.slidePrev();
