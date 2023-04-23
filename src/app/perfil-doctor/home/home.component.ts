@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { HeaderComponent } from 'src/app/shared/header/header.component';
+
 
 @Component({
   selector: 'app-home',
@@ -8,18 +10,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+
+  @ViewChild('videoPlayer') videoplayer: any;
+  @ViewChild(HeaderComponent) header: HeaderComponent;
+
   public home: string;
   public user: any;
+  public startedPlay = false;
+  public show = false;
 
   constructor(private activatedRoute: ActivatedRoute, public router: Router,
   ) { }
   ionViewWillEnter() {
     this.user = JSON.parse(localStorage.getItem('userData'));
     console.log('user', this.user);
+    this.videoplayer.nativeElement.pause();
+    this.menu();
+
   }
   ngOnInit() {
     this.home = this.activatedRoute.snapshot.paramMap.get('id');
+    this.menu();
 
+  }
+  menu() {
+    console.log('obtener menu');
+    // this.header.menuChange();
   }
   iniciarDiagnostico() {
     this.router.navigateByUrl('/perfil-doctor/diagnostico');
@@ -60,4 +76,22 @@ export class HomeComponent implements OnInit {
   //     .catch((err) => console.log('Error launching dialer', err));
 
   // }
+  pauseVideo(videoplayer) {
+    console.log('videoplayer', videoplayer);
+
+    videoplayer.nativeElement.play();
+    setTimeout(() => {
+      videoplayer.nativeElement.pause();
+      if (videoplayer.nativeElement.paused) {
+        this.show = !this.show;
+      }
+    }, 5000);
+    // }
+  }
+  closebutton(videoplayer) {
+    this.show = !this.show;
+    videoplayer.nativeElement.play();
+  }
+
+
 }

@@ -32,10 +32,7 @@ export class CreateUserComponent implements OnInit {
   public catDay;
   public catSchedule;
   public optionDay;
-
-
-
-
+  public catState;
 
   oneStep = this.formBuilder.group({
     roleId: ['', [Validators.required]],
@@ -48,13 +45,15 @@ export class CreateUserComponent implements OnInit {
   });
   threeStep = this.formBuilder.group({
     specialityId: ['', [Validators.required]],
+    other: [''],
     professionalLicense: [''],
-    professionalLicenseProcedure: [false],
+    professionalLicenseProcedure: [false, [Validators.required]],
   });
 
   fourStep = this.formBuilder.group({
     consultingType: ['', [Validators.required]],
     phoneConsulting: ['', [Validators.required]],
+    state: ['', [Validators.required]],
     address: ['', [Validators.required]],
   });
   // fiveStep = this.formBuilder.group({
@@ -82,15 +81,15 @@ export class CreateUserComponent implements OnInit {
     this.getConsultorio();
     this.getDay();
     this.getSchedule();
+    this.getState();
+
 
   }
   ngOnInit() {
-
     this.oneStep = this.formBuilder.group({
       roleId: ['', [Validators.required]],
       // email: ['', Validators.email],
     });
-
   }
   iniciarSesion() {
     this.ionViewWillEnter();
@@ -101,6 +100,14 @@ export class CreateUserComponent implements OnInit {
       if (resp.success) {
         this.especialidades = resp.result;
         console.log('cat especialidades', this.especialidades);
+      }
+    });
+  }
+  getState() {
+    this.service.serviceGeneralGet('CatState').subscribe(resp => {
+      if (resp.success) {
+        this.catState = resp.result;
+        console.log('cat estado', this.catState);
       }
     });
   }
@@ -213,6 +220,7 @@ export class CreateUserComponent implements OnInit {
     this.data.sex = this.twoStep.value.sex;
     this.data.specialityId = this.threeStep.value.specialityId;
     this.data.professionalLicense = this.threeStep.value.professionalLicense;
+    this.data.other = this.threeStep.value.other;
     this.data.professionalLicenseProcedure = this.threeStep.value.professionalLicenseProcedure;
     this.data.email = this.sixStep.value.email;
     this.data.password = this.sixStep.value.password;
@@ -220,6 +228,8 @@ export class CreateUserComponent implements OnInit {
     this.data.phone = this.fourStep.value.phoneConsulting;
     this.data.consultingType = this.fourStep.value.consultingType;
     this.data.address = this.fourStep.value.address;
+    this.data.stateId = this.fourStep.value.state;
+
     this.data.createdBy = 0;
     this.data.createdDate = this.today;
     this.data.updatedBy = 0;
@@ -275,8 +285,10 @@ class UserModel {
   status: true;
   phone: string;
   dateBirth: Date;
+  other: string;
   firstName: string;
   consultingType: number;
+  stateId: number;
   sex: number;
   address: string;
   institution: number;

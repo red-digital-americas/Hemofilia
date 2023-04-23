@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { PopoverController, NavParams } from '@ionic/angular';
@@ -11,11 +11,15 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  @Input() menu: string;
+
   public appPagesNoUser = [
     { title: 'Home', url: '/perfil-user/home', icon: 'home' },
     { title: 'Quiénes somos', url: '/perfil-user/about', icon: 'body' },
     { title: 'Patrocinadores', url: '/perfil-user/patrocinadores', icon: 'people' },
+    { title: 'Acerca de', url: '/perfil-user/acerca-de', icon: 'information' },
     { title: 'Login', url: '/perfil-user/login', icon: 'key' },
+
   ];
   public appPagesUser = [
     { title: 'Home', url: '/perfil-doctor/home', icon: 'home', status: 'true' },
@@ -26,6 +30,8 @@ export class HeaderComponent implements OnInit {
     { title: 'Patrocinadores', url: '/perfil-doctor/patrocinadores', icon: 'people', status: 'true' },
     // { title: 'Login', url: '/login', icon: 'key', status: 'true' },
     { title: 'Perfil', url: '/perfil-doctor/perfil', icon: 'person', status: 'false' },
+    { title: 'Acerca de', url: '/perfil-doctor/acerca-de', icon: 'information', status: 'false' },
+
 
   ];
   public user: any;
@@ -49,6 +55,15 @@ export class HeaderComponent implements OnInit {
     if (this.user === null) {
       this.userRol = false;
     }
+    this.menuChange2();
+  }
+  menuChange2(){
+    if (this.user === null){
+      this.userRol = false;
+    }
+    else{
+      this.userRol = true;
+    }
   }
   menuChange(){
     if (this.user === null){
@@ -56,8 +71,8 @@ export class HeaderComponent implements OnInit {
     }
     else{
       this.userRol = true;
-
     }
+    this.ngOnInit();
   }
   logout() {
     console.log('cerrar session');
@@ -66,7 +81,7 @@ export class HeaderComponent implements OnInit {
     this.message(this.title, this.body);
     this.router.navigateByUrl('/perfil-user/login');
     localStorage.removeItem('userData');
-
+    this.ngOnInit();
   }
 
   async message(title, body) {

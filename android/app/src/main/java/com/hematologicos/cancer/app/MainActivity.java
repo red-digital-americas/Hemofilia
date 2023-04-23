@@ -1,4 +1,4 @@
-package com.hematologicos.app;
+package com.hematologicos.cancer.app;
 
 import com.getcapacitor.BridgeActivity;
 

@@ -3,12 +3,12 @@
   background: linear-gradient(90deg, rgba(250, 250, 250, 1) 5%, rgba(250, 250, 250, 1) 35%, rgba(250, 250, 250, 1) 100%);
   /* background-image: linear-gradient(to top, #faeafa, #fe7afa) !important; */
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   background-position: center;
   background-size: cover;
   position: relative;
   padding: 2rem;
-  margin-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 
 .backg {
@@ -17,6 +17,7 @@
 }
 
 ion-content {
+  background: linear-gradient(90deg, rgba(250, 250, 250, 1) 5%, rgba(250, 250, 250, 1) 35%, rgba(250, 250, 250, 1) 100%);
   background-color: #fafafa;
 }
 
@@ -34,19 +35,6 @@ ion-input {
 
 ion-item {
   background-color: #fff;
-}
-
-ion-select {
-  background-color: #fff;
-  white-space: pre-wrap;
-  word-break: break-all;
-  overflow-wrap: break-word;
-}
-
-.ion-select-option {
-  white-space: pre-wrap;
-overflow-wrap: break-word;
-word-break: break-all;
 }
 
 .transparent {
@@ -188,3 +176,39 @@ word-break: break-all;
 .radio-group {
   text-align: center;
 }
+
+ion-datetime-button::part(native) {
+  background: #FFF;
+}
+
+.label-form {
+  color: #9d9d99;
+  padding: 0;
+  margin: 0;
+}
+
+ion-select{
+	max-width: 250px;
+	position: relative;
+}
+ 
+ion-select select{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+

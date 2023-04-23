@@ -1,6 +1,6 @@
 {
-	"appId": "com.hematologicos.app",
-	"appName": "hematologicos",
+	"appId": "com.hematologicos.cancer.app",
+	"appName": "4myPatient",
 	"bundledWebRuntime": false,
 	"npmClient": "npm",
 	"webDir": "www"

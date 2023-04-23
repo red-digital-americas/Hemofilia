@@ -9,7 +9,7 @@ import { PatrocinadoresComponent } from './patrocinadores/patrocinadores.compone
 import { PerfilComponent } from './perfil/perfil.component';
 import { ResultDiagnosticComponent } from './result-diagnostic/result-diagnostic.component';
 import { TerminosComponent } from './terminos/terminos.component';
-
+import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 const routes: Routes = [
   {
     path: 'home',
@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+  },
+  {
+    path: 'acerca-de',
+    component: AcercaDeComponent,
   },
   {
     path: 'diagnostico',

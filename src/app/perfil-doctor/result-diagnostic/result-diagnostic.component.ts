@@ -29,7 +29,7 @@ export class ResultDiagnosticComponent implements OnInit {
   }
   back() {
     console.log('regresar');
-    this.router.navigateByUrl('/perfil-doctor/diagnostico');
+    this.router.navigateByUrl('/perfil-doctor/home');
 
   }
   home() {

@@ -3,21 +3,32 @@
   background: linear-gradient(90deg, rgba(250, 250, 250, 1) 5%, rgba(250, 250, 250, 1) 35%, rgba(250, 250, 250, 1) 100%);
   /* background-image: linear-gradient(to top, #faeafa, #fe7afa) !important; */
   width: 100%;
-  // height: 100%;
+  height: auto;
   // height: 250vh;
-  height: 100vh;
+  // height: 100vh;
 
 
   background-position: center;
   background-size: cover;
   position: relative;
   padding: 2rem;
+  padding-bottom: 3rem;
+
 }
 
 .alt5 {
-  height: 200vh;
+  // height: 200vh;
 
 }
+ion-label {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  text-overflow: clip !important;
+  white-space: initial !important;
+}
+
+
+
 
 #container {
   background: rgb(250, 250, 250);
@@ -210,3 +221,35 @@ ion-select {
 .radio-group {
   text-align: center;
 }
+
+.label-form {
+  color: #9d9d99;
+  padding: 0;
+  margin: 0;
+}
+ion-select{
+	max-width: 250px;
+	position: relative;
+}
+ 
+ion-select select{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+

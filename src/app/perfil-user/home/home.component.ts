@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 // import { CallNumber } from '@ionic-native/call-number/ngx';
@@ -9,16 +9,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('videoPlayer') videoplayer: any;
   public home: string;
   public user: any;
+  public startedPlay = false;
+  public show = false;
 
   constructor(private activatedRoute: ActivatedRoute, public router: Router,
   ) { }
 
   ionViewWillEnter() {
     console.log('hola user');
+    this.videoplayer.nativeElement.pause();
   }
   ngOnInit() {
+
 
   }
   login() {
@@ -52,6 +57,20 @@ export class HomeComponent implements OnInit {
       '_system',
       'location=no'
     );
+  }
+  pauseVideo(videoplayer) {
+    videoplayer.nativeElement.play();
+    setTimeout(() => {
+      videoplayer.nativeElement.pause();
+      if (videoplayer.nativeElement.paused) {
+        this.show = !this.show;
+      }
+    }, 5000);
+    // }
+  }
+  closebutton(videoplayer) {
+    this.show = !this.show;
+    videoplayer.nativeElement.play();
   }
 
 }

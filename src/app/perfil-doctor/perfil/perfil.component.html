@@ -1,5 +1,5 @@
-<ion-content [fullscreen]="true" class="main">
-  <ion-header [translucent]="true">
+<ion-content class="main">
+  <ion-header>
     <ion-toolbar>
       <ion-row size="8" slot="start" class="transparent">
         <ion-col size="6">
@@ -20,7 +20,8 @@
         <ion-row class="margin-cuenta">
           <ion-col size="12" (click)="home()">
             <div class="ion-text-start back ion-margin-bottom">
-              <p class="puntero">< Cancelar</p>
+              <p class="puntero">
+                < Cancelar</p>
             </div>
           </ion-col>
           <!-- titulo -->
@@ -37,38 +38,38 @@
             <span class="step-text">Paso 1</span>
           </ion-col>
           <ion-col size="12" class="margin-pharag">
-            <span class="pharag-detail"
-              >Para crear una cuenta es necesario que indiques si eres médico o
-              laboratorista.</span
-            >
+            <span class="pharag-detail">Para crear una cuenta es necesario que indiques si eres médico o
+              laboratorista.</span>
           </ion-col>
           <form [formGroup]="oneStep">
             <ion-row>
               <ion-col size="12">
                 <ion-radio-group class="radio-group" formControlName="roleId">
                   <ion-row>
-                    <ion-col class="text-center" size="6">
-                      <ion-label>Médico</ion-label>
-                      &nbsp;
-                      <ion-radio color="tertiary" [value]="1"></ion-radio>
+                    <ion-col class="text-start" size="12">
+                      <ion-label class="label-form" for="name" position="stacked">Especialidad</ion-label>
                     </ion-col>
-                    <ion-col class="text-center" size="6">
-                      <ion-label>Laboratorista</ion-label>
-                      &nbsp;
-                      <ion-radio color="tertiary" [value]="4"></ion-radio>
+                    <ion-col class="text-start" size="12">
+                      <ion-item>
+                        <ion-label for="med">Médico</ion-label>
+                        &nbsp;
+                        <ion-radio id="med" color="tertiary" [value]="1"></ion-radio>
+                      </ion-item>
+                    </ion-col>
+                    <ion-col class="text-start" size="12">
+                      <ion-item>
+                        <ion-label for="lab">Laboratorista</ion-label>
+                        &nbsp;
+                        <ion-radio id="lab" color="tertiary" [value]="5"></ion-radio>
+                      </ion-item>
                     </ion-col>
                   </ion-row>
                 </ion-radio-group>
               </ion-col>
               <ion-col size="12" class="margin-btn ion-margin-top">
                 <div class="text-end">
-                  <button
-                    class="btn btn-tertiary btn-lg btn-gradient-blue"
-                    color="primary"
-                    [disabled]="!oneStep.valid"
-                    (click)="step2()"
-                    shape="round"
-                  >
+                  <button class="btn btn-tertiary btn-lg btn-gradient-blue" color="primary" [disabled]="!oneStep.valid"
+                    (click)="step2()" shape="round">
                     <span class="btn-text"> Continuar </span>
                   </button>
                 </div>
@@ -77,15 +78,13 @@
             <ion-row class="mb-4">
               <ion-col size="12">
                 <div class="ion-text-center">
-                  <img
-                    class="img-slider-footer"
-                    src="./assets/amdlcc.png"
-                    alt="Asociacion Mexicana de Lucha contra el cancer"
-                  />
+                  <img class="img-slider-footer" src="./assets/amdlcc.png"
+                    alt="Asociacion Mexicana de Lucha contra el cancer" />
                 </div>
               </ion-col>
             </ion-row>
           </form>
+          <br><br><br><br>
         </ion-row>
         <!-- step 2 ambos-->
         <ion-row *ngIf="twoScreen === true">
@@ -96,72 +95,84 @@
             <span class="pharag-detail">Completa tus datos personales</span>
           </ion-col>
           <form [formGroup]="twoStep">
-            <ion-row>
-              <ion-col size="12" class="mb-3">
+            <ion-row class="transparent">
+              <ion-col class="text-start" size="12">
+                <ion-label class="label-form" for="name" position="stacked">Nombre</ion-label>
+              </ion-col>
+              <ion-col size="12" class="mb-3 transparent">
                 <ion-item class="closed">
-                  <ion-input
-                    type="text"
-                    formControlName="name"
-                    placeholder="Nombre"
-                  >
+                  <ion-input id="name" type="text" formControlName="name" placeholder="">
                   </ion-input>
                 </ion-item>
               </ion-col>
-              <ion-col size="12" class="mb-3">
+              <ion-col class="text-start" size="12">
+                <ion-label class="label-form" for="firstName" position="stacked">Apellido</ion-label>
+              </ion-col>
+              <ion-col size="12" class="mb-3 transparent">
                 <ion-item class="closed">
-                  <ion-input
-                    type="text"
-                    formControlName="firstName"
-                    placeholder="Apellidos"
-                  >
+                  <ion-input id="firstName" type="text" formControlName="firstName" placeholder="">
                   </ion-input>
                 </ion-item>
               </ion-col>
-              <ion-col size="12" class="mb-3">
-                <ion-item class="closed">
-                  <ion-input
-                    type="date"
-                    formControlName="birthday"
-                    placeholder="Fecha de Nacimiento"
-                  >
-                  </ion-input>
+
+              <ion-col class="text-start" size="12">
+                <ion-label class="label-form" for="datetime" datetime="datetime" position="stacked">Fecha de
+                  Nacimiento</ion-label>
+              </ion-col>
+              <ion-col size="12" class="mb-3 transparent">
+                <ion-item class="closed transparent">
+                  <ion-datetime-button color="white" datetime="datetime"></ion-datetime-button>
                 </ion-item>
+
+                <ion-modal [keepContentsMounted]="true">
+                  <ng-template>
+                    <ion-datetime locale="es-ES" presentation="date" displayFormat="DD-MM-AAAA" color="primary"
+                      formControlName="birthday" id="datetime"></ion-datetime>
+                  </ng-template>
+                </ion-modal>
               </ion-col>
               <ion-col size="12">
                 <ion-radio-group class="radio-group" formControlName="sex">
                   <ion-row>
-                    <ion-col class="text-center" size="4">
-                      <ion-label>Hombre</ion-label>
-                      &nbsp;
-                      <ion-radio color="tertiary" [value]="1"></ion-radio>
+                    <ion-col class="text-start" size="12">
+                      <ion-label class="label-form" for="name" position="stacked">Sexo</ion-label>
                     </ion-col>
-                    <ion-col class="text-center" size="4">
-                      <ion-label>Mujer</ion-label>
-                      &nbsp;
-                      <ion-radio color="tertiary" [value]="2"></ion-radio>
+                    <ion-col class="text-start" size="12">
+                      <ion-item>
+                        <ion-label>Hombre</ion-label>
+                        &nbsp;
+                        <ion-radio color="tertiary" [value]="1"></ion-radio>
+                      </ion-item>
                     </ion-col>
-                    <ion-col class="text-center" size="4">
-                      <ion-label>Otro</ion-label>
-                      &nbsp;
-                      <ion-radio color="tertiary" [value]="3"></ion-radio>
+                    <ion-col class="text-start" size="12">
+                      <ion-item>
+                        <ion-label>Mujer</ion-label>
+                        &nbsp;
+                        <ion-radio color="tertiary" [value]="2"></ion-radio>
+                      </ion-item>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col class="text-start" size="12">
+                      <ion-item>
+                        <ion-label>Otro</ion-label>
+                        &nbsp;
+                        <ion-radio color="tertiary" [value]="3"></ion-radio>
+                      </ion-item>
                     </ion-col>
                   </ion-row>
                 </ion-radio-group>
               </ion-col>
               <ion-col size="6" class="margin-btn ion-margin-top">
                 <div class="text-start">
-                  <span class="regresar" (click)="step1()"> < Regresar </span>
+                  <span class="regresar" (click)="step1()">
+                    < Regresar </span>
                 </div>
               </ion-col>
               <ion-col size="6" class="margin-btn ion-margin-top">
                 <div class="text-end">
-                  <button
-                    class="btn btn-tertiary btn-lg btn-gradient-blue"
-                    color="primary"
-                    [disabled]="!twoStep.valid"
-                    (click)="step3()"
-                    shape="round"
-                  >
+                  <button class="btn btn-tertiary btn-lg btn-gradient-blue" color="primary" [disabled]="!twoStep.valid"
+                    (click)="step3()" shape="round">
                     <span class="btn-text"> Continuar </span>
                   </button>
                 </div>
@@ -170,18 +181,14 @@
             <ion-row class="mb-4">
               <ion-col size="12">
                 <div class="ion-text-center">
-                  <img
-                    class="img-slider-footer"
-                    src="./assets/amdlcc.png"
-                    alt="Asociacion Mexicana de Lucha contra el cancer"
-                  />
+                  <img class="img-slider-footer" src="./assets/amdlcc.png"
+                    alt="Asociacion Mexicana de Lucha contra el cancer" />
                 </div>
               </ion-col>
             </ion-row>
           </form>
         </ion-row>
         <!-- step 3 ambos -->
-        <!-- *ngIf="medicalType === 'general' && threeScreenG === true" -->
         <ion-row *ngIf="threeScreen === true">
           <ion-col size="12" class="step-text">
             <span class="step-text">Paso 3</span>
@@ -191,42 +198,49 @@
           </ion-col>
           <form [formGroup]="threeStep">
             <ion-row>
-              <ion-col size="12" class="mb-3">
-                <ion-item>
-                  <ion-select
-                    (ngModelChange)="invitacionHematologicos()"
-                    color="tertiary"
-                    formControlName="specialityId"
-                    placeholder="Especialidad"
-                  >
-                    <ion-select-option disable value="0"
-                      >Elige una especialidad:</ion-select-option
-                    >
-                    <ion-select-option
-                      *ngFor="let item of especialidades"
-                      [value]="item.id"
-                      >{{ item.speciality }}
-                    </ion-select-option>
-                  </ion-select>
-                </ion-item>
+              <ion-col class="text-start" size="12">
+                <ion-label class="label-form" for="specialityId" position="stacked">Especialidad</ion-label>
               </ion-col>
               <ion-col size="12" class="mb-3">
+                <ion-list>
+                  <ion-item>
+                    <ion-select mode="ios" id="specialityId" (ngModelChange)="invitacionHematologicos()"
+                      color="tertiary" formControlName="specialityId" interface="action-sheet"
+                      placeholder="Selecciona un especialidad">
+                      <ion-select-option *ngFor="let item of especialidades" [value]="item.id">{{ item.speciality
+                        }}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+              <!-- texto de otro -->
+              <ion-col class="text-start" size="12" *ngIf="threeStep.value.specialityId === 20">
+                <ion-label class="label-form" for="other" position="stacked">Otro</ion-label>
+              </ion-col>
+
+              <ion-col size="12" class="mb-3" *ngIf="threeStep.value.specialityId === 20">
                 <ion-item class="closed">
-                  <ion-input
-                    type="text"
-                    formControlName="professionalLicense"
-                    placeholder="Cédula profesional"
-                  >
+                  <ion-input id="other" type="text" formControlName="other" placeholder="">
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+
+              <!-- cedula profesional -->
+              <ion-col class="text-start" size="12">
+                <ion-label class="label-form" for="professionalLicense" position="stacked">Cédula
+                  profesional</ion-label>
+              </ion-col>
+
+              <ion-col size="12" class="mb-3">
+                <ion-item class="closed">
+                  <ion-input id="professionalLicense" type="text" formControlName="professionalLicense" placeholder="">
                   </ion-input>
                 </ion-item>
               </ion-col>
               <ion-col size="12" class="mb-3">
                 <ion-row class="align-center">
                   <ion-col class="text-center" size="2">
-                    <ion-checkbox
-                      formControlName="professionalLicenseProcedure"
-                      color="tertiary"
-                    ></ion-checkbox>
+                    <ion-checkbox formControlName="professionalLicenseProcedure" color="tertiary"></ion-checkbox>
                   </ion-col>
                   <ion-col class="text-center" size="10">
                     <ion-label> Cédula profesional en trámite</ion-label>
@@ -235,18 +249,14 @@
               </ion-col>
               <ion-col size="6" class="margin-btn ion-margin-top">
                 <div class="text-start">
-                  <span class="regresar" (click)="step2()"> < Regresar </span>
+                  <span class="regresar" (click)="step2()">
+                    < Regresar </span>
                 </div>
               </ion-col>
               <ion-col size="6" class="margin-btn ion-margin-top">
                 <div class="text-end">
-                  <button
-                    class="btn btn-tertiary btn-lg btn-gradient-blue"
-                    color="primary"
-                    [disabled]="!threeStep.valid"
-                    (click)="step4()"
-                    shape="round"
-                  >
+                  <button class="btn btn-tertiary btn-lg btn-gradient-blue" color="primary"
+                    [disabled]="!threeStep.valid" (click)="step4()" shape="round">
                     <span class="btn-text"> Continuar </span>
                   </button>
                 </div>
@@ -255,88 +265,88 @@
             <ion-row class="mb-4">
               <ion-col size="12">
                 <div class="ion-text-center">
-                  <img
-                    class="img-slider-footer"
-                    src="./assets/amdlcc.png"
-                    alt="Asociacion Mexicana de Lucha contra el cancer"
-                  />
+                  <img class="img-slider-footer" src="./assets/amdlcc.png"
+                    alt="Asociacion Mexicana de Lucha contra el cancer" />
                 </div>
               </ion-col>
             </ion-row>
+            <br><br><br><br>
           </form>
         </ion-row>
         <!-- step 4 ambos  -->
-        <!-- *ngIf="medicalType === 'especialista' && threeScreenE === true" -->
         <ion-row *ngIf="fourScreen === true">
           <ion-col size="12" class="step-text">
             <span class="step-text">Paso 4</span>
           </ion-col>
           <ion-col size="12" class="margin-pharag">
-            <span class="pharag-detail"
-              >Selecciona los datos relacionados con tu procedencia
-              profesional</span
-            >
+            <span class="pharag-detail">Selecciona los datos relacionados con tu procedencia
+              profesional</span>
           </ion-col>
           <form [formGroup]="fourStep">
             <ion-row>
+              <ion-col class="text-start" size="12">
+                <ion-label class="label-form" for="consultingType" position="stacked">Consultorio</ion-label>
+              </ion-col>
               <ion-col size="12" class="mb-3">
-                <!-- <ion-item class="closed">
-                            <ion-input type="text" formControlName="consultingType" placeholder="Tipo de consultorio">
-                            </ion-input>
-                          </ion-item> -->
-                <ion-item>
-                  <ion-select
-                    color="tertiary"
-                    formControlName="consultingType"
-                    placeholder="Consultorio"
-                  >
-                    <ion-select-option disable value="0"
-                      >Elige un consultorio:</ion-select-option
-                    >
-                    <ion-select-option
-                      *ngFor="let item of consultorio"
-                      [value]="item.id"
-                      >{{ item.consultorio }}
-                    </ion-select-option>
-                  </ion-select>
-                </ion-item>
+                <ion-list>
+                  <ion-item>
+                    <ion-select mode="ios" style=" flex: 1 1 0%;
+                    min-width: 90% !important;
+                    
+                    white-space: break-spaces !important;
+                    overflow: hidden ;
+                    text-overflow: ellipsis !important;" id="consultingType" color="tertiary"
+                      formControlName="consultingType" interface="action-sheet" placeholder="Selecciona un consultorio">
+                      <ion-select-option *ngFor="let item of consultorio" [value]="item.id">{{ item.consultorio
+                        }}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+              <ion-col class="text-start" size="12">
+                <ion-label class="label-form" for="phoneConsulting" position="stacked">Teléfono del
+                  consultorio</ion-label>
               </ion-col>
               <ion-col size="12" class="mb-3">
                 <ion-item class="closed">
-                  <ion-input
-                    type="text"
-                    formControlName="phoneConsulting"
-                    placeholder="Teléfono del consultorio"
-                  >
+                  <ion-input id="phoneConsulting" type="text" formControlName="phoneConsulting" placeholder="">
                   </ion-input>
                 </ion-item>
               </ion-col>
+              <ion-col class="text-start" size="12">
+                <ion-label class="label-form" for="state" position="stacked">Estado</ion-label>
+              </ion-col>
+              <ion-col size="12" class="mb-3">
+                <ion-list>
+                  <ion-item>
+                    <ion-select mode="ios" id="state" 
+                      color="tertiary" formControlName="state" interface="action-sheet"
+                      placeholder="Selecciona un estado">
+                      <ion-select-option *ngFor="let item of catState" [value]="item.id">{{ item.name
+                        }}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+              <ion-col class="text-start" size="12">
+                <ion-label class="label-form" for="address" position="stacked">Dirección</ion-label>
+              </ion-col>
               <ion-col size="12" class="mb-1">
                 <ion-item class="closed">
-                  <ion-textarea
-                    rows="4"
-                    cols="10"
-                    type="text"
-                    formControlName="address"
-                    placeholder="Dirección"
-                  >
+                  <ion-textarea id="address" rows="4" cols="10" type="text" formControlName="address" placeholder="">
                   </ion-textarea>
                 </ion-item>
               </ion-col>
               <ion-col size="6" class="margin-btn ion-margin-top">
                 <div class="text-start">
-                  <span class="regresar" (click)="step3()"> < Regresar </span>
+                  <span class="regresar" (click)="step3()">
+                    < Regresar </span>
                 </div>
               </ion-col>
               <ion-col size="6" class="margin-btn ion-margin-top">
                 <div class="text-end">
-                  <button
-                    class="btn btn-tertiary btn-lg btn-gradient-blue"
-                    color="primary"
-                    [disabled]="!fourStep.valid"
-                    (click)="step5()"
-                    shape="round"
-                  >
+                  <button class="btn btn-tertiary btn-lg btn-gradient-blue" color="primary" [disabled]="!fourStep.valid"
+                    (click)="step5()" shape="round">
                     <span class="btn-text"> Continuar </span>
                   </button>
                 </div>
@@ -345,14 +355,12 @@
             <ion-row class="mb-4">
               <ion-col size="12">
                 <div class="ion-text-center">
-                  <img
-                    class="img-slider-footer"
-                    src="./assets/amdlcc.png"
-                    alt="Asociacion Mexicana de Lucha contra el cancer"
-                  />
+                  <img class="img-slider-footer" src="./assets/amdlcc.png"
+                    alt="Asociacion Mexicana de Lucha contra el cancer" />
                 </div>
               </ion-col>
             </ion-row>
+            <br><br><br><br>
           </form>
         </ion-row>
         <!-- step 5 ambos -->
@@ -363,10 +371,8 @@
                 <span class="step-text">Paso 5</span>
               </ion-col>
               <ion-col size="12" class="margin-pharag">
-                <span class="pharag-detail"
-                  >Selecciona tu disponibilidad para la que la comunidad médica
-                  pueda consultarte</span
-                >
+                <span class="pharag-detail">Selecciona tu disponibilidad para la que la comunidad médica
+                  pueda consultarte</span>
               </ion-col>
             </ion-row>
             <ion-row>
@@ -375,52 +381,39 @@
               </ion-col>
               <!-- formulario -->
               <ion-col size="12" class="my-3 text-end">
-                <span (click)="addDay()" class="add-beneficit"
-                  >Agregar
+                <span (click)="addDay()" class="add-beneficit">Agregar
                   <ion-icon color="primary" name="add-circle"></ion-icon>
                 </span>
               </ion-col>
             </ion-row>
             <ion-row *ngFor="let item of dayCalendar; index as index">
               <ion-col size="12" *ngIf="index !== 0 || item.id === 0">
-                <ion-icon
-                  name="close-circle"
-                  (click)="deleteDay(item, index)"
-                ></ion-icon>
+                <ion-icon name="close-circle" (click)="deleteDay(item, index)"></ion-icon>
               </ion-col>
               <ion-col size="12" class="mb-2">
                 <ion-item>
-                  <ion-select [(ngModel)]="item.scheduleId" placeholder="Turno">
-                    <ion-select-option
-                      *ngFor="let item of catSchedule"
-                      [value]="item.id"
-                      >{{ item.name }}
+                  <ion-select mode="ios" [(ngModel)]="item.scheduleId" placeholder="Turno" interface="action-sheet">
+                    <ion-select-option *ngFor="let item of catSchedule" [value]="item.id">{{ item.name }}
                     </ion-select-option>
                   </ion-select>
                 </ion-item>
               </ion-col>
               <ion-col size="12" class="mb-3">
                 <ion-item>
-                  <ion-select [(ngModel)]="item.dayId" placeholder="Dias">
-                    <ion-select-option
-                      *ngFor="let item of catDay"
-                      [value]="item.id"
-                      >{{ item.name }}
+                  <ion-select mode="ios" [(ngModel)]="item.dayId" placeholder="Dias" interface="action-sheet">
+                    <ion-select-option *ngFor="let item of catDay" [value]="item.id">{{ item.name }}
                     </ion-select-option>
                   </ion-select>
                 </ion-item>
               </ion-col>
+              <br><br>
             </ion-row>
             <ion-row>
               <ion-col size="6" class="margin-btn ion-margin-top"></ion-col>
               <ion-col size="6" class="margin-btn ion-margin-top">
                 <div class="text-end">
-                  <button
-                    class="btn btn-tertiary btn-lg btn-gradient-orange"
-                    color="secondary"
-                    (click)="saveCalendar()"
-                    shape="round"
-                  >
+                  <button class="btn btn-tertiary btn-lg btn-gradient-orange" color="secondary" (click)="saveCalendar()"
+                    shape="round">
                     <span class="btn-text"> Guardar </span>
                   </button>
                 </div>
@@ -428,17 +421,14 @@
 
               <ion-col size="6" class="margin-btn ion-margin-top">
                 <div class="text-start">
-                  <span class="regresar" (click)="step4()"> < Regresar </span>
+                  <span class="regresar" (click)="step4()">
+                    < Regresar </span>
                 </div>
               </ion-col>
               <ion-col size="6" class="margin-btn ion-margin-top">
                 <div class="text-end">
-                  <button
-                    class="btn btn-tertiary btn-lg btn-gradient-blue"
-                    color="primary"
-                    (click)="step6()"
-                    shape="round"
-                  >
+                  <button class="btn btn-tertiary btn-lg btn-gradient-blue" color="primary" (click)="step6()"
+                    shape="round">
                     <span class="btn-text"> Continuar > </span>
                   </button>
                 </div>
@@ -447,11 +437,8 @@
             <ion-row class="mb-4">
               <ion-col size="12">
                 <div class="ion-text-center">
-                  <img
-                    class="img-slider-footer"
-                    src="./assets/amdlcc.png"
-                    alt="Asociacion Mexicana de Lucha contra el cancer"
-                  />
+                  <img class="img-slider-footer" src="./assets/amdlcc.png"
+                    alt="Asociacion Mexicana de Lucha contra el cancer" />
                 </div>
               </ion-col>
             </ion-row>
@@ -463,20 +450,14 @@
             <span class="step-text">Paso 6</span>
           </ion-col>
           <ion-col size="12" class="margin-pharag">
-            <span class="pharag-detail"
-              >Escribe el correo electrónico de tu cuenta para que recibas una
-              liga con una contraseña temporal.</span
-            >
+            <span class="pharag-detail">Escribe el correo electrónico de tu cuenta para que recibas una
+              liga con una contraseña temporal.</span>
           </ion-col>
           <form [formGroup]="sixStep">
             <ion-row>
               <ion-col size="12" class="mb-3">
                 <ion-item disabled class="closed">
-                  <ion-input
-                    type="email"
-                    formControlName="email"
-                    placeholder="Correo electrónico"
-                  >
+                  <ion-input type="email" formControlName="email" placeholder="Correo electrónico">
                   </ion-input>
                 </ion-item>
               </ion-col>
@@ -489,18 +470,14 @@
               </ion-col>
               <ion-col size="6" class="margin-btn ion-margin-top">
                 <div class="text-start">
-                  <span class="regresar" (click)="step5()"> < Regresar </span>
+                  <span class="regresar" (click)="step5()">
+                    < Regresar </span>
                 </div>
               </ion-col>
               <ion-col size="6" class="margin-btn ion-margin-top">
                 <div class="text-end">
-                  <button
-                    class="btn btn-tertiary btn-lg btn-gradient-blue"
-                    color="primary"
-                    [disabled]="!sixStep.valid && disabledd === true"
-                    (click)="save()"
-                    shape="round"
-                  >
+                  <button class="btn btn-tertiary btn-lg btn-gradient-blue" color="primary"
+                    [disabled]="!sixStep.valid && disabledd === true" (click)="save()" shape="round">
                     <span class="btn-text"> Guardar </span>
                   </button>
                 </div>
@@ -509,11 +486,8 @@
             <ion-row class="mb-4">
               <ion-col size="12">
                 <div class="ion-text-center">
-                  <img
-                    class="img-slider-footer"
-                    src="./assets/amdlcc.png"
-                    alt="Asociacion Mexicana de Lucha contra el cancer"
-                  />
+                  <img class="img-slider-footer" src="./assets/amdlcc.png"
+                    alt="Asociacion Mexicana de Lucha contra el cancer" />
                 </div>
               </ion-col>
             </ion-row>
