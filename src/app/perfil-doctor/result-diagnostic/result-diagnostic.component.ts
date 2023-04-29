@@ -70,7 +70,8 @@ export class ResultDiagnosticComponent implements OnInit {
     await alert.present();
   }
   especialistas(){
-    this.router.navigateByUrl('/perfil-doctor/medical-network');
+    //aqui se manda 1 ya que se debe filtrar
+    this.router.navigateByUrl('/perfil-doctor/medical-network/1');
 
   }
   goTerminos() {

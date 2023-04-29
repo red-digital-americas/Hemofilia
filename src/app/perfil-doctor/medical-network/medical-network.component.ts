@@ -12,12 +12,12 @@ export class MedicalNetworkComponent implements OnInit {
 
   public data;
 
+  public idPeticion = '';
   public title = '';
   public body = '';
   public catEspecialista: any[] = [];
   public catconsultorio: any[] = [];
   private callNumber: CallNumber;
-
 
   constructor(public service: ServiceGeneralService, private alertController: AlertController, public routerActive: ActivatedRoute,
     public router: Router) { }
@@ -26,26 +26,49 @@ export class MedicalNetworkComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getData();
+    console.log(this.routerActive.snapshot.paramMap.get('id'));
+    this.idPeticion = this.routerActive.snapshot.paramMap.get('id');
+    console.log('idPeticion', this.idPeticion);
   }
+
   getData() {
     this.catalogsEspecialista();
     this.catalogsConstultorio();
-    this.service.serviceGeneralGet(`User`).subscribe(resp => {
-      if (resp.success) {
-        this.data = resp.result;
-        console.log('data', this.data);
-      } else {
-        this.title = 'Error';
-        this.message(this.title, resp.message);
-      }
-    },
-      (error) => {
-        console.log(error);
-        this.title = 'Error';
-        this.message(this.title, error.error.message);
-      });
+    if (this.idPeticion === '0') {
+      this.service.serviceGeneralGet(`User`).subscribe(resp => {
+        if (resp.success) {
+          this.data = resp.result;
+          console.log('data', this.data);
+        } else {
+          this.title = 'Error';
+          this.message(this.title, resp.message);
+        }
+      },
+        (error) => {
+          console.log(error);
+          this.title = 'Error';
+          this.message(this.title, error.error.message);
+        });
+    }
+    else if (this.idPeticion === '1') {
+      this.service.serviceGeneralGet(`User/all-by-speciality?speciality=${1}`).subscribe(resp => {
+        if (resp.success) {
+          this.data = resp.result;
+          console.log('data', this.data);
+        } else {
+          this.title = 'Error';
+          this.message(this.title, resp.message);
+        }
+      },
+        (error) => {
+          console.log(error);
+          this.title = 'Error';
+          this.message(this.title, error.error.message);
+        });
+    }
+
   }
+
   visitTerminos() {
     window.open(
       'https://www.amlcc.org/Aviso-de-Privacidad-AMLCC.pdf',
@@ -107,7 +130,6 @@ export class MedicalNetworkComponent implements OnInit {
       });
   }
   getNameSpecial(id) {
-    console.log('id', id);
     if (id != null) {
       // eslint-disable-next-line @typescript-eslint/prefer-for-of
       for (let i = 0; i < this.catEspecialista.length; i++) {
