@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
     { title: 'Quiénes somos', url: '/perfil-doctor/about', icon: 'body', status: 'true' },
     { title: 'Ir al Diagnóstico Temprano', url: '/perfil-doctor/diagnostico', icon: 'document', status: 'false' },
     // { title: 'Estudios clínicos', url: 'clinical-studies', icon: 'reader' },
-    { title: 'Red Médica', url: '/perfil-doctor/medical-network', icon: 'pulse', status: 'false' },
+    { title: 'Red Médica', url: '/perfil-doctor/medical-network/0', icon: 'pulse', status: 'false' },
     { title: 'Patrocinadores', url: '/perfil-doctor/patrocinadores', icon: 'people', status: 'true' },
     // { title: 'Login', url: '/login', icon: 'key', status: 'true' },
     { title: 'Perfil', url: '/perfil-doctor/perfil', icon: 'person', status: 'false' },

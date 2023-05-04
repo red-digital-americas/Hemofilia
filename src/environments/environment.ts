@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: 'http://34.237.214.147/back/api_hemofilia/api/',
+  apiURL: 'https://4mypatient-api.tartaro.app/api/',
   // apiURL: 'https://localhost:7210/api/',
 };
 /*

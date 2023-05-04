@@ -40,7 +40,7 @@ const routes: Routes = [
     component: DiagnosticComponent,
   },
   {
-    path: 'medical-network',
+    path: 'medical-network/:id',
     component: MedicalNetworkComponent,
   },
   {
