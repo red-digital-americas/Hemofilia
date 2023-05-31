@@ -14,6 +14,8 @@ export class ResultDiagnosticComponent implements OnInit {
   public data;
   public title = '';
   public body = '';
+  public user: any;
+
 
   constructor(public router: Router,
     public service: ServiceGeneralService, private alertController: AlertController, public routerActive: ActivatedRoute,) { }
@@ -25,6 +27,7 @@ export class ResultDiagnosticComponent implements OnInit {
 
   ngOnInit() {
     this.idResult = this.routerActive.snapshot.paramMap.get('id');
+    this.user = JSON.parse(localStorage.getItem('userData'));
     // this.getData();
   }
   back() {
@@ -36,6 +39,24 @@ export class ResultDiagnosticComponent implements OnInit {
     console.log('home');
     this.router.navigateByUrl('/perfil-doctor/home');
 
+  }
+  llamarhematologo(){
+    const telNumber = 5560106592;
+    window.open(`tel:${telNumber}`, '_system');
+    this.postCall();
+  }
+  postCall(){
+    const data = {
+      userId: this.user.id,
+      eventType: 1
+    };
+    this.service
+      .serviceGeneralPostWithUrl(`RequestSupport`, data )
+      .subscribe((resp) => {
+        if (resp.success) {
+          console.log('llamada registrada');
+        }
+      });
   }
   getData() {
     if (this.idResult !== null) {

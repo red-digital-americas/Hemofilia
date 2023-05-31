@@ -17,6 +17,7 @@ export class MedicalNetworkComponent implements OnInit {
   public body = '';
   public catEspecialista: any[] = [];
   public catconsultorio: any[] = [];
+  public user: any;
   private callNumber: CallNumber;
 
   constructor(public service: ServiceGeneralService, private alertController: AlertController, public routerActive: ActivatedRoute,
@@ -29,6 +30,7 @@ export class MedicalNetworkComponent implements OnInit {
     console.log(this.routerActive.snapshot.paramMap.get('id'));
     this.idPeticion = this.routerActive.snapshot.paramMap.get('id');
     console.log('idPeticion', this.idPeticion);
+    this.user = JSON.parse(localStorage.getItem('userData'));
   }
 
   getData() {
@@ -108,6 +110,22 @@ export class MedicalNetworkComponent implements OnInit {
     //   .catch((err) => console.log('Error de llamada', err));
     const telNumber = numero;
     window.open(`tel:${telNumber}`, '_system');
+    if(this.idPeticion === '1'){
+      this.postCall();
+    }
+  }
+  postCall(){
+    const data = {
+      userId: this.user.id,
+      eventType: 1
+    };
+    this.service
+      .serviceGeneralPostWithUrl(`RequestSupport`, data )
+      .subscribe((resp) => {
+        if (resp.success) {
+          console.log('llamada registrada');
+        }
+      });
   }
   catalogsEspecialista() {
     this.service
