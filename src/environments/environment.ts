@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://4mypatient-api.tartaro.app/api/',
+  apiURL: 'https://api.4mypatient.com.mx/api/',
   // apiURL: 'https://localhost:7210/api/',
 };
 /*
