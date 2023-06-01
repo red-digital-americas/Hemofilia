@@ -84,7 +84,12 @@ ion-select {
   border-color: #ff8b00;
   border-width: 0px;
 }
-
+.btn-gradient-red {
+  border-radius: 26px;
+  background-image: linear-gradient(to bottom, #ff0000, #ff0000);
+  border-color: #ff8b00;
+  border-width: 0px;
+}
 .btn-gradient-blue {
   border-radius: 26px;
   background-image: linear-gradient(to bottom, #0ab1e0 0%, #0277c4) !important;

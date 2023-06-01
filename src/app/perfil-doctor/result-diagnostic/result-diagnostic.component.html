@@ -220,7 +220,10 @@
     <ion-row class="" size="12" *ngIf="data === null ">
       <ion-col size="12" class="my-1">
         <div class="text-center">
-          <h4>No encontramos coincidencias </h4>
+          <h4>No encontramos coincidencias <br> <br>
+            Quizá faltaron algunos datos importantes.
+
+          </h4>
         </div>
       </ion-col>
       <!-- <ion-col size="12" class="my-4 text-center">
@@ -237,14 +240,15 @@
       <ion-col size="12" class="my-3">
         <div class="text-center">
           <h4>
-            Cuéntale tu caso brevemente a un hematólogo</h4>
+            Cuéntale tu caso brevemente a un hematólogo de nuestra red
+          </h4>
         </div>
       </ion-col>
       <ion-col size="12" class="my-4 text-center">
         <button
           (click)="llamarhematologo()"
           type="button"
-          class="btn btn-tertiary btn-lg btn-gradient-blue"
+          class="btn btn-tertiary btn-lg btn-gradient-red"
         >
           <span class="btn-text"> HematoConect </span>
         </button>
