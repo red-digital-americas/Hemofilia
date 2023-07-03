@@ -13,6 +13,7 @@ import { DatePipe } from '@angular/common';
 })
 export class PerfilComponent implements OnInit {
 
+  public knobValues: any;
   // public data: UserModel = new UserModel();
   public data: any;
   public disabledd = true;
@@ -21,7 +22,6 @@ export class PerfilComponent implements OnInit {
   public twoScreen = false;
   public threeScreen = false;
   public fourScreen = false;
-  public fiveScreen = false;
   public sixScreen = false;
   public today = new Date();
   public title = '';
@@ -30,9 +30,17 @@ export class PerfilComponent implements OnInit {
   public especialidades;
   public consultorio;
   public catDay;
-  public catSchedule;
+  public schedule;
   public catState;
   public optionDay;
+  public countAttri = 1000;
+  public horario4mypatient = false;
+
+
+  // banderas para doctor hematologo y union a 4mypatient
+  public medico4mypatient = false;
+  doc4mypatient = false;
+
   oneStep = this.formBuilder.group({
     roleId: ['', [Validators.required]],
   });
@@ -62,6 +70,9 @@ export class PerfilComponent implements OnInit {
   sixStep = this.formBuilder.group({
     email: ['', Validators.email],
   });
+  medico4mypatientStep = this.formBuilder.group({
+    availableForCall: ['false'],
+  });
   public user: any;
   public dayCalendar: any[] = [];
 
@@ -72,22 +83,27 @@ export class PerfilComponent implements OnInit {
   segmentChanged(ev: any) {
     console.log('Segment changed', ev);
   }
-  ionViewWillEnter() {
+  // ionViewWillEnter() {
+  //   this.user = JSON.parse(localStorage.getItem('userData'));
+  //   console.log('user ionViewWillEnter', this.user);
+  //   this.getData(this.user.id);
+  //   this.getEspecialidades();
+  //   this.getConsultorio();
+  //   this.getDay();
+  //   this.getState();
+
+  // }
+  ngOnInit() {
+
     this.user = JSON.parse(localStorage.getItem('userData'));
-    console.log('user', this.user);
+    console.log('user ngOnInit', this.user);
     this.getData(this.user.id);
     this.getEspecialidades();
     this.getConsultorio();
     this.getDay();
-    this.getSchedule();
     this.getState();
+  }
 
-  }
-  ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('userData'));
-    console.log('user', this.user);
-    this.getData(this.user.id);
-  }
   getData(id: number) {
     this.service.serviceGeneralGet(`User/${id}`).subscribe(resp => {
       if (resp.success) {
@@ -118,10 +134,10 @@ export class PerfilComponent implements OnInit {
           state: [this.data.user.stateId, [Validators.required]],
           address: [this.data.user.address, [Validators.required]],
         });
-        this.dayCalendar = this.data.calendario;
-        this.fiveStep = this.formBuilder.group({
-          schedule: [''],
+        this.medico4mypatientStep = this.formBuilder.group({
+          availableForCall: [this.data.user.availableForCall, Validators.required],
         });
+        this.getSchedule();
       } else {
         this.title = 'Error';
         this.message(this.title, resp.message);
@@ -133,24 +149,37 @@ export class PerfilComponent implements OnInit {
         this.message(this.title, error.error.message);
       });
   }
+
   back() {
     console.log('regresar');
     this.router.navigateByUrl('/perfil-doctor/home');
+    this.ngOnInit();
   }
   addDay() {
+    if (this.countAttri === 1000) {
+      this.countAttri = this.countAttri + 1;
+    }
+    else {
+      this.countAttri = this.countAttri + 1;
+    }
     this.dayCalendar.push({
       id: 0,
-      userId: this.user.id,
-      dayId: 0,
-      scheduleId: 0
+      userId: this.data.user.id,
+      day: 0,
+      scheduleId: 0,
+      timeInit: '00:00',
+      timeEnd: '00:00',
+      attrHI: 'horaInicia' + this.countAttri,
+      attrHF: 'horaFinal' + this.countAttri,
+      status: 'new'
     });
     console.log('recuersos', this.dayCalendar);
   }
   deleteDay(data, index) {
     console.log('index', index);
     console.log('data', data);
-    if (data.id !== 0) {
-      this.service.serviceGeneralDelete(`User/DeleteCalendario?id=${data.id}`).subscribe(resp => {
+    if (data.status === 'old') {
+      this.service.serviceGeneralDelete(`User/delete-weekly-schedule?guid=${data.id}`).subscribe(resp => {
         if (resp.success) {
           console.log('resp delete calendar', resp.result);
           this.getData(this.user.id);
@@ -159,7 +188,7 @@ export class PerfilComponent implements OnInit {
       });
     }
     else {
-      if (this.dayCalendar.length !== 1) {
+      if (this.dayCalendar.length !== 0) {
         this.dayCalendar.splice(index, 1);
       }
     }
@@ -175,6 +204,7 @@ export class PerfilComponent implements OnInit {
       }
     });
   }
+
   getEspecialidades() {
     this.service.serviceGeneralGet('CatSpeciality').subscribe(resp => {
       if (resp.success) {
@@ -185,8 +215,9 @@ export class PerfilComponent implements OnInit {
   }
 
   home() {
-    this.ionViewWillEnter();
+    this.ngOnInit();
     this.router.navigateByUrl('/perfil-doctor/home');
+    this.step1();
   }
   getConsultorio() {
     this.service.serviceGeneralGet('CatConsultorio').subscribe(resp => {
@@ -205,74 +236,147 @@ export class PerfilComponent implements OnInit {
     });
   }
   getSchedule() {
-    this.service.serviceGeneralGet('CatSchedule').subscribe(resp => {
+    this.dayCalendar = [];
+    this.service.serviceGeneralGet(`User/all-weekly-schedule?userId=${this.user.id}`).subscribe(resp => {
       if (resp.success) {
-        this.catSchedule = resp.result;
-        console.log('cat catSchedule', this.catSchedule);
+        this.schedule = resp.result;
+        console.log('servicio', this.schedule);
+        if (this.schedule.length !== 0) {
+          if (this.countAttri === 1000) {
+            this.countAttri = this.countAttri + 1;
+          }
+          this.schedule.forEach(element => {
+            this.catDay.forEach(dia => {
+              if (dia.name === element.day) {
+                this.dayCalendar.push({
+                  id: element.id,
+                  userId: element.userId,
+                  day: dia.id,
+                  timeInit: element.timeInit,
+                  timeEnd: element.timeEnd,
+                  attrHI: 'horaInicia' + this.countAttri,
+                  attrHF: 'horaFinal' + this.countAttri,
+                  status: 'old'
+                });
+                this.countAttri = this.countAttri + 1;
+              }
+            });
+          });
+        }
+        console.log('dayCalendar', this.dayCalendar);
       }
     });
   }
-  invitacionHematologicos() {
-    console.log('especialidad', this.threeStep.value.specialityId);
-    if (this.threeStep.value.specialityId === 1) {
-      this.title = 'Hola';
-      // eslint-disable-next-line max-len
-      this.body = 'Nos encantaría que te unieras al equipo de hematólogos que queremos ver cada vez menos pacientes con enfermedades en etapas avanzadas, para ello, médicos de primer contacto podrán  contactarte brevemente para resolver dudas puntuales, de manera anónima y solo en los momentos libres que tengas, a tu elección. ';
-      this.message(this.title, this.body);
-    }
-  }
+
   step1() {
     console.log('paso 1');
-
     this.oneScreen = true;
     this.twoScreen = false;
     this.threeScreen = false;
     this.fourScreen = false;
-    this.fiveScreen = false;
+    this.medico4mypatient = false;
+    this.horario4mypatient = false;
     this.sixScreen = false;
   }
   step2() {
     console.log('paso 2');
-
     this.oneScreen = false;
     this.twoScreen = true;
     this.threeScreen = false;
+    this.medico4mypatient = false;
+    this.horario4mypatient = false;
     this.fourScreen = false;
-    this.fiveScreen = false;
     this.sixScreen = false;
   }
   // desicion
-  step3() {
-    console.log('paso 3');
+  step3(direccion: string) {
+    console.log(direccion);
+    if (direccion === 'adelante') {
+      this.oneScreen = false;
+      this.twoScreen = false;
+      this.threeScreen = true;
+      this.medico4mypatient = false;
+      this.horario4mypatient = false;
+      this.fourScreen = false;
+      this.sixScreen = false;
+    }
+    else if (direccion === 'atrasHemato') {
+      this.threeScreen = true;
+      this.medico4mypatient = false;
+      this.oneScreen = false;
+      this.twoScreen = false;
+      this.horario4mypatient = false;
+      this.fourScreen = false;
+      this.sixScreen = false;
+    }
+    else {
+      this.oneScreen = false;
+      this.twoScreen = false;
+      this.fourScreen = false;
+      if (this.threeStep.value.specialityId === 1) {
+        if (this.medico4mypatientStep.value.availableForCall === true) {
+          this.horario4mypatient = true;
+          this.medico4mypatient = false;
+          this.getSchedule();
+        }
+        else {
+          //esta opcion es regresar de medico4mypatient a paso 3
+          this.medico4mypatient = true;
+        }
+      }
+      else {
+        //si la especialida no es hematologica
+        this.threeScreen = true;
+        this.medico4mypatient = false;
 
+      }
+    }
+  }
+
+  m4mypatientStep() {
+    console.log('m4mypatientStep');
     this.oneScreen = false;
     this.twoScreen = false;
-    this.threeScreen = true;
+    this.threeScreen = false;
     this.fourScreen = false;
-    this.fiveScreen = false;
-    this.sixScreen = false;
+    this.horario4mypatient = false;
+    if (this.threeStep.value.specialityId === 1) {
+      this.medico4mypatient = true;
+    }
+    else {
+      this.medico4mypatient = false;
+      this.fourScreen = true;
+    }
   }
+  stepHorario() {
+    console.log('horario');
+    this.oneScreen = false;
+    this.twoScreen = false;
+    this.threeScreen = false;
+    this.fourScreen = false;
+    this.sixScreen = false;
+    this.medico4mypatient = false;
+    if (this.medico4mypatientStep.value.availableForCall === true) {
+      this.horario4mypatient = true;
+    }
+    else {
+      this.horario4mypatient = false;
+      this.fourScreen = true;
+    }
+  }
+
   step4() {
     console.log('paso 4');
-
     this.oneScreen = false;
     this.twoScreen = false;
     this.threeScreen = false;
     this.fourScreen = true;
-    this.fiveScreen = false;
+    this.medico4mypatient = false;
+    this.horario4mypatient = false;
     this.sixScreen = false;
   }
 
-  step5() {
-    console.log('paso 5');
-    console.log(this.dayCalendar);
-    this.oneScreen = false;
-    this.twoScreen = false;
-    this.threeScreen = false;
-    this.fourScreen = false;
-    this.fiveScreen = true;
-    this.sixScreen = false;
-  }
+
 
   step6() {
     console.log('paso 6, guardar calendario');
@@ -281,7 +385,8 @@ export class PerfilComponent implements OnInit {
     this.twoScreen = false;
     this.threeScreen = false;
     this.fourScreen = false;
-    this.fiveScreen = false;
+    this.medico4mypatient = false;
+    this.horario4mypatient = false;
     this.sixScreen = true;
   }
   formartDate() {
@@ -306,23 +411,116 @@ export class PerfilComponent implements OnInit {
     this.createDate = `${date}T${time}`;
     console.log('createDate', this.createDate);
   }
-  saveCalendar(){
+  saveCalendar() {
+    if (this.data.user.availableForCall === true) {
 
-    this.service.serviceGeneralPostWithUrl(`User/Calendar/${this.user.id}`, this.dayCalendar).subscribe(resp => {
-      if (resp.success) {
-        this.title = 'Exito';
-        this.body = 'Se guardo la disponibilidad de atención correctame';
-        this.message(this.title, this.body);
-      } else {
-        this.title = 'Error';
-        this.message(this.title, resp.message);
+      const addtempweeklySchedules = [];
+      const updatetempweeklySchedules = [];
+      if (this.data.user.specialityId === 1) {
+        if (this.dayCalendar.length !== 0) {
+          this.dayCalendar.forEach(calendario => {
+            this.catDay.forEach(dia => {
+              if (calendario.status === 'new') {
+                // add
+                if (dia.id === calendario.day) {
+                  addtempweeklySchedules.push(
+                    {
+                      id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
+                      userId: calendario.userId,
+                      day: dia.name,
+                      timeInit: calendario.timeInit,
+                      timeEnd: calendario.timeEnd
+                    });
+                }
+              }
+              else {
+                // update
+                if (dia.id === calendario.day) {
+                  updatetempweeklySchedules.push(
+                    {
+                      id: calendario.id,
+                      userId: calendario.userId,
+                      day: dia.name,
+                      timeInit: calendario.timeInit,
+                      timeEnd: calendario.timeEnd
+                    });
+                }
+              }
+            });
+          });
+        }
       }
-    },
-      (error) => {
-        console.log(error);
+      else {
         this.title = 'Error';
-        this.message(this.title, error.error.message);
-      });
+        this.body = 'No haz aceptado ser parte de la red 4myPatient';
+        this.message(this.title, this.body);
+      }
+
+      let numPost = 0;
+      let numErr = 0;
+      if (addtempweeklySchedules.length !== 0) {
+
+        addtempweeklySchedules.forEach(element => {
+          this.service.serviceGeneralPostWithUrl(`User/add-weekly-schedule`, element).subscribe(resp => {
+            if (resp.success) {
+              numPost = numPost + 1;
+            } else {
+              numErr = numErr + 1;
+            }
+          },
+            (error) => {
+              console.log(error);
+              this.title = 'Error';
+              this.message(this.title, error.error.message);
+            });
+        });
+        if (numPost === addtempweeklySchedules.length) {
+          this.title = 'Exito';
+          this.body = 'Se guardo la disponibilidad de atención correctame';
+          this.message(this.title, this.body);
+        }
+        if (numErr === addtempweeklySchedules.length) {
+          this.title = 'Error';
+          this.body = 'Tenemos problemas intentelo mas tarde';
+          this.message(this.title, this.body);
+        }
+      }
+
+      let numUpdate = 0;
+      let numUpdateErr = 0;
+      if (updatetempweeklySchedules.length !== 0) {
+        updatetempweeklySchedules.forEach(element => {
+          this.service.serviceGeneralPut(`User/update-weekly-schedule`, element).subscribe(resp => {
+            if (resp.success) {
+              numUpdate = numUpdate + 1;
+            } else {
+              numUpdateErr = numUpdateErr + 1;
+            }
+          },
+            (error) => {
+              console.log(error);
+              this.title = 'Error';
+              this.message(this.title, error.error.message);
+            });
+        });
+        if (numUpdate === updatetempweeklySchedules.length) {
+          this.title = 'Exito';
+          this.body = 'Se guardo la disponibilidad de atención correctame';
+          this.message(this.title, this.body);
+        }
+        if (numUpdateErr === updatetempweeklySchedules.length) {
+          this.title = 'Error';
+          this.body = 'Tenemos problemas intentelo mas tarde';
+          this.message(this.title, this.body);
+        }
+      }
+      this.ngOnInit();
+    }
+    else {
+      this.title = 'Atención';
+      this.body = 'Seleccione que acepta unirse a la Red Médica,guade su perfil y despues agregue los horarios de Disponibilidad';
+      this.message(this.title, this.body);
+    }
   }
 
   save() {
@@ -344,7 +542,7 @@ export class PerfilComponent implements OnInit {
     this.data.user.phone = this.fourStep.value.phoneConsulting;
     this.data.user.consultingType = this.fourStep.value.consultingType;
     this.data.user.stateId = this.fourStep.value.state;
-
+    this.data.user.availableForCall = this.medico4mypatientStep.value.availableForCall;
     this.data.user.address = this.fourStep.value.address;
     this.data.user.updatedBy = this.user.id;
     this.data.user.updatedDate = this.today;
@@ -373,7 +571,7 @@ export class PerfilComponent implements OnInit {
         this.disabledd = false;
       });
   }
-  changePassword(){
+  changePassword() {
     this.router.navigateByUrl(`/perfil-doctor/change-password/${this.data.user.id}`);
   }
 
@@ -383,6 +581,16 @@ export class PerfilComponent implements OnInit {
       // subHeader: e.header,
       message: body,
       buttons: ['OK'],
+      mode: 'ios',
+    });
+    await alert.present();
+  }
+  async messageHema(title, body) {
+    const alert = await this.alertController.create({
+      header: title,
+      // subHeader: e.header,
+      message: body,
+      buttons: ['Me Sumo a la Red Médica'],
       mode: 'ios',
     });
     await alert.present();

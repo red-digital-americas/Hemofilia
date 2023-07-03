@@ -24,16 +24,14 @@ export class HeaderComponent implements OnInit {
   public appPagesUser = [
     { title: 'Home', url: '/perfil-doctor/home', icon: 'home', status: 'true' },
     { title: 'Quiénes somos', url: '/perfil-doctor/about', icon: 'body', status: 'true' },
-    { title: 'Ir al Diagnóstico Temprano', url: '/perfil-doctor/diagnostico', icon: 'document', status: 'false' },
-    // { title: 'Estudios clínicos', url: 'clinical-studies', icon: 'reader' },
-    { title: 'Red Médica', url: '/perfil-doctor/medical-network/0', icon: 'pulse', status: 'false' },
+    { title: 'Iniciar analísis', url: '/perfil-doctor/diagnostico', icon: 'document', status: 'true' },
+    { title: 'Red Médica', url: '/perfil-doctor/medical-network/0', icon: 'pulse', status: 'true' },
+    { title: 'Mi Perfil', url: '/perfil-doctor/perfil', icon: 'person', status: 'true' },
+    { title: 'Educación médica', url: '/perfil-doctor/educacion', icon: 'book', status: 'true' },
     { title: 'Patrocinadores', url: '/perfil-doctor/patrocinadores', icon: 'people', status: 'true' },
-    // { title: 'Login', url: '/login', icon: 'key', status: 'true' },
-    { title: 'Perfil', url: '/perfil-doctor/perfil', icon: 'person', status: 'false' },
-    { title: 'Acerca de', url: '/perfil-doctor/acerca-de', icon: 'information', status: 'false' },
-
-
+    { title: 'Acerca de', url: '/perfil-doctor/acerca-de', icon: 'information', status: 'true' },
   ];
+
   public user: any;
   public userRol = false;
 
@@ -50,10 +48,22 @@ export class HeaderComponent implements OnInit {
     }
   }
   ngOnInit() {
+    console.log('menu');
+
     this.user = JSON.parse(localStorage.getItem('userData'));
     console.log('user', this.user);
     if (this.user === null) {
       this.userRol = false;
+    }
+    if(this.user.specialityId === 1){
+      this.appPagesUser.forEach(element => {
+        if(element.title === 'Iniciar analísis'){
+          element.status = 'false';
+        }
+        else {
+          element.status= 'true';
+        }
+      });
     }
     this.menuChange2();
   }
