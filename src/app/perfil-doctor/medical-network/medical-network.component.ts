@@ -10,7 +10,7 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 })
 export class MedicalNetworkComponent implements OnInit {
 
-  public data;
+  public data: any =[];
   public today = new Date();
 
   public idPeticion = '';
@@ -22,13 +22,13 @@ export class MedicalNetworkComponent implements OnInit {
   private callNumber: CallNumber;
   // eslint-disable-next-line @typescript-eslint/member-ordering
   public dias = [
-    'domingo',
-    'lunes',
-    'martes',
-    'miércoles',
-    'jueves',
-    'viernes',
-    'sábado',
+    'Domingo',
+    'Lunes',
+    'Martes',
+    'Miércoles',
+    'Jueves',
+    'Viernes',
+    'Sábado',
   ];
 
   constructor(public service: ServiceGeneralService, private alertController: AlertController, public routerActive: ActivatedRoute,
@@ -72,10 +72,11 @@ export class MedicalNetworkComponent implements OnInit {
       // User/all-by-speciality?speciality=${1}
       this.service.serviceGeneralGet(`User/medic-available`).subscribe(resp => {
         if (resp.success) {
+          console.log('red', resp.result);
           const res = resp.result;
           res.forEach(element => {
             element.weeklySchedules.forEach(dia => {
-              if(dia === nombreDia){
+              if (dia.day === nombreDia) {
                 this.data.push(element);
               }
             });

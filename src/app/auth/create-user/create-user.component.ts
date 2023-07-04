@@ -7,6 +7,7 @@ import { AlertController } from '@ionic/angular';
 import { ServiceGeneralService } from 'src/app/core/servises/service-general/service-general.service';
 import { DatePipe } from '@angular/common';
 
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-create-user',
@@ -34,6 +35,8 @@ export class CreateUserComponent implements OnInit {
   public optionDay;
   public catState;
   public countAttri = 0;
+  uuid: string;
+
 
 
   // banderas para doctor hematologo y union a 4mypatient
@@ -281,6 +284,7 @@ export class CreateUserComponent implements OnInit {
     console.log('createDate', this.createDate);
   }
 
+
   save() {
     this.disabled = true;
     this.formartDate();
@@ -317,7 +321,7 @@ export class CreateUserComponent implements OnInit {
             if (dia.id === horario.dayId) {
               tempweeklySchedules.push(
                 {
-                  id: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
+                  id: horario.id,
                   userId: 0,
                   day: dia.name,
                   timeInit: horario.timeInit,
@@ -360,6 +364,9 @@ export class CreateUserComponent implements OnInit {
       });
   }
   addDay() {
+    // this.uuid = self.crypto.randomUUID();
+    this.uuid = uuidv4();
+
     if (this.countAttri === 0) {
       this.countAttri = this.countAttri + 1;
     }
@@ -367,7 +374,7 @@ export class CreateUserComponent implements OnInit {
       this.countAttri = this.countAttri + 1;
     }
     this.dayCalendar.push({
-      id: 0,
+      id: this.uuid,
       userId: 0,
       dayId: 0,
       scheduleId: 0,

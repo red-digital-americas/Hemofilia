@@ -40,13 +40,7 @@ export class HeaderComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, public router: Router,
     private popoverCtrl: PopoverController, private alertController: AlertController) { }
 
-  ionViewWillEnter() {
-    this.user = JSON.parse(localStorage.getItem('userData'));
-    console.log('user', this.user);
-    if(this.user === null){
-      this.userRol = false;
-    }
-  }
+
   ngOnInit() {
     console.log('menu');
 
@@ -65,6 +59,8 @@ export class HeaderComponent implements OnInit {
         }
       });
     }
+
+
     this.menuChange2();
   }
   menuChange2(){
@@ -91,6 +87,9 @@ export class HeaderComponent implements OnInit {
     this.message(this.title, this.body);
     this.router.navigateByUrl('/perfil-user/login');
     localStorage.removeItem('userData');
+    this.appPagesUser[2].status = 'true';
+    console.log('status', this.appPagesUser[2].status );
+
     this.ngOnInit();
   }
 

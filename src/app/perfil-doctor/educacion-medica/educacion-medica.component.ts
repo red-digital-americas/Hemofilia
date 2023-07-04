@@ -11,6 +11,7 @@ export class EducacionMedicaComponent implements OnInit {
   slideOpt ={
     direction: 'horizontal',
     slidesPerView: 2,
+    autoplay:true,
     pagination: {
       el: '.swiper-pagination',
     }
