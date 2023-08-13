@@ -39,6 +39,12 @@
 
                         <br><br>
                         Por ello se recomienda consultar a un médico especialista ante cualquier sospecha de enfermedad.
+                        <br><br>
+                        Los datos que le solicitaremos de su paciente no incluyen datos de identificación personal. El
+                        análisis que está usted a punto de iniciar, considera únicamente información puntual que nos
+                        permita analizar desde el punto de vista de la clínica y con el apoyo de resultados de
+                        laboratorio posibles hallazgos que indiquen la presencia de una hematopatía
+                        <br><br>
                       </span>
                     </div>
                   </ion-col>
@@ -53,7 +59,7 @@
         </ion-row>
       </ion-content>
     </ion-slide>
-    <!-- * Datos Iniciales  1 pantalla-->
+    <!-- Sintomas -->
     <ion-slide>
       <ion-content scroll="false">
         <ion-row>
@@ -70,6 +76,145 @@
               </span>
             </div>
           </ion-col>
+          <ion-col size="12">
+            <h2>Sintomas</h2>
+            <ion-grid class="mb-4">
+              <ion-row>
+                <ion-col size="12">
+                  <ion-list class="text-left">
+                    <ion-list-header class="mb-2">
+                      <ion-label class="subtitle">
+                        Seleccione los síntomas que presenta su paciente:
+                      </ion-label>
+                    </ion-list-header>
+                    <div *ngFor="let item of cSintomas">
+                      <ion-item>
+                        <ion-checkbox [(ngModel)]="item.status" slot="start"
+                          (ngModelChange)="sintomasValue(item)">{{item.symptom}}</ion-checkbox>
+                        <ion-label>
+                          {{item.symptom}}
+                        </ion-label>
+                      </ion-item>
+                    </div>
+                  </ion-list>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-grid>
+              <ion-button (click)="slides.slidePrev()" fill="clear">
+                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+              </ion-button>
+              <ion-button (click)="swipeNext()" color="tertiary" fill="clear">Continuar
+                <ion-icon color="tertiary" slot="end" name="arrow-forward">
+                </ion-icon>
+              </ion-button>
+            </ion-grid>
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="ion-text-center">
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </ion-slide>
+    <!-- Estudios -->
+    <ion-slide *ngIf="this.data.symptomId !== null">
+      <ion-content scroll="false">
+        <ion-row>
+          <ion-col size="6">
+            <div class="ion-text-start">
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="ion-text-end back ion-margin-bottom">
+              <span (click)="back()" class="puntero">
+                <ion-icon name="close-outline"></ion-icon> Cancelar
+              </span>
+            </div>
+          </ion-col>
+          <ion-col size="12">
+            <h2>Estudios</h2>
+            <ion-grid class="mb-4">
+              <ion-row>
+                <ion-col size="12">
+                  <ion-list class="text-left">
+                    <ion-list-header class="mb-2">
+                      <ion-label class="subtitle">
+                        En caso de contar con estudios de laboratorio recientes menores a 2 meses, continuar:
+                      </ion-label>
+                    </ion-list-header>
+                    <div *ngFor="let item of cEstudios">
+                      <ion-item>
+                        <ion-checkbox [(ngModel)]="item.status" slot="start"
+                          (ngModelChange)="laboratoryValue(item)"></ion-checkbox>
+                        <ion-label>
+                          {{item.laboratoryTest}}
+                        </ion-label>
+                      </ion-item>
+                    </div>
+                  </ion-list>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+            <ion-grid class="my-3">
+              <ion-row *ngIf="data.laboratoryTestId === '57d018d9-c7f1-4196-919d-cba04eb8e29d'">
+                <ion-col size="12">
+                  <ion-item>
+                    <ion-input [(ngModel)]="data.laboratoryTestOther" label="Otro"
+                      placeholder="Escribe otro estudio"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-grid>
+              <ion-button (click)="slides.slidePrev()" fill="clear">
+                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+              </ion-button>
+              <ion-button (click)="swipeNext()" color="tertiary" fill="clear">Continuar
+                <ion-icon color="tertiary" slot="end" name="arrow-forward">
+                </ion-icon>
+              </ion-button>
+            </ion-grid>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <div class="ion-text-center">
+              <img class="img-slider-footer mb-4" src="./assets/amdlcc.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-content>
+    </ion-slide>
+    <!-- * Datos Iniciales  1 pantalla-->
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
+      <ion-content scroll="false">
+        <ion-row>
+          <ion-col size="6">
+            <div class="ion-text-start">
+              <img class="img-slider-header" src="./assets/logo.png"
+                alt="Asociacion Mexicana de Lucha contra el cancer" />
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="ion-text-end back ion-margin-bottom">
+              <span (click)="back()" class="puntero">
+                <ion-icon name="close-outline"></ion-icon> Cancelar
+              </span>
+            </div>
+          </ion-col>
+
+
           <ion-col size="12">
             <h2>Datos Iniciales</h2>
             <ion-grid class="mb-4">
@@ -116,7 +261,7 @@
       </ion-content>
     </ion-slide>
     <!--* Datos Iniciales  2 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -178,7 +323,7 @@
       </ion-content>
     </ion-slide>
     <!--* Biometria Hematica  3 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -242,7 +387,7 @@
       </ion-content>
     </ion-slide>
     <!--* Biometria Hematica  4 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -306,7 +451,7 @@
       </ion-content>
     </ion-slide>
     <!-- * Biometria Hematica  5 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -370,7 +515,7 @@
       </ion-content>
     </ion-slide>
     <!-- *Biometria Hematica  6 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -434,7 +579,7 @@
       </ion-content>
     </ion-slide>
     <!-- Biometria Hematica  7 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -497,7 +642,7 @@
       </ion-content>
     </ion-slide>
     <!--* Biometria Hematica  8 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -561,7 +706,7 @@
       </ion-content>
     </ion-slide>
     <!-- Biometria Hematica  9 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -624,7 +769,7 @@
       </ion-content>
     </ion-slide>
     <!--FROTIS DE SANGRE PERIFERICA  10 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -685,7 +830,7 @@
       </ion-content>
     </ion-slide>
     <!--FROTIS DE SANGRE PERIFERICA  11 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -746,7 +891,7 @@
       </ion-content>
     </ion-slide>
     <!--Bioquimicas 12 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -807,7 +952,7 @@
       </ion-content>
     </ion-slide>
     <!--* Biometria Hematica  13 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -871,7 +1016,7 @@
       </ion-content>
     </ion-slide>
     <!--Bioquimicas 14 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -932,7 +1077,7 @@
       </ion-content>
     </ion-slide>
     <!--Bioquimicas 15 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -993,7 +1138,7 @@
       </ion-content>
     </ion-slide>
     <!--Bioquimicas 16 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -1054,7 +1199,7 @@
       </ion-content>
     </ion-slide>
     <!--Bioquimicas 17 pantalla-->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -1115,7 +1260,7 @@
       </ion-content>
     </ion-slide>
     <!-- Coagulación 18 pantalla -->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -1176,7 +1321,7 @@
       </ion-content>
     </ion-slide>
     <!-- Clínicas 19 pantalla -->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -1237,7 +1382,7 @@
       </ion-content>
     </ion-slide>
     <!-- Clínicas 20 pantalla -->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -1298,7 +1443,7 @@
       </ion-content>
     </ion-slide>
     <!-- Clínicas 21 pantalla -->
-    <ion-slide>
+    <ion-slide *ngIf="this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
@@ -1360,7 +1505,7 @@
       </ion-content>
     </ion-slide>
     <!-- leyenda al terminar quiz -->
-    <ion-slide *ngIf="dataSave === true">
+    <ion-slide *ngIf="dataSave === true || this.data.symptomId !== null && this.data.laboratoryTestId !== null">
       <ion-content scroll="false">
         <ion-row>
           <ion-col size="6">
