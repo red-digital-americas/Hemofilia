@@ -27,7 +27,17 @@ export class DiagnosticComponent implements OnInit {
   // public data: any;
   public data: DataModel = new DataModel();
   public dataSave = false;
+  public dataSintomas = false;
+  public dataEstudios = false;
+
+
   public cOption = [];
+  public cSintomas = [];
+  public cEstudios = [];
+  public symptomId = null;
+  public laboratoryTestId = null;
+
+
   public title = '';
   public body = '';
   public today = new Date();
@@ -46,10 +56,37 @@ export class DiagnosticComponent implements OnInit {
   ngOnInit() {
     this.slides.slideTo(0);
     this.disabledGuardar = false;
+    this.data.symptomId = null;
+    this.data.laboratoryTestId = null;
 
     this.user = JSON.parse(localStorage.getItem('userData'));
     console.log('user', this.user);
     this.getCatOpcion();
+    this.catEstudios();
+    this.catSintomas();
+
+  }
+  catSintomas() {
+    this.service.serviceGeneralGet('CatSymptom').subscribe(resp => {
+      if (resp.success) {
+        this.cSintomas = resp.result;
+        this.cSintomas.forEach(element => {
+          element.status = false;
+        });
+        console.log('sintomas', this.cSintomas);
+      }
+    });
+  }
+  catEstudios() {
+    this.service.serviceGeneralGet('CatLaboratoryTest').subscribe(resp => {
+      if (resp.success) {
+        this.cEstudios = resp.result;
+        this.cEstudios.forEach(element => {
+          element.status = false;
+        });
+        console.log('estudios', this.cEstudios);
+      }
+    });
   }
   getCatOpcion() {
     this.service.serviceGeneralGet(`CatOptionDiagnostic`).subscribe(resp => {
@@ -129,10 +166,11 @@ export class DiagnosticComponent implements OnInit {
     this.data.textResult = nameTemp;
     this.data.result = true;
     this.data.createdDate = this.today;
-
+    this.data.initialDataId = null;
     console.log('data', this.data);
-
     if (this.data.results.length !== 0) {
+      console.log('data', this.data);
+
       this.service.serviceGeneralPostWithUrl('Quiz', this.data).subscribe(resp => {
         if (resp.success) {
           this.dataSave = true;
@@ -162,6 +200,48 @@ export class DiagnosticComponent implements OnInit {
   public prev() {
     this.slides.slidePrev();
   }
+  sintomasValue(value) {
+    console.log('sintoma value', value);
+    this.cSintomas.forEach(element => {
+      if (element.id !== value.id) {
+        element.status = false;
+      }
+      else {
+        if (value.status === true) {
+          this.data.symptomId = value.id;
+        }
+        else {
+          this.data.symptomId = null;
+        }
+      }
+    });
+    console.log('sintoma value', this.data.symptomId);
+  }
+  laboratoryValue(value) {
+    // eslint-disable-next-line max-len
+    const body = 'Para validar los posibles resultados, le recomendamos indicar a su paciente realizarse una Biometria Hematica y/o una Quimica Sanguinea.';
+    const title = 'Importante';
+    console.log('laboratory', value);
+    this.cEstudios.forEach(element => {
+      if (element.id !== value.id) {
+        element.status = false;
+      }
+      else {
+        if (value.status === true) {
+          this.data.laboratoryTestId = value.id;
+          if (value.laboratoryTest === 'Otro(s)' || value.laboratoryTest === 'Ninguno') {
+            this.messageHema(title, body);
+
+          }
+        }
+        else {
+          this.data.laboratoryTestId = null;
+        }
+      }
+    });
+    console.log('laboratory', this.data.laboratoryTestId);
+  }
+
   sexValueOp(value) {
     console.log('sex', value);
     if (value.id === 2) {
@@ -369,6 +449,16 @@ export class DiagnosticComponent implements OnInit {
       this.cOption[69].status = true;
     }
   }
+  async messageHema(title, body) {
+    const alert = await this.alertController.create({
+      header: title,
+      // subHeader: e.header,
+      message: body,
+      buttons: ['Ok'],
+      mode: 'ios',
+    });
+    await alert.present();
+  }
 
 }
 class DataModel {
@@ -376,6 +466,10 @@ class DataModel {
   name: string;
   result: boolean;
   textResult: string;
+  symptomId: string;
+  laboratoryTestId: string;
+  laboratoryTestOther: string;
+  initialDataId: string;
   createdDate: Date;
   results: ResultModel[] = [];
 }

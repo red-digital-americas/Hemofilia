@@ -26,24 +26,25 @@
                 <h1 class="title-main text-center">Red médica</h1>
               </div>
             </ion-col>
-            <ion-col size="12">
-              <div class="container my-3">
-                <ion-row size="12">
-                  <ion-col size="4">
+            <ion-col size="12" >
+              <div class="container my-1" >
+                <ion-row size="12" style="display: flex;"   >
+                  <ion-col size="4" style="align-self: center;">
                     <div class="text-center">
-                      <img
-                        src="./assets/random/heart.png"
-                        alt="Criterios de inclusion"
-                      />
+                      <img src="./assets/random/heart.png" alt="Criterios de inclusion" />
                     </div>
                   </ion-col>
-                  <ion-col size="8">
+                  <ion-col size="8" style="align-self: center;">
                     <div class="text-start">
                       <span class="text-clinical-studies">
-                        Aquí se encuentran héroes médicos que se han sumado a
-                        participar con su tiempo y expertos para resolver dudas
-                        puntuales de médicos de primer contacto que están
-                        enfrentando algún desafío diagnóstico
+                        En esta sección podrá acceder al apoyo de un especialista Hematólog@ que amablemente se ha
+                        sumado a participar con su tiempo y experiencia para resolver dudas puntuales que se le puedan
+                        presentar.
+                        <br>
+                        Podrá acceder a una llamada a cualquiera de los que se marcan como disponibles en este momento.
+                        <br>
+                        Agradecemos su apoyo y disponibilidad para sumarse en esta causa en pro de los pacientes.
+
                       </span>
                     </div>
                   </ion-col>
@@ -92,21 +93,12 @@
     <!-- content -->
     <ion-row size="12" *ngIf="data">
       <div class="container my-4">
-        <ion-card
-          (click)="call(item.phone)"
-          class="my-2 radius"
-          *ngFor="let item of data"
-        >
+        <ion-card (click)="call(item.phone)" class="my-2 radius" *ngFor="let item of data">
           <div class="container text-start mt-1 mb-3">
             <ion-row size="12">
               <ion-col size="12" class="text-end">
-                <span class="text-disponible"
-                  >Disponible
-                  <ion-icon
-                    class="text-center"
-                    name="ellipse"
-                    color="success"
-                  ></ion-icon>
+                <span class="text-disponible">Disponible
+                  <ion-icon class="text-center" name="ellipse" color="success"></ion-icon>
                 </span>
               </ion-col>
               <ion-col size="4" class="center-icon">
@@ -125,9 +117,7 @@
                     <!-- <span class="name-person text-start"
                       >{{item.name}} {{item.firstName}}</span
                     > -->
-                    <span class="name-person text-start"
-                      >MED00{{item.id}}0</span
-                    >
+                    <span class="name-person text-start">MED00{{item.id}}0</span>
                   </ion-col>
                   <ion-col size="12" class="my-1 pl-1" class="text-end">
                     <span class="text-end diagnostic">
@@ -150,34 +140,15 @@
         <ion-grid class="transparent">
           <ion-row size="12" class="transparent">
             <ion-col size="12">
-              <img
-                class="logo-footer"
-                src="./assets/logo.png"
-                alt="logo Sumate al diagnostico oportuno"
-              />
+              <img class="logo-footer" src="./assets/logo.png" alt="logo Sumate al diagnostico oportuno" />
             </ion-col>
           </ion-row>
           <ion-row size="12" class="my-4 transparent">
             <ion-col size="12">
               <div class="text-center">
-                <img
-                  (click)="facebook()"
-                  class="icon-social"
-                  src="./assets/icon/icon-facebook.png"
-                  alt="facebook"
-                />
-                <img
-                  (click)="instagram()"
-                  class="icon-social"
-                  src="./assets/icon/icon-instagram.png"
-                  alt="instagram"
-                />
-                <img
-                  (click)="twitter()"
-                  class="icon-social"
-                  src="./assets/icon/icon-twitter.png"
-                  alt="twitter"
-                />
+                <img (click)="facebook()" class="icon-social" src="./assets/icon/icon-facebook.png" alt="facebook" />
+                <img (click)="instagram()" class="icon-social" src="./assets/icon/icon-instagram.png" alt="instagram" />
+                <img (click)="twitter()" class="icon-social" src="./assets/icon/icon-twitter.png" alt="twitter" />
               </div>
             </ion-col>
           </ion-row>
@@ -199,9 +170,7 @@
             </ion-col> -->
             <ion-col size="12" class="my-2">
               <div class="text-center">
-                <span (click)="goTerminos()" class="text-footer"
-                  >Aviso de privacidad</span
-                >
+                <span (click)="goTerminos()" class="text-footer">Aviso de privacidad</span>
               </div>
             </ion-col>
           </ion-row>

@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true" class="main" *ngIf="data !== undefined" >
+<ion-content [fullscreen]="true" class="main" *ngIf="data !== undefined">
   <ion-header [translucent]="true">
     <ion-toolbar>
       <ion-row size="8" slot="start" class="transparent">
@@ -21,7 +21,8 @@
     <ion-row class="margin-cuenta my-4">
       <ion-col size="12" (click)="back()">
         <div class="ion-text-start back ion-margin-bottom">
-          <p class="puntero">< Regresar</p>
+          <p class="puntero">
+            < Regresar</p>
         </div>
       </ion-col>
       <!-- titulo -->
@@ -32,10 +33,8 @@
       </ion-col>
       <ion-col>
         <div class="second-text mt-4 text-center">
-          <span
-            >Con los datos que usted ingresó se obtienen las siguientes
-            posibilidades hematológicas</span
-          >
+          <span>Con los datos que usted ingresó se obtienen las siguientes
+            posibilidades hematológicas</span>
         </div>
       </ion-col>
       <!-- <ion-col *ngIf="data !== undefined" size="12" class="ion-margin-top">
@@ -163,7 +162,7 @@
           </div>
         </ion-card>
       </ion-col>
-      <ion-col size="12" *ngIf="data !== null">
+      <!-- <ion-col size="12" *ngIf="data !== null">
         <div class="text-center">
           <h4 class="text-recomendacion">Recomendaciones:</h4>
         </div>
@@ -190,103 +189,73 @@
             <b class="info-text-b">Tengo una duda</b>
           </span>
         </div>
-      </ion-col>
+      </ion-col> -->
 
-      <ion-col size="12" class="margin-btn ion-margin-top">
+      <!-- <ion-col size="12" class="margin-btn ion-margin-top">
         <div class="text-end">
-          <button
-            class="btn btn-tertiary btn-lg btn-gradient-blue"
-            color="primary"
-            (click)="home()"
-            shape="round"
-          >
+          <button class="btn btn-tertiary btn-lg btn-gradient-blue" color="primary" (click)="home()" shape="round">
             <span class="btn-text">Terminar</span>
           </button>
         </div>
       </ion-col>
       <ion-col size="12" class="margin-btn ion-margin-top mb-3">
         <div class="text-end alineado">
-          <button
-            class="btn btn-tertiary btn-lg btn-gradient-orange"
-            color="primary"
-            (click)="especialistas()"
-            shape="round"
-          >
+          <button class="btn btn-tertiary btn-lg btn-gradient-orange" color="primary" (click)="especialistas()"
+            shape="round">
             <span class="btn-text">Tengo una duda</span>
           </button>
         </div>
-      </ion-col>
+      </ion-col> -->
     </ion-row>
     <ion-row class="" size="12" *ngIf="data === null ">
       <ion-col size="12" class="my-1">
         <div class="text-center">
-          <h4>No encontramos coincidencias </h4>
+          <h4>No encontramos coincidencias
+          </h4>
         </div>
       </ion-col>
-      <!-- <ion-col size="12" class="my-4 text-center">
-        <button
-          (click)="back()"
-          type="button"
-          class="btn btn-tertiary btn-lg btn-gradient-orange"
-        >
-          <span class="btn-text"> < Realizar diagnostico </span>
-        </button>
-      </ion-col> -->
     </ion-row>
-    <ion-row class="mb-3" size="12" *ngIf="data === null ">
+    <ion-row class="mb-3" size="12" >
+      <ion-col size="12" class="my-1">
+        <div class="text-center">
+          <h4>
+            Quizá faltaron algunos datos importantes.
+          </h4>
+          <br>
+          <span>Si estas interesado en preguntar alguna duda puntual
+          </span>
+        </div>
+      </ion-col>
       <ion-col size="12" class="my-3">
         <div class="text-center">
           <h4>
-            Cuéntale tu caso brevemente a un hematólogo</h4>
+            Cuéntale tu caso brevemente a un hematólogo de nuestra red
+          </h4>
         </div>
       </ion-col>
       <ion-col size="12" class="my-4 text-center">
-        <button
-          (click)="llamarhematologo()"
-          type="button"
-          class="btn btn-tertiary btn-lg btn-gradient-blue"
-        >
+        <button (click)="llamarhematologo()" type="button" class="btn btn-tertiary btn-lg btn-gradient-red">
           <span class="btn-text"> HematoConect </span>
         </button>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <!-- </div> -->
   <!-- footer -->
   <ion-grid>
     <ion-row size="12" class="content-footer ">
       <div class="my-1">
         <ion-grid class="transparent">
           <ion-row size="12" class="transparent">
-            <ion-col size="12" >
-              <img
-                class="logo-footer"
-                src="./assets/logo.png"
-                alt="logo Sumate al diagnostico oportuno"
-              />
+            <ion-col size="12">
+              <img class="logo-footer" src="./assets/logo.png" alt="logo Sumate al diagnostico oportuno" />
             </ion-col>
           </ion-row>
           <ion-row size="12" class="my-4 transparent">
             <ion-col size="12">
               <div class="text-center">
-                <img
-                  (click)="facebook()"
-                  class="icon-social"
-                  src="./assets/icon/icon-facebook.png"
-                  alt="facebook"
-                />
-                <img
-                  (click)="instagram()"
-                  class="icon-social"
-                  src="./assets/icon/icon-instagram.png"
-                  alt="instagram"
-                />
-                <img
-                  (click)="twitter()"
-                  class="icon-social"
-                  src="./assets/icon/icon-twitter.png"
-                  alt="twitter"
-                />
+                <img (click)="facebook()" class="icon-social" src="./assets/icon/icon-facebook.png" alt="facebook" />
+                <img (click)="instagram()" class="icon-social" src="./assets/icon/icon-instagram.png" alt="instagram" />
+                <img (click)="twitter()" class="icon-social" src="./assets/icon/icon-twitter.png" alt="twitter" />
               </div>
             </ion-col>
           </ion-row>
@@ -308,9 +277,7 @@
                 </ion-col> -->
             <ion-col size="12" class="my-2">
               <div class="text-center">
-                <span (click)="goTerminos()" class="text-footer"
-                  >Aviso de privacidad</span
-                >
+                <span (click)="goTerminos()" class="text-footer">Aviso de privacidad</span>
               </div>
             </ion-col>
           </ion-row>

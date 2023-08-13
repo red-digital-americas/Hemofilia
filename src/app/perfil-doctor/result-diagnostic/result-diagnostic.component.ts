@@ -41,9 +41,11 @@ export class ResultDiagnosticComponent implements OnInit {
 
   }
   llamarhematologo(){
-    const telNumber = 5560106592;
-    window.open(`tel:${telNumber}`, '_system');
-    this.postCall();
+    this.router.navigateByUrl('/perfil-doctor/medical-network/0');
+
+    // const telNumber = 5560106592;
+    // window.open(`tel:${telNumber}`, '_system');
+    // this.postCall();
   }
   postCall(){
     const data = {

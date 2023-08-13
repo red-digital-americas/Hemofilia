@@ -10,7 +10,8 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 })
 export class MedicalNetworkComponent implements OnInit {
 
-  public data;
+  public data: any =[];
+  public today = new Date();
 
   public idPeticion = '';
   public title = '';
@@ -19,6 +20,16 @@ export class MedicalNetworkComponent implements OnInit {
   public catconsultorio: any[] = [];
   public user: any;
   private callNumber: CallNumber;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  public dias = [
+    'Domingo',
+    'Lunes',
+    'Martes',
+    'Miércoles',
+    'Jueves',
+    'Viernes',
+    'Sábado',
+  ];
 
   constructor(public service: ServiceGeneralService, private alertController: AlertController, public routerActive: ActivatedRoute,
     public router: Router) { }
@@ -34,9 +45,13 @@ export class MedicalNetworkComponent implements OnInit {
   }
 
   getData() {
+    const numeroDia = this.today.getDay();
+    const nombreDia = this.dias[numeroDia];
+    console.log('today', nombreDia);
     this.catalogsEspecialista();
     this.catalogsConstultorio();
-    if (this.idPeticion === '0') {
+    // aqui se pone null por que siempre se mostrara los hematologicos
+    if (this.idPeticion === 'null') {
       this.service.serviceGeneralGet(`User`).subscribe(resp => {
         if (resp.success) {
           this.data = resp.result;
@@ -52,10 +67,20 @@ export class MedicalNetworkComponent implements OnInit {
           this.message(this.title, error.error.message);
         });
     }
-    else if (this.idPeticion === '1') {
-      this.service.serviceGeneralGet(`User/all-by-speciality?speciality=${1}`).subscribe(resp => {
+    else if (this.idPeticion !== 'null') {
+      // User/medic-available
+      // User/all-by-speciality?speciality=${1}
+      this.service.serviceGeneralGet(`User/medic-available`).subscribe(resp => {
         if (resp.success) {
-          this.data = resp.result;
+          console.log('red', resp.result);
+          const res = resp.result;
+          res.forEach(element => {
+            element.weeklySchedules.forEach(dia => {
+              if (dia.day === nombreDia) {
+                this.data.push(element);
+              }
+            });
+          });
           console.log('data', this.data);
         } else {
           this.title = 'Error';
@@ -110,17 +135,17 @@ export class MedicalNetworkComponent implements OnInit {
     //   .catch((err) => console.log('Error de llamada', err));
     const telNumber = numero;
     window.open(`tel:${telNumber}`, '_system');
-    if(this.idPeticion === '1'){
+    if (this.idPeticion === '1') {
       this.postCall();
     }
   }
-  postCall(){
+  postCall() {
     const data = {
       userId: this.user.id,
       eventType: 1
     };
     this.service
-      .serviceGeneralPostWithUrl(`RequestSupport`, data )
+      .serviceGeneralPostWithUrl(`RequestSupport`, data)
       .subscribe((resp) => {
         if (resp.success) {
           console.log('llamada registrada');

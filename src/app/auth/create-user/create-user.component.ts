@@ -7,6 +7,7 @@ import { AlertController } from '@ionic/angular';
 import { ServiceGeneralService } from 'src/app/core/servises/service-general/service-general.service';
 import { DatePipe } from '@angular/common';
 
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-create-user',
@@ -21,8 +22,8 @@ export class CreateUserComponent implements OnInit {
   public twoScreen = false;
   public threeScreen = false;
   public fourScreen = false;
-  public fiveScreen = false;
-  public sixScreen = false;
+  public horario4mypatient = false;
+  public five = false;
   public today = new Date();
   public title = '';
   public body = '';
@@ -33,6 +34,14 @@ export class CreateUserComponent implements OnInit {
   public catSchedule;
   public optionDay;
   public catState;
+  public countAttri = 0;
+  uuid: string;
+
+
+
+  // banderas para doctor hematologo y union a 4mypatient
+  public medico4mypatient = false;
+  doc4mypatient = false;
 
   oneStep = this.formBuilder.group({
     roleId: ['', [Validators.required]],
@@ -49,22 +58,23 @@ export class CreateUserComponent implements OnInit {
     professionalLicense: [''],
     professionalLicenseProcedure: [false, [Validators.required]],
   });
-
   fourStep = this.formBuilder.group({
     consultingType: ['', [Validators.required]],
     phoneConsulting: ['', [Validators.required]],
     state: ['', [Validators.required]],
     address: ['', [Validators.required]],
   });
-  // fiveStep = this.formBuilder.group({
-  //   schedule: ['', Validators.required],
-  // });
-  sixStep = this.formBuilder.group({
+  fiveStep = this.formBuilder.group({
     email: ['', Validators.email],
     password: ['', [Validators.required]],
     term: ['false', [Validators.requiredTrue]],
 
   });
+  medico4mypatientStep = this.formBuilder.group({
+    availableForCall: ['false'],
+  });
+  public dayCalendar: any[] = [];
+
   constructor(private formBuilder: FormBuilder,
     public router: Router,
     public service: ServiceGeneralService, private alertController: AlertController, public datepipe: DatePipe) {
@@ -92,8 +102,8 @@ export class CreateUserComponent implements OnInit {
     });
   }
   iniciarSesion() {
-    this.ionViewWillEnter();
     this.router.navigateByUrl('/perfil-user/login');
+    this.ionViewWillEnter();
   }
   getEspecialidades() {
     this.service.serviceGeneralGet('CatSpeciality').subscribe(resp => {
@@ -135,54 +145,121 @@ export class CreateUserComponent implements OnInit {
       }
     });
   }
-  invitacionHematologicos() {
-    console.log('especialidad', this.threeStep.value.specialityId);
-    if (this.threeStep.value.specialityId === 1) {
-      this.title = 'Hola';
-      this.body = 'Nos encantaría que te unieras al equipo de hematólogos que queremos ver cada vez menos pacientes con enfermedades en etapas avanzadas, para ello, médicos de primer contacto podrán  contactarte brevemente para resolver dudas puntuales, de manera anónima y solo en los momentos libres que tengas, a tu elección. ';
-      this.message(this.title, this.body);
-    }
-  }
+  // invitacionHematologicos() {
+  //   console.log('especialidad', this.threeStep.value.specialityId);
+  //   if (this.threeStep.value.specialityId === 1) {
+  //     this.medico4mypatient = true;
+  //   }
+  //   else {
+  //     this.medico4mypatient = false;
+  //   }
+  // }
   step1() {
     this.oneScreen = true;
     this.twoScreen = false;
     this.threeScreen = false;
     this.fourScreen = false;
-    this.fiveScreen = false;
-    this.sixScreen = false;
+    this.medico4mypatient = false;
+    this.horario4mypatient = false;
+    this.five = false;
+
   }
   step2() {
     this.oneScreen = false;
     this.twoScreen = true;
     this.threeScreen = false;
     this.fourScreen = false;
-    this.fiveScreen = false;
-    this.sixScreen = false;
+    this.medico4mypatient = false;
+    this.horario4mypatient = false;
+    this.five = false;
+
   }
-  // desicion
-  step3() {
+  step3(direccion: string) {
+    console.log(direccion);
+    if (direccion === 'adelante') {
+      this.oneScreen = false;
+      this.twoScreen = false;
+      this.threeScreen = true;
+      this.medico4mypatient = false;
+      this.horario4mypatient = false;
+      this.fourScreen = false;
+      this.five = false;
+    }
+    else if (direccion === 'atrasHemato') {
+      this.threeScreen = true;
+      this.medico4mypatient = false;
+    }
+    else {
+      this.oneScreen = false;
+      this.twoScreen = false;
+      this.fourScreen = false;
+      this.five = false;
+      if (this.threeStep.value.specialityId === 1) {
+        if (this.medico4mypatientStep.value.availableForCall === true) {
+          this.horario4mypatient = true;
+          this.medico4mypatient = false;
+        }
+        else {
+          //esta opcion es regresar de medico4mypatient a paso 3
+          this.medico4mypatient = true;
+        }
+      }
+      else {
+        //si la especialida no es hematologica
+        this.threeScreen = true;
+        this.medico4mypatient = false;
+
+      }
+    }
+  }
+  m4mypatientStep() {
+    console.log('m4mypatientStep');
     this.oneScreen = false;
     this.twoScreen = false;
-    this.threeScreen = true;
+    this.threeScreen = false;
     this.fourScreen = false;
-    this.fiveScreen = false;
-    this.sixScreen = false;
+    this.horario4mypatient = false;
+    if (this.threeStep.value.specialityId === 1) {
+      this.medico4mypatient = true;
+    }
+    else {
+      this.medico4mypatient = false;
+      this.fourScreen = true;
+    }
+  }
+  stepHorario() {
+    console.log('horario');
+    this.oneScreen = false;
+    this.twoScreen = false;
+    this.threeScreen = false;
+    this.fourScreen = false;
+    this.medico4mypatient = false;
+    if (this.medico4mypatientStep.value.availableForCall === true) {
+      this.horario4mypatient = true;
+    }
+    else {
+      this.horario4mypatient = false;
+      this.fourScreen = true;
+    }
   }
   step4() {
     this.oneScreen = false;
     this.twoScreen = false;
     this.threeScreen = false;
     this.fourScreen = true;
-    this.fiveScreen = false;
-    this.sixScreen = false;
+    this.medico4mypatient = false;
+    this.horario4mypatient = false;
+    this.five = false;
   }
-  step6() {
+
+  step5() {
     this.oneScreen = false;
     this.twoScreen = false;
     this.threeScreen = false;
     this.fourScreen = false;
-    this.fiveScreen = false;
-    this.sixScreen = true;
+    this.medico4mypatient = false;
+    this.horario4mypatient = false;
+    this.five = true;
   }
   formartDate() {
     // 2022-03-11T17:27:00
@@ -207,6 +284,7 @@ export class CreateUserComponent implements OnInit {
     console.log('createDate', this.createDate);
   }
 
+
   save() {
     this.disabled = true;
     this.formartDate();
@@ -214,6 +292,7 @@ export class CreateUserComponent implements OnInit {
     this.data.id = 0;
     this.data.token = '';
     this.data.roleId = this.oneStep.value.roleId;
+    this.data.availableForCall = this.medico4mypatientStep.value.availableForCall;
     this.data.name = this.twoStep.value.name;
     this.data.firstName = this.twoStep.value.firstName;
     this.data.dateBirth = this.twoStep.value.birthday;
@@ -222,8 +301,8 @@ export class CreateUserComponent implements OnInit {
     this.data.professionalLicense = this.threeStep.value.professionalLicense;
     this.data.other = this.threeStep.value.other;
     this.data.professionalLicenseProcedure = this.threeStep.value.professionalLicenseProcedure;
-    this.data.email = this.sixStep.value.email;
-    this.data.password = this.sixStep.value.password;
+    this.data.email = this.fiveStep.value.email;
+    this.data.password = this.fiveStep.value.password;
     this.data.status = true;
     this.data.phone = this.fourStep.value.phoneConsulting;
     this.data.consultingType = this.fourStep.value.consultingType;
@@ -234,8 +313,32 @@ export class CreateUserComponent implements OnInit {
     this.data.createdDate = this.today;
     this.data.updatedBy = 0;
     this.data.updatedDate = this.today;
-    console.log('fecha', this.today);
+    if (this.data.specialityId === 1) {
+      const tempweeklySchedules = [];
+      if (this.dayCalendar.length !== 0) {
+        this.dayCalendar.forEach(horario => {
+          this.catDay.forEach(dia => {
+            if (dia.id === horario.dayId) {
+              tempweeklySchedules.push(
+                {
+                  id: horario.id,
+                  userId: 0,
+                  day: dia.name,
+                  timeInit: horario.timeInit,
+                  timeEnd: horario.timeEnd
+                });
+            }
+          });
+        });
+      }
+      this.data.weeklySchedules = tempweeklySchedules;
+    }
+    else {
+      this.data.availableForCall = false;
+      this.data.weeklySchedules = [];
 
+    }
+    console.log('data', this.data);
     this.service.serviceGeneralPostWithUrl('User', this.data).subscribe(resp => {
       if (resp.success) {
         this.title = 'Exito';
@@ -243,6 +346,9 @@ export class CreateUserComponent implements OnInit {
         this.message(this.title, this.body);
         this.router.navigateByUrl('/perfil-user/login');
         this.disabled = false;
+        this.ngOnInit();
+        this.step1();
+
       } else {
         this.title = 'Error';
         this.router.navigateByUrl('/perfil-user/login');
@@ -257,6 +363,35 @@ export class CreateUserComponent implements OnInit {
         this.disabled = false;
       });
   }
+  addDay() {
+    // this.uuid = self.crypto.randomUUID();
+    this.uuid = uuidv4();
+
+    if (this.countAttri === 0) {
+      this.countAttri = this.countAttri + 1;
+    }
+    else {
+      this.countAttri = this.countAttri + 1;
+    }
+    this.dayCalendar.push({
+      id: this.uuid,
+      userId: 0,
+      dayId: 0,
+      scheduleId: 0,
+      timeInit: '00:00',
+      timeEnd: '00:00',
+      attrHI: 'horaInicia' + this.countAttri,
+      attrHF: 'horaFinal' + this.countAttri,
+    });
+    console.log('recuersos', this.dayCalendar);
+  }
+  deleteDay(data, index) {
+    console.log('index', index);
+    console.log('data', data);
+    if (this.dayCalendar.length !== 1) {
+      this.dayCalendar.splice(index, 1);
+    }
+  }
 
   // falta sex institutio consultingType address schedule
   verificarCode() { }
@@ -266,6 +401,16 @@ export class CreateUserComponent implements OnInit {
       // subHeader: e.header,
       message: body,
       buttons: ['OK'],
+      mode: 'ios',
+    });
+    await alert.present();
+  }
+  async messageHema(title, body) {
+    const alert = await this.alertController.create({
+      header: title,
+      // subHeader: e.header,
+      message: body,
+      buttons: ['Me Sumo a la Red Médica'],
       mode: 'ios',
     });
     await alert.present();
@@ -282,6 +427,7 @@ class UserModel {
   specialityId: number;
   professionalLicenseProcedure: true;
   roleId: number;
+  availableForCall: boolean;
   status: true;
   phone: string;
   dateBirth: Date;
@@ -296,6 +442,14 @@ class UserModel {
   createdDate: Date;
   updatedBy: number;
   updatedDate: Date;
+  weeklySchedules: WeeklySchedulesModel[] = [];
+}
+class WeeklySchedulesModel {
+  id: number;
+  userId: number;
+  day: string;
+  timeInit: string;
+  timeEnd: string;
 }
 
 

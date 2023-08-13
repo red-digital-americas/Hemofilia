@@ -10,6 +10,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { ResultDiagnosticComponent } from './result-diagnostic/result-diagnostic.component';
 import { TerminosComponent } from './terminos/terminos.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
+import { EducacionMedicaComponent } from './educacion-medica/educacion-medica.component';
 const routes: Routes = [
   {
     path: 'home',
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'medical-network/:id',
     component: MedicalNetworkComponent,
+  },
+  {
+    path: 'educacion',
+    component: EducacionMedicaComponent,
   },
   {
     path: 'terminos',

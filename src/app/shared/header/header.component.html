@@ -49,14 +49,14 @@
             color="tertiary"
             *ngFor="let p of appPagesUser; let i = index"
           >
-            <ion-item
+            <ion-item *ngIf="p.status === 'true'"
               class="menu-style"
               routerDirection="root"
               [routerLink]="[p.url]"
               lines="none"
               detail="false"
               routerLinkActive="selected"
-              
+
             >
               <ion-icon
                 color="tertiary"

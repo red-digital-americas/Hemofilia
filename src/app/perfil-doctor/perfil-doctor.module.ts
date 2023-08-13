@@ -15,7 +15,7 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 import { MedicalNetworkComponent } from './medical-network/medical-network.component';
 import { PerfilDoctorRoutingModule } from './perfil-doctor-routing.module';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
-
+import { EducacionMedicaComponent } from './educacion-medica/educacion-medica.component';
 @NgModule({
   declarations:
     [
@@ -29,6 +29,7 @@ import { AcercaDeComponent } from './acerca-de/acerca-de.component';
       TerminosComponent,
       MedicalNetworkComponent,
       AcercaDeComponent,
+      EducacionMedicaComponent,
     ],
   imports:
     [
