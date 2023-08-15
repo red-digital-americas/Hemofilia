@@ -40,20 +40,20 @@ export class ResultDiagnosticComponent implements OnInit {
     this.router.navigateByUrl('/perfil-doctor/home');
 
   }
-  llamarhematologo(){
+  llamarhematologo() {
     this.router.navigateByUrl('/perfil-doctor/medical-network/0');
 
     // const telNumber = 5560106592;
     // window.open(`tel:${telNumber}`, '_system');
     // this.postCall();
   }
-  postCall(){
+  postCall() {
     const data = {
       userId: this.user.id,
       eventType: 1
     };
     this.service
-      .serviceGeneralPostWithUrl(`RequestSupport`, data )
+      .serviceGeneralPostWithUrl(`RequestSupport`, data)
       .subscribe((resp) => {
         if (resp.success) {
           console.log('llamada registrada');
@@ -65,6 +65,11 @@ export class ResultDiagnosticComponent implements OnInit {
       this.service.serviceGeneralGet(`ResultQuiz/${this.idResult}`).subscribe(resp => {
         if (resp.success) {
           this.data = resp.result;
+          this.data.option1 = this.data.option1.trim();
+          this.data.option2 = this.data.option2.trim();
+          this.data.option3 = this.data.option3.trim();
+          this.data.option4 = this.data.option4.trim();
+
           console.log('data', this.data);
         }
         else {
@@ -92,7 +97,7 @@ export class ResultDiagnosticComponent implements OnInit {
     });
     await alert.present();
   }
-  especialistas(){
+  especialistas() {
     //aqui se manda 1 ya que se debe filtrar
     this.router.navigateByUrl('/perfil-doctor/medical-network/1');
 

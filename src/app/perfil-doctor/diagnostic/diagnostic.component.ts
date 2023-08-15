@@ -58,6 +58,8 @@ export class DiagnosticComponent implements OnInit {
     this.disabledGuardar = false;
     this.data.symptomId = null;
     this.data.laboratoryTestId = null;
+    this.data.laboratoryTestOther = '';
+
 
     this.user = JSON.parse(localStorage.getItem('userData'));
     console.log('user', this.user);
@@ -120,6 +122,7 @@ export class DiagnosticComponent implements OnInit {
     console.log('regresar');
     this.router.navigateByUrl('/perfil-doctor/home');
     this.slides.slideTo(0);
+    this.ngOnInit();
 
   }
   swipeNext() {
@@ -178,6 +181,7 @@ export class DiagnosticComponent implements OnInit {
           setTimeout(() => {
             this.router.navigateByUrl(`/perfil-doctor/result-diagnostic/${resp.result.id}`);
             this.disabledGuardar = false;
+            this.ngOnInit();
           }, 5000);
         }
         else {
